@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "js_furniture_mod",
+	"version": "${version}",
+	"name": "NhatJS's Fabric Furniture Mod",
+	"description": "Mod đầu tiên của mình trong Minecraft (Vietnamese), My first mod in Minecraft (English). Note: some textures and images are found online, and made by the authors.",
+	"authors": [
+		"NhatJS (aka James Southfall)"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/js_furniture_mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "net.nhatjs.js_furniture_mod.JsFurnitureModMod"
+		],
+		"fabric-datagen": [
+			"net.nhatjs.js_furniture_mod.JsFurnitureModModDataGenerator"
+		],
+		"client": [
+			"net.nhatjs.js_furniture_mod.JsFurnitureModModClient"
+		]
+	},
+	"mixins": [
+		"js_furniture_mod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
