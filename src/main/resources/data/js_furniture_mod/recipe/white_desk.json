@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "121",
+    "1 1",
+    "1 1"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:white_concrete"
+    },
+    "2": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:white_desk",
+    "count": 2
+  }
+}

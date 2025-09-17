@@ -1,3 +1,12 @@
 {
-  "item.js_furniture_mod.remote_control_rgb": "Remote Control RGB"
+  "item.js_furniture_mod.remote_control_rgb": "Remote Control RGB",
+
+  "block.js_furniture_mod.black_table": "Black Table",
+  "block.js_furniture_mod.white_table": "White Table",
+  "block.js_furniture_mod.white_desk": "White Desk",
+  "block.js_furniture_mod.socket": "Socket",
+  "block.js_furniture_mod.led_floor_lamp": "LED Floor Lamp",
+  "block.js_furniture_mod.washing_machine_ai": "Washing Machine AI",
+
+  "itemgroup.js_furniture_mod.js_furniture_tab": "NhatJS's Furniture Mod"
 }

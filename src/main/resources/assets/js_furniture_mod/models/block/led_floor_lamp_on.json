@@ -1,0 +1,6 @@
+{
+	"parent": "js_furniture_mod:block/led_floor_lamp",
+	"textures": {
+      "1": "js_furniture_mod:block/emissive"
+	}
+}
