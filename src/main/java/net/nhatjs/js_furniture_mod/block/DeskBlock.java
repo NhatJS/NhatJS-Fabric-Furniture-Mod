@@ -62,17 +62,17 @@ public class DeskBlock extends Block {
     );
 
     private static final VoxelShape WEST = VoxelShapes.union(
-            Block.createCuboidShape(-0.025, 12.925, -7.975, 15.975, 16, 24.025),
-            Block.createCuboidShape(14.975, 0, 23.025, 15.975, 12.925, 24.025),
-            Block.createCuboidShape(-0.025, 0, 23.025, 0.975, 12.925, 24.025),
-            Block.createCuboidShape(14.975, 0, -7.975, 15.975, 12.925, -6.975),
-            Block.createCuboidShape(-0.025, 0, -7.975, 0.975, 12.925, -6.975),
-            Block.createCuboidShape(0.975, 12.125, 23.125, 14.975, 12.925, 23.925),
-            Block.createCuboidShape(0.975, 12.125, -7.875, 14.975, 12.925, -7.075),
-            Block.createCuboidShape(0.975, 2.2, -7.875, 14.975, 3, -7.075),
-            Block.createCuboidShape(0.975, 2.2, 23.125, 14.975, 3, 23.925),
-            Block.createCuboidShape(0.075, 2.2, -6.975, 0.875, 3, 23.025),
-            Block.createCuboidShape(15.125, 12.125, -6.975, 15.925, 12.925, 23.025)
+            Block.createCuboidShape(0, 12.925, -8, 16, 16, 24),
+            Block.createCuboidShape(0, 0, -8, 1, 12.925, -7),
+            Block.createCuboidShape(15, 0, -8, 16, 12.925, -7),
+            Block.createCuboidShape(0, 0, 23, 1, 12.925, 24),
+            Block.createCuboidShape(15, 0, 23, 16, 12.925, 24),
+            Block.createCuboidShape(1, 12.125, -7.9, 15, 12.925, -7.1),
+            Block.createCuboidShape(1, 12.125, 23.1, 15, 12.925, 23.9),
+            Block.createCuboidShape(1, 2.2, 23.1, 15, 3, 23.9),
+            Block.createCuboidShape(1, 2.2, -7.9, 15, 3, -7.1),
+            Block.createCuboidShape(15.1, 2.2, -7, 15.9, 3, 23),
+            Block.createCuboidShape(15.1, 12.125, -7, 15.9, 12.925, 23)
     );
 
     @Override
