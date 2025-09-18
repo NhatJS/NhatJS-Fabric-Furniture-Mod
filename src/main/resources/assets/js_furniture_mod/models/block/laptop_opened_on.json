@@ -1,0 +1,7 @@
+{
+  "parent": "js_furniture_mod:block/laptop_opened",
+  "textures": {
+    "3": "js_furniture_mod:block/rgb",
+    "4": "js_furniture_mod:block/display_screen"
+  }
+}

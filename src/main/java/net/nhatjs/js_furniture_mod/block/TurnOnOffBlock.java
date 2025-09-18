@@ -16,15 +16,18 @@ import net.minecraft.world.World;
 public class TurnOnOffBlock extends Block{
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
+    public static final BooleanProperty OPEN = BooleanProperty.of("open");
 
     public TurnOnOffBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(TURN_ON, false));
+        this.setDefaultState(this.stateManager.getDefaultState()
+                .with(TURN_ON, false)
+                .with(OPEN, false));
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING, TURN_ON);
+        builder.add(FACING, TURN_ON, OPEN);
     }
 
     @Override

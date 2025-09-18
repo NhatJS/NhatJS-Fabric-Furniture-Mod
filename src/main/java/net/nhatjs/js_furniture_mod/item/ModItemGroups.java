@@ -21,6 +21,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WHITE_DESK);
                         entries.add(ModBlocks.SOCKET);
                         entries.add(ModBlocks.LED_FLOOR_LAMP);
+                        entries.add(ModBlocks.LAPTOP);
                         entries.add(ModBlocks.WASHING_MACHINE_AI);
                         entries.add(ModItems.REMOTE_CONTROL_RGB);
                     }).build());

@@ -22,6 +22,8 @@ public class ModBlocks {
             new SocketBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
     public static Block LED_FLOOR_LAMP = registerBlock("led_floor_lamp",
             new LEDFloorLampBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block LAPTOP = registerBlock("laptop",
+            new LaptopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WASHING_MACHINE_AI = registerBlock("washing_machine_ai",
             new WashingMachineBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
 
