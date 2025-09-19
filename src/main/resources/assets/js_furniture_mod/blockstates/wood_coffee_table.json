@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "js_furniture_mod:block/wood_coffee_table"
+    },
+    "facing=east": {
+      "model": "js_furniture_mod:block/wood_coffee_table",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/wood_coffee_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/wood_coffee_table",
+      "y": 270
+    }
+  }
+}

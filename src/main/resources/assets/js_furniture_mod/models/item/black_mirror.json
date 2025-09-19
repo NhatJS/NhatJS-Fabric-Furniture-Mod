@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "js_furniture_mod:item/black_mirror_item"
+  }
+}

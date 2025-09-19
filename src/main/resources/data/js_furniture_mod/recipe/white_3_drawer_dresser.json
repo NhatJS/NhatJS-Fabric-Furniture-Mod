@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "121",
+    "121",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:white_concrete"
+    },
+    "2": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:white_3_drawer_dresser",
+    "count": 2
+  }
+}

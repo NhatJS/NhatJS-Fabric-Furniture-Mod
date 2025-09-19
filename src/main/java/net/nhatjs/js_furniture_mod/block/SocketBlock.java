@@ -25,8 +25,8 @@ public class SocketBlock extends Block {
             case SOUTH -> Block.createCuboidShape(6, 5, 0, 10, 11, 0.25);
             case EAST -> Block.createCuboidShape(0, 5, 6, 0.25, 11, 10);
             case WEST -> Block.createCuboidShape(15.75, 5, 6, 16, 11, 10);
-            case UP -> Block.createCuboidShape(15.75, 5, 6, 16, 11, 10);
-            case DOWN -> Block.createCuboidShape(15.75, 5, 6, 16, 11, 10);
+            case UP -> Block.createCuboidShape(6, 0, 5, 10, 0.25, 11);
+            case DOWN -> Block.createCuboidShape(6, 15.75, 5, 10, 16, 11);
         };
     }
 

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " 2 ",
+    "111",
+    "222"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:white_concrete"
+    },
+    "2": {
+      "item": "minecraft:black_concrete"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:modern_bathroom_sink_storage",
+    "count": 1
+  }
+}

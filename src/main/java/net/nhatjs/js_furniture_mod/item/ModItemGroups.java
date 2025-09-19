@@ -16,12 +16,40 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.BLACK_TABLE))
                     .displayName(Text.translatable("itemgroup.js_furniture_mod.js_furniture_tab"))
                     .entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.MODERN_CHAIR);
+                        entries.add(ModBlocks.WOOD_LIGHT_TABLE);
                         entries.add(ModBlocks.BLACK_TABLE);
                         entries.add(ModBlocks.WHITE_TABLE);
+                        entries.add(ModBlocks.WOOD_COFFEE_TABLE);
+                        entries.add(ModBlocks.WHITE_COFFEE_TABLE);
+                        entries.add(ModBlocks.WOOD_DESK);
                         entries.add(ModBlocks.WHITE_DESK);
+                        entries.add(ModBlocks.WOOD_STANDING_DESK);
+                        entries.add(ModBlocks.BLACK_STANDING_DESK);
+                        entries.add(ModBlocks.WHITE_STANDING_DESK);
+                        entries.add(ModBlocks.WOOD_3_DRAWER_DRESSER);
+                        entries.add(ModBlocks.WHITE_3_DRAWER_DRESSER);
+                        entries.add(ModBlocks.WOOD_LIGHT_TV_STAND);
+                        entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM);
+                        entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK);
+                        entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_2);
+                        entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_2_EXTRA);
+                        entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_B);
+                        entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_B_WITH_SINK);
+                        entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_B_2);
+                        entries.add(ModBlocks.KITCHEN_DRAWERS);
+                        entries.add(ModBlocks.KITCHEN_CABINET_TOP);
+                        entries.add(ModBlocks.KITCHEN_CABINET_TOP_B);
+                        entries.add(ModBlocks.WOOD_STRIPED_WALL);
+                        entries.add(ModBlocks.BLACK_MIRROR);
                         entries.add(ModBlocks.SOCKET);
+                        entries.add(ModBlocks.MODERN_CLOCK);
+                        entries.add(ModBlocks.MODERN_LIGHT);
                         entries.add(ModBlocks.LED_FLOOR_LAMP);
                         entries.add(ModBlocks.LAPTOP);
+                        entries.add(ModBlocks.COOKTOP);
+                        entries.add(ModBlocks.MODERN_BATHROOM_SINK_STORAGE);
+                        entries.add(ModBlocks.MODERN_BATHROOM_MIRROR_SHELF);
                         entries.add(ModBlocks.WASHING_MACHINE_AI);
                         entries.add(ModItems.REMOTE_CONTROL_RGB);
                     }).build());

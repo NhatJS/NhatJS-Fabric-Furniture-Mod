@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "js_furniture_mod:block/kitchen_cabinet_bottom_b_with_sink"
+    },
+    "facing=east": {
+      "model": "js_furniture_mod:block/kitchen_cabinet_bottom_b_with_sink",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/kitchen_cabinet_bottom_b_with_sink",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/kitchen_cabinet_bottom_b_with_sink",
+      "y": 270
+    }
+  }
+}

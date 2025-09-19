@@ -12,31 +12,31 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class TableBlock extends Block {
+public class CoffeeTableBlock extends Block {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    public TableBlock(Settings settings) {
+    public CoffeeTableBlock(Settings settings) {
         super(settings);
     }
 
     private static final VoxelShape HORIZONTAL = VoxelShapes.union(
-            Block.createCuboidShape(-12, 15, 0, 28, 16, 16),
-            Block.createCuboidShape(-11.75, 0, 0.25, -10.75, 15, 1.25),
-            Block.createCuboidShape(-11.75, 0, 14.75, -10.75, 15, 15.75),
-            Block.createCuboidShape(26.75, 0, 14.75, 27.75, 15, 15.75),
-            Block.createCuboidShape(26.75, 0, 0.25, 27.75, 15, 1.25),
-            Block.createCuboidShape(26.85, 0.4, 1.25, 27.65, 1.2, 14.75),
-            Block.createCuboidShape(-11.65, 0.4, 1.25, -10.85, 1.2, 14.75)
+            Block.createCuboidShape(-2.5, 0, 2.25, -1.25, 8, 3.5),
+            Block.createCuboidShape(17.25, 0, 2.25, 18.5, 8, 3.5),
+            Block.createCuboidShape(17.25, 0, 12.5, 18.5, 8, 13.75),
+            Block.createCuboidShape(-2.5, 0, 12.5, -1.25, 8, 13.75),
+            Block.createCuboidShape(-2, 4.625, 3.5, 8, 4.975, 12.5),
+            Block.createCuboidShape(-2.5, 8, 2.25, 18.5, 9.25, 13.75),
+            Block.createCuboidShape(8, 4.625, 3.5, 18, 4.975, 12.5)
     );
 
     private static final VoxelShape VERTICAL = VoxelShapes.union(
-            Block.createCuboidShape(0, 15, -12, 16, 16, 28),
-            Block.createCuboidShape(14.75, 0, -11.75, 15.75, 15, -10.75),
-            Block.createCuboidShape(0.25, 0, -11.75, 1.25, 15, -10.75),
-            Block.createCuboidShape(0.25, 0, 26.75, 1.25, 15, 27.75),
-            Block.createCuboidShape(14.75, 0, 26.75, 15.75, 15, 27.75),
-            Block.createCuboidShape(1.25, 0.4, 26.85, 14.75, 1.2, 27.65),
-            Block.createCuboidShape(1.25, 0.4, -11.65, 14.75, 1.2, -10.85)
+            Block.createCuboidShape(12.5, 0, -2.5, 13.75, 8, -1.25),
+            Block.createCuboidShape(12.5, 0, 17.25, 13.75, 8, 18.5),
+            Block.createCuboidShape(2.25, 0, 17.25, 3.5, 8, 18.5),
+            Block.createCuboidShape(2.25, 0, -2.5, 3.5, 8, -1.25),
+            Block.createCuboidShape(3.5, 4.625, -2, 12.5, 4.975, 8),
+            Block.createCuboidShape(2.25, 8, -2.5, 13.75, 9.25, 18.5),
+            Block.createCuboidShape(3.5, 4.625, 8, 12.5, 4.975, 18)
     );
 
     @Override

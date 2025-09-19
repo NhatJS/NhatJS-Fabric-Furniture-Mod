@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "js_furniture_mod:block/furniture",
-		"1": "js_furniture_mod:block/emissive_e"
+		"particle": "minecraft:block/black_concrete"
 	},
 	"elements": [
 		{

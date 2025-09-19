@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "js_furniture_mod:block/wood_3_drawer_dresser"
+    },
+    "facing=east": {
+      "model": "js_furniture_mod:block/wood_3_drawer_dresser",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/wood_3_drawer_dresser",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/wood_3_drawer_dresser",
+      "y": 270
+    }
+  }
+}

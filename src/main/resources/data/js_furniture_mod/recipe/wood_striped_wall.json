@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "111",
+    "111",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:birch_planks"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:wood_striped_wall",
+    "count": 4
+  }
+}
