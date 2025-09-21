@@ -46,6 +46,13 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MODERN_CLOCK);
                         entries.add(ModBlocks.MODERN_LIGHT);
                         entries.add(ModBlocks.LED_FLOOR_LAMP);
+                        entries.add(ModBlocks.LED_FLOOR_LAMP_RGB_OFF);
+                        entries.add(ModBlocks.MONITOR_SETUP);
+                        entries.add(ModBlocks.MONITOR);
+                        entries.add(ModBlocks.KEYBOARD);
+                        entries.add(ModBlocks.COMPUTER_MOUSE);
+                        entries.add(ModBlocks.PC);
+                        entries.add(ModBlocks.PC_TOWER_GLASS);
                         entries.add(ModBlocks.LAPTOP);
                         entries.add(ModBlocks.COOKTOP);
                         entries.add(ModBlocks.MODERN_BATHROOM_SINK_STORAGE);

@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "facing=north,turn_on=false": {
+      "model": "js_furniture_mod:block/monitor_setup"
+    },
+    "facing=east,turn_on=false": {
+      "model": "js_furniture_mod:block/monitor_setup",
+      "y": 90
+    },
+    "facing=south,turn_on=false": {
+      "model": "js_furniture_mod:block/monitor_setup",
+      "y": 180
+    },
+    "facing=west,turn_on=false": {
+      "model": "js_furniture_mod:block/monitor_setup",
+      "y": 270
+    },
+
+    "facing=north,turn_on=true": {
+      "model": "js_furniture_mod:block/monitor_setup_on"
+    },
+    "facing=east,turn_on=true": {
+      "model": "js_furniture_mod:block/monitor_setup_on",
+      "y": 90
+    },
+    "facing=south,turn_on=true": {
+      "model": "js_furniture_mod:block/monitor_setup_on",
+      "y": 180
+    },
+    "facing=west,turn_on=true": {
+      "model": "js_furniture_mod:block/monitor_setup_on",
+      "y": 270
+    }
+  }
+}

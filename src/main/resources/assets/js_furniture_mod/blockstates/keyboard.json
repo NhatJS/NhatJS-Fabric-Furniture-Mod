@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "js_furniture_mod:block/keyboard"
+    },
+    "facing=east": {
+      "model": "js_furniture_mod:block/keyboard",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/keyboard",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/keyboard",
+      "y": 270
+    }
+  }
+}

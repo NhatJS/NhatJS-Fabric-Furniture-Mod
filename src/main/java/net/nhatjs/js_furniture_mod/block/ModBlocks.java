@@ -6,6 +6,9 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
 
@@ -72,6 +75,24 @@ public class ModBlocks {
             new ModernLightBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
     public static Block LED_FLOOR_LAMP = registerBlock("led_floor_lamp",
             new LEDFloorLampBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block LED_FLOOR_LAMP_RGB_OFF = registerBlock("led_floor_lamp_rgb_off",
+            new LEDFloorLampRGBBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block LED_FLOOR_LAMP_RGB_OFF_2 = registerBlock("led_floor_lamp_rgb_off_2",
+            new LEDFloorLampRGBAltBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MONITOR_SETUP = registerBlock("monitor_setup",
+            new MonitorSetupBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MONITOR = registerBlock("monitor",
+            new MonitorBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block KEYBOARD = registerBlock("keyboard",
+            new KeyboardBlock(AbstractBlock.Settings.create().strength(0.7f).nonOpaque()));
+    public static Block COMPUTER_MOUSE = registerBlock("computer_mouse",
+            new ComputerMouseBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
+    public static Block PC = registerBlock("pc",
+            new DesktopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block PC_RGB1_OFF = registerBlock("pc_rgb1_off",
+            new DesktopAltBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block PC_TOWER_GLASS = registerBlock("pc_tower_glass",
+            new DesktopTowerGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).strength(0.4f).nonOpaque().noCollision()));
     public static Block LAPTOP = registerBlock("laptop",
             new LaptopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block COOKTOP = registerBlock("cooktop",
