@@ -17,7 +17,7 @@ public class ModEntities {
     public static final EntityType<ChairBlockEntity> SOFA = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(NhatJSFurnitureMod.MOD_ID, "sofa_entity"),
             EntityType.Builder.create(ChairBlockEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.5f, 0.675f).build());
+                    .dimensions(0.5f, 0.475f).build());
 
     public static void registerModEntities() {
         NhatJSFurnitureMod.LOGGER.info("Registering Mod Entities for " + NhatJSFurnitureMod.MOD_ID);

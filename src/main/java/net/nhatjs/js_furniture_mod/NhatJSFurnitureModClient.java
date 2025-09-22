@@ -59,5 +59,6 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_TOWER_GLASS, RenderLayer.getTranslucent());
 
         EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SOFA, ChairRenderer::new);
     }
 }
