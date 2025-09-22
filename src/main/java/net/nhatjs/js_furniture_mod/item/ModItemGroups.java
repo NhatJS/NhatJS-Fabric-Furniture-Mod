@@ -17,6 +17,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.js_furniture_mod.js_furniture_tab"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.MODERN_CHAIR);
+                        entries.add(ModBlocks.SOFA);
                         entries.add(ModBlocks.WOOD_LIGHT_TABLE);
                         entries.add(ModBlocks.BLACK_TABLE);
                         entries.add(ModBlocks.WHITE_TABLE);
