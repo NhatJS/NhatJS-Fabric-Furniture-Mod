@@ -11,17 +11,20 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
-public class ComputerMouseBlock extends Block {
+public class ShowerBlock extends Block {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    public ComputerMouseBlock(Settings settings) {
+    public ShowerBlock(Settings settings) {
         super(settings);
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
-            default -> Block.createCuboidShape(7, 0, 7, 9, 0.3, 9);
+            default -> createCuboidShape(5.75, 5.25, 4, 10.25, 9, 16);
+            case SOUTH -> createCuboidShape(5.75, 5.25, 0, 10.25, 9, 12);
+            case EAST -> createCuboidShape(0, 5.25, 5.75, 12, 9, 10.25);
+            case WEST -> createCuboidShape(4, 5.25, 5.75, 16, 9, 10.25);
         };
     }
 

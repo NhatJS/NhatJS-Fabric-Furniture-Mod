@@ -103,6 +103,8 @@ public class ModBlocks {
             new BathroomSinkStorageBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MODERN_BATHROOM_MIRROR_SHELF = registerBlock("modern_bathroom_mirror_shelf",
             new BathroomMirrorShelfBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
+    public static Block SHOWER = registerBlock("shower",
+            new ShowerBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
     public static Block WASHING_MACHINE_AI = registerBlock("washing_machine_ai",
             new WashingMachineBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
 

@@ -21,10 +21,10 @@ public class KeyboardBlock extends Block {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
-            default -> Block.createCuboidShape(0, 0, 10, 16, 14, 15);
-            case SOUTH -> Block.createCuboidShape(0, 0, 1, 16, 14, 6);
-            case EAST -> Block.createCuboidShape(10, 0, 10, 15, 14, 16);
-            case WEST -> Block.createCuboidShape(1, 0, 10, 6, 14, 15);
+            default -> Block.createCuboidShape(3.5, 0, 6, 12.5, 0.3, 10);
+            case SOUTH -> Block.createCuboidShape(3.5, 0, 6, 12.5, 0.3, 10);
+            case EAST -> Block.createCuboidShape(6, 0, 3.5, 10, 0.3, 12.5);
+            case WEST -> Block.createCuboidShape(6, 0, 3.5, 10, 0.3, 12.5);
         };
     }
 

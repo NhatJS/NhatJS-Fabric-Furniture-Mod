@@ -58,6 +58,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.COOKTOP);
                         entries.add(ModBlocks.MODERN_BATHROOM_SINK_STORAGE);
                         entries.add(ModBlocks.MODERN_BATHROOM_MIRROR_SHELF);
+                        entries.add(ModBlocks.SHOWER);
                         entries.add(ModBlocks.WASHING_MACHINE_AI);
                         entries.add(ModItems.REMOTE_CONTROL_RGB);
                     }).build());

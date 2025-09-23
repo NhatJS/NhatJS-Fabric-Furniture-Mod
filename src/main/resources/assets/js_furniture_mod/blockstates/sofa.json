@@ -20,6 +20,16 @@
       "uvlock": true,
       "y": 0
     },
+    "facing=north,part=corner_left": {
+      "model": "js_furniture_mod:block/sofa_corner_left",
+      "uvlock": true,
+      "y": 0
+    },
+    "facing=north,part=corner_right": {
+      "model": "js_furniture_mod:block/sofa_corner_right",
+      "uvlock": true,
+      "y": 0
+    },
 
     "facing=east,part=single": {
       "model": "js_furniture_mod:block/sofa",
@@ -38,6 +48,16 @@
     },
     "facing=east,part=middle": {
       "model": "js_furniture_mod:block/sofa_middle",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=east,part=corner_left": {
+      "model": "js_furniture_mod:block/sofa_corner_left",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=east,part=corner_right": {
+      "model": "js_furniture_mod:block/sofa_corner_right",
       "uvlock": true,
       "y": 90
     },
@@ -62,6 +82,16 @@
       "uvlock": true,
       "y": 180
     },
+    "facing=sorth,part=corner_left": {
+      "model": "js_furniture_mod:block/sofa_corner_left",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=sorth,part=corner_right": {
+      "model": "js_furniture_mod:block/sofa_corner_right",
+      "uvlock": true,
+      "y": 180
+    },
 
     "facing=west,part=single": {
       "model": "js_furniture_mod:block/sofa",
@@ -80,6 +110,16 @@
     },
     "facing=west,part=middle": {
       "model": "js_furniture_mod:block/sofa_middle",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=west,part=corner_left": {
+      "model": "js_furniture_mod:block/sofa_corner_left",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=west,part=corner_right": {
+      "model": "js_furniture_mod:block/sofa_corner_right",
       "uvlock": true,
       "y": 270
     }

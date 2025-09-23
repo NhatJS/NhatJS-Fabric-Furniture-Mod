@@ -36,7 +36,9 @@ public class SofaBlock extends Block {
         SINGLE("single"),
         LEFT("left"),
         RIGHT("right"),
-        MIDDLE("middle");
+        MIDDLE("middle"),
+        CORNER_LEFT("corner_left"),
+        CORNER_RIGHT("corner_right");
 
         private final String name;
 
@@ -89,6 +91,18 @@ public class SofaBlock extends Block {
     public Part getShape(BlockState state, WorldAccess level, BlockPos pos)
     {
         Direction facing = state.get(FACING);
+        Direction front = this.getSofaState(level, pos, facing.getOpposite());
+        if(front != null)
+        {
+            if(front == facing.rotateYClockwise())
+            {
+                return Part.CORNER_RIGHT;
+            }
+            else if(front == facing.rotateYCounterclockwise())
+            {
+                return Part.CORNER_LEFT;
+            }
+        }
         boolean left = this.isConnectable(level, pos, facing, facing.rotateYCounterclockwise());
         boolean right = this.isConnectable(level, pos, facing, facing.rotateYClockwise());
         if(left && right)
@@ -104,6 +118,12 @@ public class SofaBlock extends Block {
             return Part.LEFT;
         }
         return Part.SINGLE;
+    }
+
+    private Direction getSofaState(WorldAccess level, BlockPos pos, Direction side)
+    {
+        BlockState relativeState = level.getBlockState(pos.offset(side));
+        return relativeState.getBlock() instanceof SofaBlock ? relativeState.get(FACING) : null;
     }
 
     private boolean isConnectable(WorldAccess level, BlockPos pos, Direction facing, Direction offset)
