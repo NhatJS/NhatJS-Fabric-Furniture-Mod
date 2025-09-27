@@ -97,6 +97,8 @@ public class ModBlocks {
             new DesktopTowerGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).strength(0.4f).nonOpaque().noCollision()));
     public static Block LAPTOP = registerBlock("laptop",
             new LaptopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MIDI_STANDALONE_GROOVEBOX = registerBlock("midi_standalone_groovebox",
+            new GrooveboxBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block COOKTOP = registerBlock("cooktop",
             new CooktopBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
     public static Block MODERN_BATHROOM_SINK_STORAGE = registerBlock("modern_bathroom_sink_storage",
