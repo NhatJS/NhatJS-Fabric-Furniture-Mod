@@ -4,7 +4,7 @@
   "pattern": [
     "111",
     "223",
-    "1 1"
+    "4 4"
   ],
   "key": {
     "1": {
@@ -15,10 +15,13 @@
     },
     "3": {
       "item": "minecraft:lever"
+    },
+    "4": {
+      "item": "minecraft:white_concrete"
     }
   },
   "result": {
-    "id": "js_furniture_mod:black_standing_desk",
+    "id": "js_furniture_mod:black_standing_desk_b",
     "count": 1
   }
 }

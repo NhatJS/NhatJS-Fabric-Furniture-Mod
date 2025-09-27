@@ -35,9 +35,15 @@ public class ModBlocks {
             new DeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WOOD_STANDING_DESK = registerBlock("wood_standing_desk",
             new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_STANDING_DESK_B = registerBlock("wood_standing_desk_b",
+            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block BLACK_STANDING_DESK = registerBlock("black_standing_desk",
             new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block BLACK_STANDING_DESK_B = registerBlock("black_standing_desk_b",
+            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WHITE_STANDING_DESK = registerBlock("white_standing_desk",
+            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_STANDING_DESK_B = registerBlock("white_standing_desk_b",
             new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WOOD_3_DRAWER_DRESSER = registerBlock("wood_3_drawer_dresser",
             new ThreeDrawerDresserBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));

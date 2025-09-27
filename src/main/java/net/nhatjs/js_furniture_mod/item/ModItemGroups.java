@@ -26,8 +26,11 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WOOD_DESK);
                         entries.add(ModBlocks.WHITE_DESK);
                         entries.add(ModBlocks.WOOD_STANDING_DESK);
+                        entries.add(ModBlocks.WOOD_STANDING_DESK_B);
                         entries.add(ModBlocks.BLACK_STANDING_DESK);
+                        entries.add(ModBlocks.BLACK_STANDING_DESK_B);
                         entries.add(ModBlocks.WHITE_STANDING_DESK);
+                        entries.add(ModBlocks.WHITE_STANDING_DESK_B);
                         entries.add(ModBlocks.WOOD_3_DRAWER_DRESSER);
                         entries.add(ModBlocks.WHITE_3_DRAWER_DRESSER);
                         entries.add(ModBlocks.WOOD_LIGHT_TV_STAND);

@@ -2,23 +2,26 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "111",
-    "223",
+    "222",
+    "334",
     "1 1"
   ],
   "key": {
     "1": {
-      "item": "minecraft:black_concrete"
+      "item": "minecraft:white_concrete"
     },
     "2": {
-      "item": "minecraft:redstone"
+      "item": "minecraft:birch_planks"
     },
     "3": {
+      "item": "minecraft:redstone"
+    },
+    "4": {
       "item": "minecraft:lever"
     }
   },
   "result": {
-    "id": "js_furniture_mod:black_standing_desk",
+    "id": "js_furniture_mod:wood_standing_desk_b",
     "count": 1
   }
 }
