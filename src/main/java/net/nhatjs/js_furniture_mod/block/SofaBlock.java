@@ -79,7 +79,7 @@ public class SofaBlock extends Block {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
-            default -> Block.createCuboidShape(0, 1, 0, 16, 7.525, 16);
+            default -> Block.createCuboidShape(0, 0.5, 0, 16, 7.525, 16);
         };
     }
 
