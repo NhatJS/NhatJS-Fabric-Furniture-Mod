@@ -18,7 +18,7 @@ public class ModBlocks {
     public static Block MODERN_CHAIR = registerBlock("modern_chair",
             new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block SOFA = registerBlock("sofa",
-            new SofaBlock(Block.Settings.create().strength(1.0f).nonOpaque()));
+            new SofaBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WOOD_LIGHT_TABLE = registerBlock("wood_light_table",
             new WoodTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block BLACK_TABLE = registerBlock("black_table",
@@ -107,6 +107,8 @@ public class ModBlocks {
             new GrooveboxBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block COOKTOP = registerBlock("cooktop",
             new CooktopBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
+    public static Block FRIDGE = registerBlock("fridge",
+            new FridgeBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()));
     public static Block MODERN_BATHROOM_SINK_STORAGE = registerBlock("modern_bathroom_sink_storage",
             new BathroomSinkStorageBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MODERN_BATHROOM_MIRROR_SHELF = registerBlock("modern_bathroom_mirror_shelf",

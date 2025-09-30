@@ -60,6 +60,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.LAPTOP);
                         entries.add(ModBlocks.MIDI_STANDALONE_GROOVEBOX);
                         entries.add(ModBlocks.COOKTOP);
+                        entries.add(ModBlocks.FRIDGE);
                         entries.add(ModBlocks.MODERN_BATHROOM_SINK_STORAGE);
                         entries.add(ModBlocks.MODERN_BATHROOM_MIRROR_SHELF);
                         entries.add(ModBlocks.SHOWER);
