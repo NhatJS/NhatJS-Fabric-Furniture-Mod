@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "js_furniture_mod:midi_standalone_groovebox_3"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

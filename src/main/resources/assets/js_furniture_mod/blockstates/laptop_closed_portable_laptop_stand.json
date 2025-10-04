@@ -1,0 +1,51 @@
+{
+  "variants": {
+    "facing=north,turn_on=false,open=false": {
+      "model": "js_furniture_mod:block/laptop_closed_portable_laptop_stand"
+    },
+    "facing=east,turn_on=false,open=false": {
+      "model": "js_furniture_mod:block/laptop_closed_portable_laptop_stand",
+      "y": 90
+    },
+    "facing=south,turn_on=false,open=false": {
+      "model": "js_furniture_mod:block/laptop_closed_portable_laptop_stand",
+      "y": 180
+    },
+    "facing=west,turn_on=false,open=false": {
+      "model": "js_furniture_mod:block/laptop_closed_portable_laptop_stand",
+      "y": 270
+    },
+
+    "facing=north,turn_on=false,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_off_portable_laptop_stand"
+    },
+    "facing=east,turn_on=false,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_off_portable_laptop_stand",
+      "y": 90
+    },
+    "facing=south,turn_on=false,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_off_portable_laptop_stand",
+      "y": 180
+    },
+    "facing=west,turn_on=false,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_off_portable_laptop_stand",
+      "y": 270
+    },
+
+    "facing=north,turn_on=true,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_on_portable_laptop_stand"
+    },
+    "facing=east,turn_on=true,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_on_portable_laptop_stand",
+      "y": 90
+    },
+    "facing=south,turn_on=true,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_on_portable_laptop_stand",
+      "y": 180
+    },
+    "facing=west,turn_on=true,open=true": {
+      "model": "js_furniture_mod:block/laptop_opened_on_portable_laptop_stand",
+      "y": 270
+    }
+  }
+}

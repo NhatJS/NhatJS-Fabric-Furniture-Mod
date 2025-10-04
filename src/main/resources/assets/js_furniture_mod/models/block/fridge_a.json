@@ -1,0 +1,7 @@
+{
+	"parent": "js_furniture_mod:block/fridge",
+	"textures": {
+		"0": "js_furniture_mod:block/furniture3",
+		"particle": "block/gray_concrete"
+	}
+}

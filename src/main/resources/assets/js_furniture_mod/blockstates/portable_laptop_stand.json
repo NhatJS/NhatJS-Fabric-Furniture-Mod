@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "js_furniture_mod:block/portable_laptop_stand"
+    },
+    "facing=east": {
+      "model": "js_furniture_mod:block/portable_laptop_stand",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/portable_laptop_stand",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/portable_laptop_stand",
+      "y": 270
+    }
+  }
+}

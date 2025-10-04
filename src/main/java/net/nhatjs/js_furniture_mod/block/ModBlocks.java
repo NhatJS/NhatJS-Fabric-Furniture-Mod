@@ -15,6 +15,8 @@ import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
 import static net.nhatjs.js_furniture_mod.NhatJSFurnitureMod.MOD_ID;
 
 public class ModBlocks {
+    public static Block WOOD_CHAIR = registerBlock("wood_chair",
+            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MODERN_CHAIR = registerBlock("modern_chair",
             new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block SOFA = registerBlock("sofa",
@@ -87,6 +89,8 @@ public class ModBlocks {
             new LEDFloorLampRGBBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block LED_FLOOR_LAMP_RGB_OFF_2 = registerBlock("led_floor_lamp_rgb_off_2",
             new LEDFloorLampRGBAltBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block STUDIO_LIGHT = registerBlock("studio_light",
+            new StudioLightBlock(AbstractBlock.Settings.create().strength(1.5f).nonOpaque()));
     public static Block MONITOR_SETUP = registerBlock("monitor_setup",
             new MonitorSetupBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MONITOR = registerBlock("monitor",
@@ -103,11 +107,21 @@ public class ModBlocks {
             new DesktopTowerGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).strength(0.4f).nonOpaque().noCollision()));
     public static Block LAPTOP = registerBlock("laptop",
             new LaptopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block PORTABLE_LAPTOP_STAND = registerBlock("portable_laptop_stand",
+            new PortableLaptopStandBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND = registerBlock("laptop_closed_portable_laptop_stand",
+            new PortableLaptopStandAddedBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MIDI_STANDALONE_GROOVEBOX = registerBlock("midi_standalone_groovebox",
             new GrooveboxBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MIDI_STANDALONE_GROOVEBOX_2 = registerBlock("midi_standalone_groovebox_2",
+            new Groovebox2Block(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MIDI_STANDALONE_GROOVEBOX_3 = registerBlock("midi_standalone_groovebox_3",
+            new Groovebox3Block(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block COOKTOP = registerBlock("cooktop",
             new CooktopBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
-    public static Block FRIDGE = registerBlock("fridge",
+    public static Block FRIDGE_A = registerBlock("fridge_a",
+            new FridgeBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()));
+    public static Block FRIDGE_B = registerBlock("fridge_b",
             new FridgeBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()));
     public static Block MODERN_BATHROOM_SINK_STORAGE = registerBlock("modern_bathroom_sink_storage",
             new BathroomSinkStorageBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));

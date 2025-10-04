@@ -17,11 +17,11 @@
       "item": "minecraft:end_crystal"
     },
     "4": {
-      "item": "minecraft:light_gray_concrete"
+      "item": "minecraft:white_concrete"
     }
   },
   "result": {
-    "id": "js_furniture_mod:fridge",
+    "id": "js_furniture_mod:fridge_b",
     "count": 1
   }
 }

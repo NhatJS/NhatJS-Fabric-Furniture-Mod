@@ -16,6 +16,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.BLACK_TABLE))
                     .displayName(Text.translatable("itemgroup.js_furniture_mod.js_furniture_tab"))
                     .entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.WOOD_CHAIR);
                         entries.add(ModBlocks.MODERN_CHAIR);
                         entries.add(ModBlocks.SOFA);
                         entries.add(ModBlocks.WOOD_LIGHT_TABLE);
@@ -51,6 +52,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MODERN_LIGHT);
                         entries.add(ModBlocks.LED_FLOOR_LAMP);
                         entries.add(ModBlocks.LED_FLOOR_LAMP_RGB_OFF);
+                        entries.add(ModBlocks.STUDIO_LIGHT);
                         entries.add(ModBlocks.MONITOR_SETUP);
                         entries.add(ModBlocks.MONITOR);
                         entries.add(ModBlocks.KEYBOARD);
@@ -58,9 +60,14 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PC);
                         entries.add(ModBlocks.PC_TOWER_GLASS);
                         entries.add(ModBlocks.LAPTOP);
+                        entries.add(ModBlocks.PORTABLE_LAPTOP_STAND);
+                        entries.add(ModBlocks.LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND);
                         entries.add(ModBlocks.MIDI_STANDALONE_GROOVEBOX);
+                        entries.add(ModBlocks.MIDI_STANDALONE_GROOVEBOX_2);
+                        entries.add(ModBlocks.MIDI_STANDALONE_GROOVEBOX_3);
                         entries.add(ModBlocks.COOKTOP);
-                        entries.add(ModBlocks.FRIDGE);
+                        entries.add(ModBlocks.FRIDGE_A);
+                        entries.add(ModBlocks.FRIDGE_B);
                         entries.add(ModBlocks.MODERN_BATHROOM_SINK_STORAGE);
                         entries.add(ModBlocks.MODERN_BATHROOM_MIRROR_SHELF);
                         entries.add(ModBlocks.SHOWER);

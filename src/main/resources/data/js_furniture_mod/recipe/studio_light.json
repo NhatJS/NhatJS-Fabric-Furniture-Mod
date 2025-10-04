@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "2  ",
     "121",
+    " 1",
     "1 1"
   ],
   "key": {
@@ -11,11 +11,11 @@
       "item": "minecraft:black_concrete"
     },
     "2": {
-      "item": "minecraft:white_wool"
+      "item": "minecraft:redstone_lamp"
     }
   },
   "result": {
-    "id": "js_furniture_mod:modern_chair",
-    "count": 4
+    "id": "js_furniture_mod:studio_light",
+    "count": 2
   }
 }

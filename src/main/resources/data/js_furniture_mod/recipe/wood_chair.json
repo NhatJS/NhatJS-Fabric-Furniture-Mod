@@ -3,19 +3,19 @@
   "category": "misc",
   "pattern": [
     "2  ",
-    "121",
+    "122",
     "1 1"
   ],
   "key": {
     "1": {
-      "item": "minecraft:black_concrete"
+      "item": "minecraft:birch_planks"
     },
     "2": {
       "item": "minecraft:white_wool"
     }
   },
   "result": {
-    "id": "js_furniture_mod:modern_chair",
+    "id": "js_furniture_mod:wood_chair",
     "count": 4
   }
 }

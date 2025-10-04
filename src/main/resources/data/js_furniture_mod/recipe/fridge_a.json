@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "414",
+    "232",
+    "414"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:black_concrete"
+    },
+    "2": {
+      "item": "minecraft:iron_block"
+    },
+    "3": {
+      "item": "minecraft:end_crystal"
+    },
+    "4": {
+      "item": "minecraft:gray_concrete"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:fridge_a",
+    "count": 1
+  }
+}

@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "js_furniture_mod:block/electronic",
 		"1": "js_furniture_mod:block/rgb_off",
-		"particle": "js_furniture_mod:block/electronic"
+		"particle": "block/black_concrete"
 	},
 	"elements": [
 		{

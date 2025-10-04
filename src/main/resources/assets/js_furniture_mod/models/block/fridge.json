@@ -2,9 +2,7 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "js_furniture_mod:block/furniture3",
-		"1": "js_furniture_mod:block/furniture",
-		"particle": "block/light_gray_concrete"
+		"1": "js_furniture_mod:block/furniture"
 	},
 	"elements": [
 		{
