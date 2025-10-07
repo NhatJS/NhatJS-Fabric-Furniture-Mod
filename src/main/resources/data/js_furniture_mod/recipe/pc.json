@@ -7,18 +7,10 @@
     "111"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:end_crystal"
-    },
-    "3": {
-      "item": "minecraft:redstone"
-    },
-    "4": {
-      "item": "minecraft:stone_button"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:end_crystal",
+    "3": "minecraft:redstone",
+    "4": "minecraft:stone_button"
   },
   "result": {
     "id": "js_furniture_mod:pc",

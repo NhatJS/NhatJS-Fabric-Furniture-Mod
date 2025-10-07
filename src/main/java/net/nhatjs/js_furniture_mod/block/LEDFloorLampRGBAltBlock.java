@@ -7,10 +7,10 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.loot.context.LootWorldContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -26,7 +26,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class LEDFloorLampRGBAltBlock extends Block{
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
 
     public LEDFloorLampRGBAltBlock(Settings settings) {
@@ -104,7 +104,7 @@ public class LEDFloorLampRGBAltBlock extends Block{
     }
 
     @Override
-    public List<ItemStack> getDroppedStacks(BlockState state, LootContextParameterSet.Builder builder) {
+    public List<ItemStack> getDroppedStacks(BlockState state, LootWorldContext.Builder builder) {
         return Collections.singletonList(new ItemStack(ModBlocks.LED_FLOOR_LAMP_RGB_OFF_2));
     }
 }

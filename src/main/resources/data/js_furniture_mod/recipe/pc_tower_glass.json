@@ -6,12 +6,8 @@
     "21"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:glass_pane"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:glass_pane"
   },
   "result": {
     "id": "js_furniture_mod:pc_tower_glass",

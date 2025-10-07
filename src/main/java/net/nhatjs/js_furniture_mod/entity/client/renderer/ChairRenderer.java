@@ -3,17 +3,17 @@ package net.nhatjs.js_furniture_mod.entity.client.renderer;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.render.entity.state.EntityRenderState;
 import net.nhatjs.js_furniture_mod.entity.client.ChairBlockEntity;
 
-public class ChairRenderer extends EntityRenderer<ChairBlockEntity> {
-    public ChairRenderer(EntityRendererFactory.Context ctx) {
-        super(ctx);
+public class ChairRenderer extends EntityRenderer<ChairBlockEntity, EntityRenderState> {
+    public ChairRenderer(EntityRendererFactory.Context context) {
+        super(context);
     }
 
     @Override
-    public Identifier getTexture(ChairBlockEntity entity) {
-        return null;
+    public EntityRenderState createRenderState() {
+        return new EntityRenderState();
     }
 
     @Override

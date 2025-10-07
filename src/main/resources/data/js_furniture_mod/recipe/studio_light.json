@@ -3,19 +3,15 @@
   "category": "misc",
   "pattern": [
     "121",
-    " 1",
+    " 1 ",
     "1 1"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:redstone_lamp"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:redstone_lamp"
   },
   "result": {
-    "id": "js_furniture_mod:studio_light",
-    "count": 2
+    "count": 2,
+    "id": "js_furniture_mod:studio_light"
   }
 }

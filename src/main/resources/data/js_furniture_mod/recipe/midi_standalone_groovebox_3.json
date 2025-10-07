@@ -5,9 +5,7 @@
     "11"
   ],
   "key": {
-    "1": {
-      "item": "js_furniture_mod:midi_standalone_groovebox"
-    }
+    "1": "js_furniture_mod:midi_standalone_groovebox"
   },
   "result": {
     "id": "js_furniture_mod:midi_standalone_groovebox_3",

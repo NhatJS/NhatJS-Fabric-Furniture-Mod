@@ -6,12 +6,8 @@
     "2"
   ],
   "key": {
-    "1": {
-      "item": "js_furniture_mod:laptop"
-    },
-    "2": {
-      "item": "js_furniture_mod:portable_laptop_stand"
-    }
+    "1": "js_furniture_mod:laptop",
+    "2": "js_furniture_mod:portable_laptop_stand"
   },
   "result": {
     "id": "js_furniture_mod:laptop_closed_portable_laptop_stand",

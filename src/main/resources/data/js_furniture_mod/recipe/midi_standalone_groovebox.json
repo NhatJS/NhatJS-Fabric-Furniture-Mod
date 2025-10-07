@@ -7,15 +7,9 @@
     "222"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:stone_button"
-    },
-    "3": {
-      "item": "minecraft:end_crystal"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:stone_button",
+    "3": "minecraft:end_crystal"
   },
   "result": {
     "id": "js_furniture_mod:midi_standalone_groovebox",

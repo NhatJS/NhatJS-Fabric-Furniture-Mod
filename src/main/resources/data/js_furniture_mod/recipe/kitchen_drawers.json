@@ -7,15 +7,9 @@
     "121"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:birch_planks"
-    },
-    "2": {
-      "item": "minecraft:chest"
-    },
-    "3": {
-      "item": "minecraft:birch_slab"
-    }
+    "1": "minecraft:birch_planks",
+    "2": "minecraft:chest",
+    "3": "minecraft:birch_slab"
   },
   "result": {
     "id": "js_furniture_mod:kitchen_drawers",

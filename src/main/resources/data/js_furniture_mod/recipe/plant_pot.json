@@ -6,15 +6,9 @@
     "121"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:iron_ingot"
-    },
-    "2": {
-      "item": "minecraft:flower_pot"
-    },
-    "3": {
-      "item": "minecraft:oak_sapling"
-    }
+    "1": "minecraft:iron_ingot",
+    "2": "minecraft:flower_pot",
+    "3": "minecraft:oak_sapling"
   },
   "result": {
     "id": "js_furniture_mod:plant_pot",

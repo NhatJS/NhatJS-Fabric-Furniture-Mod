@@ -7,18 +7,10 @@
     "121"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:birch_planks"
-    },
-    "2": {
-      "item": "minecraft:chest"
-    },
-    "3": {
-      "item": "minecraft:white_concrete"
-    },
-    "4": {
-      "item": "minecraft:bucket"
-    }
+    "1": "minecraft:birch_planks",
+    "2": "minecraft:chest",
+    "3": "minecraft:white_concrete",
+    "4": "minecraft:bucket"
   },
   "result": {
     "id": "js_furniture_mod:kitchen_cabinet_bottom_b_with_sink",

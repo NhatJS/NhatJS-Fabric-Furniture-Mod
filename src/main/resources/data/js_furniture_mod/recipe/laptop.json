@@ -7,21 +7,11 @@
     "141"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:end_crystal"
-    },
-    "3": {
-      "item": "minecraft:stone_button"
-    },
-    "4": {
-      "item": "minecraft:redstone"
-    },
-    "5": {
-      "item": "minecraft:note_block"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:end_crystal",
+    "3": "minecraft:stone_button",
+    "4": "minecraft:redstone",
+    "5": "minecraft:note_block"
   },
   "result": {
     "id": "js_furniture_mod:laptop",

@@ -7,9 +7,7 @@
     "111"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:birch_planks"
-    }
+    "1": "minecraft:birch_planks"
   },
   "result": {
     "id": "js_furniture_mod:wood_striped_wall",

@@ -7,15 +7,9 @@
     "1 1"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:redstone"
-    },
-    "3": {
-      "item": "minecraft:lever"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:redstone",
+    "3": "minecraft:lever"
   },
   "result": {
     "id": "js_furniture_mod:black_standing_desk",

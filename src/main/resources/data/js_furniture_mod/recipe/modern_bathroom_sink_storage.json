@@ -7,12 +7,8 @@
     "222"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:white_concrete"
-    },
-    "2": {
-      "item": "minecraft:black_concrete"
-    }
+    "1": "minecraft:white_concrete",
+    "2": "minecraft:black_concrete"
   },
   "result": {
     "id": "js_furniture_mod:modern_bathroom_sink_storage",
