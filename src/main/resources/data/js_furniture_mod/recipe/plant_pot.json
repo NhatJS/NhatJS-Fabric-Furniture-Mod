@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " 3 ",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:iron_ingot"
+    },
+    "2": {
+      "item": "minecraft:flower_pot"
+    },
+    "3": {
+      "item": "minecraft:oak_sapling"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:plant_pot",
+    "count": 1
+  }
+}

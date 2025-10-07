@@ -131,6 +131,8 @@ public class ModBlocks {
             new ShowerBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
     public static Block WASHING_MACHINE_AI = registerBlock("washing_machine_ai",
             new WashingMachineBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block PLANT_POT = registerBlock("plant_pot",
+            new PotBlock(AbstractBlock.Settings.create().strength(0.4f).nonOpaque()));
 
     private static <T extends Block> T registerBlock(String name, T block) {
         Identifier id = Identifier.of(MOD_ID, name);

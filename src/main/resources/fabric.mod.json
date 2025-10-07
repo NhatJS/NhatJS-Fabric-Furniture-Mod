@@ -3,13 +3,13 @@
 	"id": "js_furniture_mod",
 	"version": "${version}",
 	"name": "NhatJS's Furniture Mod",
-	"description": "Mod đầu tiên của mình trong Minecraft (Vietnamese), My first mod in Minecraft (English). Note: some textures and images are found online, and made by the authors.",
+	"description": "Adds stylish furniture, cool electronics, and more to level up your modern Minecraft builds!",
 	"authors": [
 		"NhatJS (aka James Southfall)"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/NhatJS/NhatJS-Fabric-Furniture-Mod"
 	},
 	"license": "MIT",
 	"icon": "assets/js_furniture_mod/js_furniture_mod.png",
