@@ -1,4 +1,6 @@
 {
+	"loader": "fusion:model",
+	"type": "base",
 	"parent": "js_furniture_mod:block/studio_light",
 	"textures": {
 		"2": "js_furniture_mod:block/emissive"
