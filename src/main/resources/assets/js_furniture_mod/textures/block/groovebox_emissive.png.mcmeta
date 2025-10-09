@@ -2,9 +2,5 @@
   "fusion": {
     "emissive": true,
     "render_type": "cutout"
-  },
-  "animation": {
-    "interpolate": true,
-    "frametime": 8
   }
 }
