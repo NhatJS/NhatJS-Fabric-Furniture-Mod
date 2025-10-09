@@ -4,7 +4,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.BlockRenderLayer;
-import net.minecraft.client.render.RenderLayer;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
 import net.nhatjs.js_furniture_mod.entity.client.renderer.ChairRenderer;

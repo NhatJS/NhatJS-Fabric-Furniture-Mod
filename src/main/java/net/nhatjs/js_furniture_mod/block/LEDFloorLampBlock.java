@@ -61,7 +61,7 @@ public class LEDFloorLampBlock extends Block{
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!world.isClient) {
+        if (!world.isClient()) {
             boolean current = state.get(TURN_ON);
             world.setBlockState(pos, state.with(TURN_ON, !current), 3);
         }

@@ -59,7 +59,7 @@ public class DesktopAltBlock extends Block {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient) return ActionResult.SUCCESS;
+        if (world.isClient()) return ActionResult.SUCCESS;
         ItemStack held = player.getMainHandStack();
 
         if (!held.isOf(ModItems.REMOTE_CONTROL_RGB)) {

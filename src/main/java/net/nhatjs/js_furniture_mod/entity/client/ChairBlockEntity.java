@@ -39,8 +39,8 @@ public class ChairBlockEntity extends Entity {
     @Override
     protected void removePassenger(Entity passenger) {
         super.removePassenger(passenger);
-        if(!this.getWorld().isClient()) {
-            this.kill(((ServerWorld) this.getWorld()));
+        if(!this.getEntityWorld().isClient()) {
+            this.kill(((ServerWorld) this.getEntityWorld()));
         }
     }
 
@@ -48,20 +48,20 @@ public class ChairBlockEntity extends Entity {
     public void tick()
     {
         super.tick();
-        if(!this.getWorld().isClient)
+        if(!this.getEntityWorld().isClient())
         {
             BlockPos pos = this.getBlockPos();
-            if(this.getPassengerList().isEmpty() || this.getWorld().isAir(pos))
+            if(this.getPassengerList().isEmpty() || this.getEntityWorld().isAir(pos))
             {
                 this.discard();
-                this.getWorld().updateComparators(pos, this.getWorld().getBlockState(pos).getBlock());
+                this.getEntityWorld().updateComparators(pos, this.getEntityWorld().getBlockState(pos).getBlock());
             }
         }
     }
 
     @Override
     public void remove(RemovalReason reason) {
-        if (!this.getWorld().isClient) {
+        if (!this.getEntityWorld().isClient()) {
             if (this.hasPassengers()) this.getPassengerList().forEach(p -> p.stopRiding());
             this.removeAllPassengers();
         }
