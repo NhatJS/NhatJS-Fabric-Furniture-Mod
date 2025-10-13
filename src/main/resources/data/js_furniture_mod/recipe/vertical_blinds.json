@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "111",
+    "222",
+    "222"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:white_concrete"
+    },
+    "2": {
+      "item": "minecraft:white_banner"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:vertical_blinds",
+    "count": 1
+  }
+}

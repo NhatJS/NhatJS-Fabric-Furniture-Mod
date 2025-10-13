@@ -17,6 +17,8 @@ import static net.nhatjs.js_furniture_mod.NhatJSFurnitureMod.MOD_ID;
 public class ModBlocks {
     public static Block WOOD_CHAIR = registerBlock("wood_chair",
             new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_CHAIR = registerBlock("white_chair",
+            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MODERN_CHAIR = registerBlock("modern_chair",
             new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block SOFA = registerBlock("sofa",
@@ -53,6 +55,8 @@ public class ModBlocks {
             new ThreeDrawerDresserBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WOOD_LIGHT_TV_STAND = registerBlock("wood_light_tv_stand",
             new TVStandBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_TV_STAND = registerBlock("white_tv_stand",
+            new TVStand2Block(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_BOTTOM = registerBlock("kitchen_cabinet_bottom",
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_BOTTOM_WITH_SINK = registerBlock("kitchen_cabinet_bottom_with_sink",
@@ -69,6 +73,8 @@ public class ModBlocks {
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_DRAWERS = registerBlock("kitchen_drawers",
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block KITCHEN_DRAWERS_B = registerBlock("kitchen_drawers_b",
+            new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_TOP = registerBlock("kitchen_cabinet_top",
             new KitchenTopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_TOP_B = registerBlock("kitchen_cabinet_top_b",
@@ -77,8 +83,12 @@ public class ModBlocks {
             new WoodStripedWallBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
     public static Block BLACK_MIRROR = registerBlock("black_mirror",
             new BlackMirrorBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
+    public static Block VERTICAL_BLINDS = registerBlock("vertical_blinds",
+            new VerticalBlindsBlock(AbstractBlock.Settings.create().strength(0.7f).nonOpaque()));
     public static Block SOCKET = registerBlock("socket",
             new SocketBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
+    public static Block TV = registerBlock("tv",
+            new TVBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MODERN_CLOCK = registerBlock("modern_clock",
             new ModernClockBlock(AbstractBlock.Settings.create().strength(0.4f).nonOpaque()));
     public static Block MODERN_LIGHT = registerBlock("modern_light",
@@ -91,6 +101,8 @@ public class ModBlocks {
             new LEDFloorLampRGBAltBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block STUDIO_LIGHT = registerBlock("studio_light",
             new StudioLightBlock(AbstractBlock.Settings.create().strength(1.5f).nonOpaque()));
+    public static Block LED_RGB_TRIANGLE_PANEL = registerBlock("led_rgb_triangle_panel",
+            new LEDRGBTrianglePanelBlock(AbstractBlock.Settings.create().strength(0.8f).nonOpaque()));
     public static Block MONITOR_SETUP = registerBlock("monitor_setup",
             new MonitorSetupBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MONITOR = registerBlock("monitor",
@@ -133,6 +145,10 @@ public class ModBlocks {
             new WashingMachineBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block PLANT_POT = registerBlock("plant_pot",
             new PotBlock(AbstractBlock.Settings.create().strength(0.4f).nonOpaque()));
+    public static Block BOOKS = registerBlock("books",
+            new BooksBlock(AbstractBlock.Settings.create().strength(0.1f).nonOpaque()));
+    public static Block HOLOGRAM = registerBlock("hologram",
+            new HologramBlock(AbstractBlock.Settings.create().strength(0.4f)));
 
     private static <T extends Block> T registerBlock(String name, T block) {
         Identifier id = Identifier.of(MOD_ID, name);

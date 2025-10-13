@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "facing=north,turn_on=false": {
+      "model": "js_furniture_mod:block/vertical_blinds"
+    },
+    "facing=east,turn_on=false": {
+      "model": "js_furniture_mod:block/vertical_blinds",
+      "y": 90
+    },
+    "facing=south,turn_on=false": {
+      "model": "js_furniture_mod:block/vertical_blinds",
+      "y": 180
+    },
+    "facing=west,turn_on=false": {
+      "model": "js_furniture_mod:block/vertical_blinds",
+      "y": 270
+    },
+
+    "facing=north,turn_on=true": {
+      "model": "js_furniture_mod:block/vertical_blinds_open"
+    },
+    "facing=east,turn_on=true": {
+      "model": "js_furniture_mod:block/vertical_blinds_open",
+      "y": 90
+    },
+    "facing=south,turn_on=true": {
+      "model": "js_furniture_mod:block/vertical_blinds_open",
+      "y": 180
+    },
+    "facing=west,turn_on=true": {
+      "model": "js_furniture_mod:block/vertical_blinds_open",
+      "y": 270
+    }
+  }
+}

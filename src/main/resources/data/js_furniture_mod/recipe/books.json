@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "232",
+    "111",
+    "232"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:book"
+    },
+    "2": {
+      "item": "minecraft:white_dye"
+    },
+    "3": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:books",
+    "count": 2
+  }
+}

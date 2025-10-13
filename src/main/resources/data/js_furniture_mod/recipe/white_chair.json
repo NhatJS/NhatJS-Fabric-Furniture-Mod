@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "2  ",
+    "122",
+    "1 1"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:white_concrete"
+    },
+    "2": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "result": {
+    "id": "js_furniture_mod:white_chair",
+    "count": 4
+  }
+}
