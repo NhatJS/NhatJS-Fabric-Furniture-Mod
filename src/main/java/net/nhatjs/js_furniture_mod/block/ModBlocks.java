@@ -89,6 +89,8 @@ public class ModBlocks {
             new SocketBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
     public static Block TV = registerBlock("tv",
             new TVBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block FLOOR_STANDING_SPEAKER = registerBlock("floor_standing_speaker",
+            new FloorStandingSpeakerBlock(AbstractBlock.Settings.create().strength(0.9f).nonOpaque()));
     public static Block MODERN_CLOCK = registerBlock("modern_clock",
             new ModernClockBlock(AbstractBlock.Settings.create().strength(0.4f).nonOpaque()));
     public static Block MODERN_LIGHT = registerBlock("modern_light",

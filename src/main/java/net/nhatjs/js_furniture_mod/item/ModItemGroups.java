@@ -53,6 +53,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VERTICAL_BLINDS);
                         entries.add(ModBlocks.SOCKET);
                         entries.add(ModBlocks.TV);
+                        entries.add(ModBlocks.FLOOR_STANDING_SPEAKER);
                         entries.add(ModBlocks.MODERN_CLOCK);
                         entries.add(ModBlocks.MODERN_LIGHT);
                         entries.add(ModBlocks.LED_FLOOR_LAMP);
