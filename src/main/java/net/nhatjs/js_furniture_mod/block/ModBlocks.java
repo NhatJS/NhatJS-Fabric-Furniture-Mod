@@ -15,48 +15,28 @@ import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
 import static net.nhatjs.js_furniture_mod.NhatJSFurnitureMod.MOD_ID;
 
 public class ModBlocks {
-    public static Block WOOD_CHAIR = registerBlock("wood_chair",
-            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_CHAIR = registerBlock("white_chair",
-            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block MODERN_CHAIR = registerBlock("modern_chair",
-            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block SOFA = registerBlock("sofa",
-            new SofaBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_LIGHT_TABLE = registerBlock("wood_light_table",
-            new WoodTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block BLACK_TABLE = registerBlock("black_table",
-            new ModernTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_TABLE = registerBlock("white_table",
-            new ModernTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_COFFEE_TABLE = registerBlock("wood_coffee_table",
-            new CoffeeTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_COFFEE_TABLE = registerBlock("white_coffee_table",
-            new CoffeeTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_DESK = registerBlock("wood_desk",
-            new DeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_DESK = registerBlock("white_desk",
-            new DeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_STANDING_DESK = registerBlock("wood_standing_desk",
-            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_STANDING_DESK_B = registerBlock("wood_standing_desk_b",
-            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block BLACK_MIRROR = registerBlock("black_mirror",
+            new BlackMirrorBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
     public static Block BLACK_STANDING_DESK = registerBlock("black_standing_desk",
             new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block BLACK_STANDING_DESK_B = registerBlock("black_standing_desk_b",
             new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_STANDING_DESK = registerBlock("white_standing_desk",
-            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_STANDING_DESK_B = registerBlock("white_standing_desk_b",
-            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_3_DRAWER_DRESSER = registerBlock("wood_3_drawer_dresser",
-            new ThreeDrawerDresserBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_3_DRAWER_DRESSER = registerBlock("white_3_drawer_dresser",
-            new ThreeDrawerDresserBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_LIGHT_TV_STAND = registerBlock("wood_light_tv_stand",
-            new TVStandBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WHITE_TV_STAND = registerBlock("white_tv_stand",
-            new TVStand2Block(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block BLACK_TABLE = registerBlock("black_table",
+            new ModernTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block BOOKS = registerBlock("books",
+            new BooksBlock(AbstractBlock.Settings.create().strength(0.1f).nonOpaque()));
+    public static Block COMPUTER_MOUSE = registerBlock("computer_mouse",
+            new ComputerMouseBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
+    public static Block COOKTOP = registerBlock("cooktop",
+            new CooktopBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
+    public static Block FLOOR_STANDING_SPEAKER = registerBlock("floor_standing_speaker",
+            new FloorStandingSpeakerBlock(AbstractBlock.Settings.create().strength(0.9f).nonOpaque()));
+    public static Block FRIDGE_A = registerBlock("fridge_a",
+            new FridgeBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()));
+    public static Block FRIDGE_B = registerBlock("fridge_b",
+            new FridgeBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()));
+    public static Block KEYBOARD = registerBlock("keyboard",
+            new KeyboardBlock(AbstractBlock.Settings.create().strength(0.7f).nonOpaque()));
     public static Block KITCHEN_CABINET_BOTTOM = registerBlock("kitchen_cabinet_bottom",
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_BOTTOM_WITH_SINK = registerBlock("kitchen_cabinet_bottom_with_sink",
@@ -71,84 +51,104 @@ public class ModBlocks {
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_BOTTOM_B_2 = registerBlock("kitchen_cabinet_bottom_b_2",
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block KITCHEN_DRAWERS = registerBlock("kitchen_drawers",
-            new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block KITCHEN_DRAWERS_B = registerBlock("kitchen_drawers_b",
-            new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_TOP = registerBlock("kitchen_cabinet_top",
             new KitchenTopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block KITCHEN_CABINET_TOP_B = registerBlock("kitchen_cabinet_top_b",
             new KitchenTopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block WOOD_STRIPED_WALL = registerBlock("wood_striped_wall",
-            new WoodStripedWallBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
-    public static Block BLACK_MIRROR = registerBlock("black_mirror",
-            new BlackMirrorBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
-    public static Block VERTICAL_BLINDS = registerBlock("vertical_blinds",
-            new VerticalBlindsBlock(AbstractBlock.Settings.create().strength(0.7f).nonOpaque()));
-    public static Block SOCKET = registerBlock("socket",
-            new SocketBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
-    public static Block TV = registerBlock("tv",
-            new TVBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block FLOOR_STANDING_SPEAKER = registerBlock("floor_standing_speaker",
-            new FloorStandingSpeakerBlock(AbstractBlock.Settings.create().strength(0.9f).nonOpaque()));
-    public static Block MODERN_CLOCK = registerBlock("modern_clock",
-            new ModernClockBlock(AbstractBlock.Settings.create().strength(0.4f).nonOpaque()));
-    public static Block MODERN_LIGHT = registerBlock("modern_light",
-            new ModernLightBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
+    public static Block KITCHEN_DRAWERS = registerBlock("kitchen_drawers",
+            new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block KITCHEN_DRAWERS_B = registerBlock("kitchen_drawers_b",
+            new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block LAPTOP = registerBlock("laptop",
+            new LaptopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND = registerBlock("laptop_closed_portable_laptop_stand",
+            new PortableLaptopStandAddedBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block LED_FLOOR_LAMP = registerBlock("led_floor_lamp",
             new LEDFloorLampBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block LED_FLOOR_LAMP_RGB_OFF = registerBlock("led_floor_lamp_rgb_off",
             new LEDFloorLampRGBBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block LED_FLOOR_LAMP_RGB_OFF_2 = registerBlock("led_floor_lamp_rgb_off_2",
             new LEDFloorLampRGBAltBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block STUDIO_LIGHT = registerBlock("studio_light",
-            new StudioLightBlock(AbstractBlock.Settings.create().strength(1.5f).nonOpaque()));
     public static Block LED_RGB_TRIANGLE_PANEL = registerBlock("led_rgb_triangle_panel",
             new LEDRGBTrianglePanelBlock(AbstractBlock.Settings.create().strength(0.8f).nonOpaque()));
-    public static Block MONITOR_SETUP = registerBlock("monitor_setup",
-            new MonitorSetupBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block MONITOR = registerBlock("monitor",
-            new MonitorBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block KEYBOARD = registerBlock("keyboard",
-            new KeyboardBlock(AbstractBlock.Settings.create().strength(0.7f).nonOpaque()));
-    public static Block COMPUTER_MOUSE = registerBlock("computer_mouse",
-            new ComputerMouseBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
-    public static Block PC = registerBlock("pc",
-            new DesktopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block PC_RGB1_OFF = registerBlock("pc_rgb1_off",
-            new DesktopAltBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block PC_TOWER_GLASS = registerBlock("pc_tower_glass",
-            new DesktopTowerGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).strength(0.4f).nonOpaque().noCollision()));
-    public static Block LAPTOP = registerBlock("laptop",
-            new LaptopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block PORTABLE_LAPTOP_STAND = registerBlock("portable_laptop_stand",
-            new PortableLaptopStandBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND = registerBlock("laptop_closed_portable_laptop_stand",
-            new PortableLaptopStandAddedBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MIDI_STANDALONE_GROOVEBOX = registerBlock("midi_standalone_groovebox",
             new GrooveboxBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MIDI_STANDALONE_GROOVEBOX_2 = registerBlock("midi_standalone_groovebox_2",
             new Groovebox2Block(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MIDI_STANDALONE_GROOVEBOX_3 = registerBlock("midi_standalone_groovebox_3",
             new Groovebox3Block(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
-    public static Block COOKTOP = registerBlock("cooktop",
-            new CooktopBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
-    public static Block FRIDGE_A = registerBlock("fridge_a",
-            new FridgeBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()));
-    public static Block FRIDGE_B = registerBlock("fridge_b",
-            new FridgeBlock(AbstractBlock.Settings.create().strength(2f).nonOpaque()));
-    public static Block MODERN_BATHROOM_SINK_STORAGE = registerBlock("modern_bathroom_sink_storage",
-            new BathroomSinkStorageBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block MODERN_BATHROOM_MIRROR_SHELF = registerBlock("modern_bathroom_mirror_shelf",
             new BathroomMirrorShelfBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
-    public static Block SHOWER = registerBlock("shower",
-            new ShowerBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
-    public static Block WASHING_MACHINE_AI = registerBlock("washing_machine_ai",
-            new WashingMachineBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MODERN_BATHROOM_SINK_STORAGE = registerBlock("modern_bathroom_sink_storage",
+            new BathroomSinkStorageBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MODERN_CHAIR = registerBlock("modern_chair",
+            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MODERN_CLOCK = registerBlock("modern_clock",
+            new ModernClockBlock(AbstractBlock.Settings.create().strength(0.4f).nonOpaque()));
+    public static Block MODERN_LIGHT = registerBlock("modern_light",
+            new ModernLightBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
+    public static Block MONITOR = registerBlock("monitor",
+            new MonitorBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block MONITOR_SETUP = registerBlock("monitor_setup",
+            new MonitorSetupBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block PC = registerBlock("pc",
+            new DesktopBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block PC_RGB1_OFF = registerBlock("pc_rgb1_off",
+            new DesktopAltBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block PC_TOWER_GLASS = registerBlock("pc_tower_glass",
+            new DesktopTowerGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).strength(0.4f).nonOpaque().noCollision()));
     public static Block PLANT_POT = registerBlock("plant_pot",
             new PotBlock(AbstractBlock.Settings.create().strength(0.4f).nonOpaque()));
-    public static Block BOOKS = registerBlock("books",
-            new BooksBlock(AbstractBlock.Settings.create().strength(0.1f).nonOpaque()));
+    public static Block PORTABLE_LAPTOP_STAND = registerBlock("portable_laptop_stand",
+            new PortableLaptopStandBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block SHOWER = registerBlock("shower",
+            new ShowerBlock(AbstractBlock.Settings.create().strength(0.5f).nonOpaque()));
+    public static Block SOCKET = registerBlock("socket",
+            new SocketBlock(AbstractBlock.Settings.create().strength(0.2f).nonOpaque()));
+    public static Block SOFA = registerBlock("sofa",
+            new SofaBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block STUDIO_LIGHT = registerBlock("studio_light",
+            new StudioLightBlock(AbstractBlock.Settings.create().strength(1.5f).nonOpaque()));
+    public static Block TV = registerBlock("tv",
+            new TVBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block VERTICAL_BLINDS = registerBlock("vertical_blinds",
+            new VerticalBlindsBlock(AbstractBlock.Settings.create().strength(0.7f).nonOpaque()));
+    public static Block WASHING_MACHINE_AI = registerBlock("washing_machine_ai",
+            new WashingMachineBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_3_DRAWER_DRESSER = registerBlock("white_3_drawer_dresser",
+            new ThreeDrawerDresserBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_CHAIR = registerBlock("white_chair",
+            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_COFFEE_TABLE = registerBlock("white_coffee_table",
+            new CoffeeTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_DESK = registerBlock("white_desk",
+            new DeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_STANDING_DESK = registerBlock("white_standing_desk",
+            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_STANDING_DESK_B = registerBlock("white_standing_desk_b",
+            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_TABLE = registerBlock("white_table",
+            new ModernTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_TV_STAND = registerBlock("white_tv_stand",
+            new TVStand2Block(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_3_DRAWER_DRESSER = registerBlock("wood_3_drawer_dresser",
+            new ThreeDrawerDresserBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_CHAIR = registerBlock("wood_chair",
+            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_COFFEE_TABLE = registerBlock("wood_coffee_table",
+            new CoffeeTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_DESK = registerBlock("wood_desk",
+            new DeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_LIGHT_TABLE = registerBlock("wood_light_table",
+            new WoodTableBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_LIGHT_TV_STAND = registerBlock("wood_light_tv_stand",
+            new TVStandBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_STANDING_DESK = registerBlock("wood_standing_desk",
+            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_STANDING_DESK_B = registerBlock("wood_standing_desk_b",
+            new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WOOD_STRIPED_WALL = registerBlock("wood_striped_wall",
+            new WoodStripedWallBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
     public static Block HOLOGRAM = registerBlock("hologram",
             new HologramBlock(AbstractBlock.Settings.create().strength(0.4f)));
 

@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version "${loom_version}"
 	id 'maven-publish'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 version = project.mod_version
@@ -27,6 +28,7 @@ repositories {
 			includeGroup "maven.modrinth"
 		}
 	}
+    mavenCentral()
 }
 
 fabricApi {
@@ -45,6 +47,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation "maven.modrinth:fusion-connected-textures:1.2.11-fabric-mc1.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 processResources {
@@ -65,8 +68,6 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
@@ -93,4 +94,7 @@ publishing {
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
 	}
+}
+kotlin {
+    jvmToolchain(21)
 }
