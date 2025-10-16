@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "js_furniture_mod:block/floor_standing_speaker"
+    },
+    "facing=east": {
+      "model": "js_furniture_mod:block/floor_standing_speaker",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/floor_standing_speaker",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/floor_standing_speaker",
+      "y": 270
+    }
+  }
+}

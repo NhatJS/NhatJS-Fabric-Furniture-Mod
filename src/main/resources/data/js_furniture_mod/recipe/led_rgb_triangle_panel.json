@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "12 ",
+    "131",
+    " 21"
+  ],
+  "key": {
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:redstone_lamp",
+    "3": "minecraft:redstone"
+  },
+  "result": {
+    "id": "js_furniture_mod:led_rgb_triangle_panel",
+    "count": 1
+  }
+}
