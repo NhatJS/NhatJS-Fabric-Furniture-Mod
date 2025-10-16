@@ -71,6 +71,15 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(ModBlocks.WASHING_MACHINE_AI, BlockRenderLayer.CUTOUT_MIPPED);
         BlockRenderLayerMap.putBlock(ModBlocks.PLANT_POT, BlockRenderLayer.CUTOUT_MIPPED);
 
+        BlockRenderLayerMap.putBlock(ModBlocks.BOOKS, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.FLOOR_STANDING_SPEAKER, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.KITCHEN_DRAWERS_B, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.LED_RGB_TRIANGLE_PANEL, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.TV, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.VERTICAL_BLINDS, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.WHITE_CHAIR, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.WHITE_TV_STAND, BlockRenderLayer.CUTOUT_MIPPED);
+
         BlockRenderLayerMap.putBlock(ModBlocks.PC_TOWER_GLASS, BlockRenderLayer.TRANSLUCENT);
 
         EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
