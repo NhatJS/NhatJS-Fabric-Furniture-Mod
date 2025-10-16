@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "js_furniture_mod:block/tv_stand_2"
+    },
+    "facing=east": {
+      "model": "js_furniture_mod:block/tv_stand_2",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/tv_stand_2",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/tv_stand_2",
+      "y": 270
+    }
+  }
+}

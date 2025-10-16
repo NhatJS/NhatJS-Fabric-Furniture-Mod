@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "facing=north,turn_on=false": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel"
+    },
+    "facing=east,turn_on=false": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel",
+      "y": 90
+    },
+    "facing=south,turn_on=false": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel",
+      "y": 180
+    },
+    "facing=west,turn_on=false": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel",
+      "y": 270
+    },
+
+    "facing=north,turn_on=true": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel_on"
+    },
+    "facing=east,turn_on=true": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel_on",
+      "y": 90
+    },
+    "facing=south,turn_on=true": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel_on",
+      "y": 180
+    },
+    "facing=west,turn_on=true": {
+      "model": "js_furniture_mod:block/led_rgb_triangle_panel_on",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "323",
+    "121",
+    "121"
+  ],
+  "key": {
+    "1": "minecraft:birch_planks",
+    "2": "minecraft:chest",
+    "3": "minecraft:white_concrete"
+  },
+  "result": {
+    "id": "js_furniture_mod:kitchen_drawers_b",
+    "count": 2
+  }
+}
