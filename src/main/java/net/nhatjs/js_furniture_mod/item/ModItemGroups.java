@@ -17,6 +17,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.js_furniture_mod.js_furniture_tab"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.WOOD_CHAIR);
+                        entries.add(ModBlocks.WHITE_CHAIR);
                         entries.add(ModBlocks.MODERN_CHAIR);
                         entries.add(ModBlocks.SOFA);
                         entries.add(ModBlocks.WOOD_LIGHT_TABLE);
@@ -35,6 +36,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WOOD_3_DRAWER_DRESSER);
                         entries.add(ModBlocks.WHITE_3_DRAWER_DRESSER);
                         entries.add(ModBlocks.WOOD_LIGHT_TV_STAND);
+                        entries.add(ModBlocks.WHITE_TV_STAND);
                         entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM);
                         entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK);
                         entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_2);
@@ -43,15 +45,20 @@ public class ModItemGroups {
                         entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_B_WITH_SINK);
                         entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_B_2);
                         entries.add(ModBlocks.KITCHEN_DRAWERS);
+                        entries.add(ModBlocks.KITCHEN_DRAWERS_B);
                         entries.add(ModBlocks.KITCHEN_CABINET_TOP);
                         entries.add(ModBlocks.KITCHEN_CABINET_TOP_B);
                         entries.add(ModBlocks.WOOD_STRIPED_WALL);
                         entries.add(ModBlocks.BLACK_MIRROR);
+                        entries.add(ModBlocks.VERTICAL_BLINDS);
                         entries.add(ModBlocks.SOCKET);
+                        entries.add(ModBlocks.TV);
+                        entries.add(ModBlocks.FLOOR_STANDING_SPEAKER);
                         entries.add(ModBlocks.MODERN_CLOCK);
                         entries.add(ModBlocks.MODERN_LIGHT);
                         entries.add(ModBlocks.LED_FLOOR_LAMP);
                         entries.add(ModBlocks.LED_FLOOR_LAMP_RGB_OFF);
+                        entries.add(ModBlocks.LED_RGB_TRIANGLE_PANEL);
                         entries.add(ModBlocks.STUDIO_LIGHT);
                         entries.add(ModBlocks.MONITOR_SETUP);
                         entries.add(ModBlocks.MONITOR);
@@ -73,6 +80,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SHOWER);
                         entries.add(ModBlocks.WASHING_MACHINE_AI);
                         entries.add(ModBlocks.PLANT_POT);
+                        entries.add(ModBlocks.BOOKS);
                         entries.add(ModItems.REMOTE_CONTROL_RGB);
                     }).build());
 
