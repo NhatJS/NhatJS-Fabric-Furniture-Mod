@@ -7,9 +7,9 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ChairBlockEntity extends Entity {
+public class SeatBlockEntity extends Entity {
 
-    public ChairBlockEntity(EntityType<?> type, World world) {
+    public SeatBlockEntity(EntityType<?> type, World world) {
         super(type, world);
     }
 

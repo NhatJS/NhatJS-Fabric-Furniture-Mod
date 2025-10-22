@@ -51,6 +51,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WOOD_STRIPED_WALL);
                         entries.add(ModBlocks.BLACK_MIRROR);
                         entries.add(ModBlocks.VERTICAL_BLINDS);
+                        entries.add(ModBlocks.CEILING_FAN); //1.0.2 update
                         entries.add(ModBlocks.SOCKET);
                         entries.add(ModBlocks.TV);
                         entries.add(ModBlocks.FLOOR_STANDING_SPEAKER);

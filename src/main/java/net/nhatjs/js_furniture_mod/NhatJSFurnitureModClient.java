@@ -4,9 +4,12 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
+import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
+import net.nhatjs.js_furniture_mod.block.blockentity.client.renderer.CeilingFanRenderer;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
-import net.nhatjs.js_furniture_mod.entity.client.renderer.ChairRenderer;
+import net.nhatjs.js_furniture_mod.entity.client.renderer.SeatRenderer;
 
 public class NhatJSFurnitureModClient implements ClientModInitializer {
     @Override
@@ -48,6 +51,7 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LED_FLOOR_LAMP, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LED_FLOOR_LAMP_RGB_OFF, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LED_FLOOR_LAMP_RGB_OFF_2, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LED_RGB_TRIANGLE_PANEL, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STUDIO_LIGHT, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MONITOR_SETUP, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MONITOR, RenderLayer.getCutoutMipped());
@@ -72,7 +76,12 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_TOWER_GLASS, RenderLayer.getTranslucent());
 
-        EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
-        EntityRendererRegistry.register(ModEntities.SOFA, ChairRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CHAIR, SeatRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SOFA, SeatRenderer::new);
+
+        //1.0.2 update
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CEILING_FAN, RenderLayer.getCutoutMipped());
+        BlockEntityRendererFactories.register(ModBlockEntities.CEILING_FAN, CeilingFanRenderer::new);
+        //end
     }
 }

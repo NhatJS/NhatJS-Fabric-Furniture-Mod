@@ -9,7 +9,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
@@ -23,12 +22,12 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
-import net.nhatjs.js_furniture_mod.entity.client.ChairBlockEntity;
+import net.nhatjs.js_furniture_mod.entity.client.SeatBlockEntity;
 
 import java.util.List;
 
 public class SofaBlock extends Block {
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final EnumProperty<Part> PART = EnumProperty.of("part", Part.class);
 
     public enum Part implements StringIdentifiable
@@ -142,7 +141,7 @@ public class SofaBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient()) {
             Entity entity = null;
-            List<ChairBlockEntity> entities = world.getEntitiesByType(ModEntities.SOFA, new Box(pos), chairBlockEntity -> true);
+            List<SeatBlockEntity> entities = world.getEntitiesByType(ModEntities.SOFA, new Box(pos), seatBlockEntity -> true);
             if(entities.isEmpty()) {
                 entity = ModEntities.SOFA.spawn((ServerWorld) world, pos, SpawnReason.TRIGGERED);
             } else {

@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -22,7 +22,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class PortableLaptopStandAddedBlock extends Block {
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
     public static final BooleanProperty OPEN = BooleanProperty.of("open");
 

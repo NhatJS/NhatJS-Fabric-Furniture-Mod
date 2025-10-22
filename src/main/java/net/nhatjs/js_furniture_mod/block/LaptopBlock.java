@@ -1,12 +1,11 @@
 package net.nhatjs.js_furniture_mod.block;
 
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -17,7 +16,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class LaptopBlock extends Block {
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
     public static final BooleanProperty OPEN = BooleanProperty.of("open");
 

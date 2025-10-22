@@ -7,8 +7,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
 
@@ -149,6 +147,11 @@ public class ModBlocks {
             new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WOOD_STRIPED_WALL = registerBlock("wood_striped_wall",
             new WoodStripedWallBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
+    //1.0.2 update
+    public static Block CEILING_FAN = registerBlock("ceiling_fan",
+            new CeilingFanBlock(AbstractBlock.Settings.create().strength(1.0f)));
+
+    //unsure
     public static Block HOLOGRAM = registerBlock("hologram",
             new HologramBlock(AbstractBlock.Settings.create().strength(0.4f)));
 
