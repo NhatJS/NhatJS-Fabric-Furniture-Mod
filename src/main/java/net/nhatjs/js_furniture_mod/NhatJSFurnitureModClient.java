@@ -18,6 +18,7 @@ import net.nhatjs.js_furniture_mod.entity.client.renderer.SeatRenderer;
 
 public class NhatJSFurnitureModClient implements ClientModInitializer {
     public static final Identifier CEILING_FAN_BLADES_ID = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades");
+    public static final Identifier PC_TOWER_GLASS_ID = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/laptop_closed");
 
     @Override
     public void onInitializeClient() {
@@ -91,7 +92,7 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockEntityRendererFactories.register(ModBlockEntities.CEILING_FAN, CeilingFanRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.COFFEE_TABLE, CoffeeTableRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.PC_TOWER_GLASS, DesktopRenderer::new);
-        ModelLoadingPlugin.register(ctx -> ctx.addModels(CEILING_FAN_BLADES_ID));
+        ModelLoadingPlugin.register(ctx -> ctx.addModels(CEILING_FAN_BLADES_ID, PC_TOWER_GLASS_ID));
         //end
     }
 }

@@ -16,12 +16,15 @@ import net.minecraft.util.math.RotationAxis;
 import net.nhatjs.js_furniture_mod.block.CoffeeTableBlock;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.CoffeeTableBlockEntity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Environment(EnvType.CLIENT)
 public class CoffeeTableRenderer implements BlockEntityRenderer<CoffeeTableBlockEntity> {
 
     public CoffeeTableRenderer(BlockEntityRendererFactory.Context ctx) {}
 
-    private final java.util.Map<BlockPos, Integer> lastNonce = new java.util.HashMap<>();
+    private final Map<BlockPos, Integer> lastNonce = new HashMap<>();
 
     @Override
     public void render(CoffeeTableBlockEntity be, float tickDelta, MatrixStack ms,
