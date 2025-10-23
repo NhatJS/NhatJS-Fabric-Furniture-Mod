@@ -2,16 +2,23 @@ package net.nhatjs.js_furniture_mod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.util.ModelIdentifier;
+import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
 import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.renderer.CeilingFanRenderer;
+import net.nhatjs.js_furniture_mod.block.blockentity.client.renderer.CoffeeTableRenderer;
+import net.nhatjs.js_furniture_mod.block.blockentity.client.renderer.DesktopRenderer;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
 import net.nhatjs.js_furniture_mod.entity.client.renderer.SeatRenderer;
 
 public class NhatJSFurnitureModClient implements ClientModInitializer {
+    public static final Identifier CEILING_FAN_BLADES_ID = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades");
+
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WOOD_CHAIR, RenderLayer.getCutoutMipped());
@@ -82,6 +89,9 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         //1.0.2 update
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CEILING_FAN, RenderLayer.getCutoutMipped());
         BlockEntityRendererFactories.register(ModBlockEntities.CEILING_FAN, CeilingFanRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.COFFEE_TABLE, CoffeeTableRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.PC_TOWER_GLASS, DesktopRenderer::new);
+        ModelLoadingPlugin.register(ctx -> ctx.addModels(CEILING_FAN_BLADES_ID));
         //end
     }
 }

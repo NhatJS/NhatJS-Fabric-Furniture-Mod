@@ -147,9 +147,10 @@ public class ModBlocks {
             new StandingDeskBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WOOD_STRIPED_WALL = registerBlock("wood_striped_wall",
             new WoodStripedWallBlock(AbstractBlock.Settings.create().strength(0.3f).nonOpaque()));
+
     //1.0.2 update
     public static Block CEILING_FAN = registerBlock("ceiling_fan",
-            new CeilingFanBlock(AbstractBlock.Settings.create().strength(1.0f)));
+            new CeilingFanBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
 
     //unsure
     public static Block HOLOGRAM = registerBlock("hologram",
