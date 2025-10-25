@@ -1,8 +1,6 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -18,35 +16,14 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.CeilingFanBlockEntity;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.DesktopBlockEntity;
 import net.nhatjs.js_furniture_mod.item.ModItems;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.List;
 
-public class DesktopBlock extends BlockWithEntity{
+public class DesktopBlock extends Block{
     public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
-
-    public static final MapCodec<CeilingFanBlock> CODEC = createCodec(CeilingFanBlock::new);
-
-    @Override
-    public MapCodec<CeilingFanBlock> getCodec() {
-        return CODEC;
-    }
-
-    @Nullable
-    @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new DesktopBlockEntity(pos, state);
-    }
-
-    @Override
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
-    }
 
     public DesktopBlock(Settings settings) {
         super(settings);

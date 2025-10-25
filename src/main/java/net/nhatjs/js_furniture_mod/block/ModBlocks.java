@@ -151,6 +151,11 @@ public class ModBlocks {
     //1.0.2 update
     public static Block CEILING_FAN = registerBlock("ceiling_fan",
             new CeilingFanBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block BLACK_GAMING_CHAIR = registerBlock("black_gaming_chair",
+            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    public static Block WHITE_GAMING_CHAIR = registerBlock("white_gaming_chair",
+            new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    //end
 
     //unsure
     public static Block HOLOGRAM = registerBlock("hologram",
