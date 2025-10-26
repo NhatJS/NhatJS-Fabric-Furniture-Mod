@@ -22,7 +22,6 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.CoffeeTableBlockEntity;
-import org.apache.logging.log4j.core.jmx.Server;
 
 public class CoffeeTableBlock extends BlockWithEntity {
     public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
