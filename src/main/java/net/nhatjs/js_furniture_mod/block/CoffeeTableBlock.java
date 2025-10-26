@@ -1,20 +1,30 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+import net.nhatjs.js_furniture_mod.block.blockentity.client.CoffeeTableBlockEntity;
 
-public class CoffeeTableBlock extends Block {
+public class CoffeeTableBlock extends BlockWithEntity {
     public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
+    public static final BooleanProperty HAS_ITEM = BooleanProperty.of("has_item");
 
     public CoffeeTableBlock(Settings settings) {
         super(settings);
@@ -57,6 +67,55 @@ public class CoffeeTableBlock extends Block {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, HAS_ITEM);
+    }
+
+    public static final MapCodec<CoffeeTableBlock> CODEC = createCodec(CoffeeTableBlock::new);
+
+    @Override
+    public MapCodec<CoffeeTableBlock> getCodec() {
+        return CODEC;
+    }
+
+    @Override public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new CoffeeTableBlockEntity(pos, state);
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos,
+                              PlayerEntity player, BlockHitResult hit) {
+        if (world.isClient) return ActionResult.SUCCESS;
+
+        CoffeeTableBlockEntity be = (CoffeeTableBlockEntity) world.getBlockEntity(pos);
+        ItemStack held = player.getMainHandStack();
+
+        assert be != null;
+        if (be.getItem().isEmpty() && !held.isEmpty()) {
+            ItemStack put = held.copy(); put.setCount(1);
+            be.setItem(put);
+            held.decrement(1);
+        } else if (!be.getItem().isEmpty()) {
+            ItemScatterer.spawn(world, pos.getX()+0.5, pos.getY()+1, pos.getZ()+0.5, be.getItem());
+            be.setItem(ItemStack.EMPTY);
+        }
+        return ActionResult.CONSUME; // đã xử lý
+    }
+
+    @Override
+    public void onStateReplaced(BlockState state, World world, BlockPos pos,
+                                BlockState newState, boolean moved) {
+        if (state.getBlock() != newState.getBlock()) {
+            BlockEntity be = world.getBlockEntity(pos);
+            if (be instanceof CoffeeTableBlockEntity ct) {
+                ItemStack s = ct.getItem();
+                if (!s.isEmpty()) ItemScatterer.spawn(world, pos, DefaultedList.copyOf(ItemStack.EMPTY, s));
+            }
+            super.onStateReplaced(state, world, pos, newState, moved);
+        } else super.onStateReplaced(state, world, pos, newState, moved);
     }
 }
