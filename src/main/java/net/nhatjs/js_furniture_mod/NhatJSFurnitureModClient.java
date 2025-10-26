@@ -1,15 +1,26 @@
 package net.nhatjs.js_furniture_mod;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey;
+import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
+import net.fabricmc.fabric.api.client.model.loading.v1.SimpleUnbakedExtraModel;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.model.BlockStateModel;
+import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
+import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
+import net.nhatjs.js_furniture_mod.block.blockentity.client.renderer.*;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
 import net.nhatjs.js_furniture_mod.entity.client.renderer.ChairRenderer;
 
 public class NhatJSFurnitureModClient implements ClientModInitializer {
+    public static final Identifier CEILING_FAN_BLADES = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades");
+
+    public static final ExtraModelKey<BlockStateModel> CEILING_FAN_BLADES_ID = ExtraModelKey.<BlockStateModel>create(CEILING_FAN_BLADES::toString);
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_CHAIR, BlockRenderLayer.CUTOUT_MIPPED);
@@ -84,5 +95,17 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
         EntityRendererRegistry.register(ModEntities.SOFA, ChairRenderer::new);
+
+        //1.0.2 update
+        BlockRenderLayerMap.putBlock(ModBlocks.CEILING_FAN, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.BLACK_GAMING_CHAIR, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.WHITE_GAMING_CHAIR, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockEntityRendererFactories.register(ModBlockEntities.CEILING_FAN, CeilingFanRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.COFFEE_TABLE, CoffeeTableRenderer::new);
+        ModelLoadingPlugin.register(ctx -> {
+            ctx.addModel(CEILING_FAN_BLADES_ID,
+                    SimpleUnbakedExtraModel.blockStateModel(CEILING_FAN_BLADES));
+        });
+        //end
     }
 }

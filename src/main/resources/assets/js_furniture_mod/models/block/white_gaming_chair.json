@@ -1,0 +1,8 @@
+{
+	"parent": "js_furniture_mod:block/gaming_chair",
+	"textures": {
+		"0": "js_furniture_mod:block/seamless_black_fabric",
+		"1": "js_furniture_mod:block/seamless_white_fabric",
+		"particle": "js_furniture_mod:block/seamless_white_fabric"
+	}
+}

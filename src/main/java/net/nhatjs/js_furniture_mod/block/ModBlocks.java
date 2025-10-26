@@ -152,6 +152,15 @@ public class ModBlocks {
     public static Block WOOD_STRIPED_WALL = registerBlock("wood_striped_wall",
             properties -> new WoodStripedWallBlock(properties.strength(0.3f).nonOpaque()));
 
+    //1.0.2 update
+    public static Block CEILING_FAN = registerBlock("ceiling_fan",
+            properties -> new CeilingFanBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block BLACK_GAMING_CHAIR = registerBlock("black_gaming_chair",
+            properties -> new ChairBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WHITE_GAMING_CHAIR = registerBlock("white_gaming_chair",
+            properties -> new ChairBlock(properties.strength(1.0f).nonOpaque()));
+    //end
+
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> function) {
         Block toRegister = function.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(NhatJSFurnitureMod.MOD_ID, name))));
         registerBlockItem(name, toRegister);
