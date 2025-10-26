@@ -51,6 +51,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WOOD_STRIPED_WALL);
                         entries.add(ModBlocks.BLACK_MIRROR);
                         entries.add(ModBlocks.VERTICAL_BLINDS);
+                        entries.add(ModBlocks.CEILING_FAN); //1.0.2 update
                         entries.add(ModBlocks.SOCKET);
                         entries.add(ModBlocks.TV);
                         entries.add(ModBlocks.FLOOR_STANDING_SPEAKER);
@@ -60,6 +61,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.LED_FLOOR_LAMP_RGB_OFF);
                         entries.add(ModBlocks.LED_RGB_TRIANGLE_PANEL);
                         entries.add(ModBlocks.STUDIO_LIGHT);
+                        entries.add(ModBlocks.BLACK_GAMING_CHAIR); //1.0.2 update
+                        entries.add(ModBlocks.WHITE_GAMING_CHAIR); //1.0.2 update
                         entries.add(ModBlocks.MONITOR_SETUP);
                         entries.add(ModBlocks.MONITOR);
                         entries.add(ModBlocks.KEYBOARD);

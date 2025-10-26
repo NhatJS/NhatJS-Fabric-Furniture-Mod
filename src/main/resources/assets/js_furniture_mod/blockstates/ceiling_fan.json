@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "turn_on=false": {
+      "model": "js_furniture_mod:block/ceiling_fan_base"
+    },
+    "turn_on=true": {
+      "model": "js_furniture_mod:block/ceiling_fan_base"
+    }
+  }
+}

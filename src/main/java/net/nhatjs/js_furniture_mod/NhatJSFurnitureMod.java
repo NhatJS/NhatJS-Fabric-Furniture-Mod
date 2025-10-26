@@ -3,6 +3,7 @@ package net.nhatjs.js_furniture_mod;
 import net.fabricmc.api.ModInitializer;
 
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
+import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
 import net.nhatjs.js_furniture_mod.item.ModItemGroups;
 import net.nhatjs.js_furniture_mod.item.ModItems;
@@ -16,6 +17,7 @@ public class NhatJSFurnitureMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
         ModBlocks.registerModBlocks();
+        ModBlockEntities.registerModBlockEntities();
         ModItems.registerModItems();
         ModItemGroups.registerItemGroups();
         ModEntities.registerModEntities();
