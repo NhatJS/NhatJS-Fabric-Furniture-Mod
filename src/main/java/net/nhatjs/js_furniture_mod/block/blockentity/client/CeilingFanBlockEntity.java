@@ -14,8 +14,6 @@ public class CeilingFanBlockEntity extends BlockEntity {
     private static final float MAX_SPEED = 35f;
     private static final float ACCEL = 0.02f;
 
-    private boolean isOn = false;
-
     public CeilingFanBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.CEILING_FAN, pos, state);
     }
@@ -34,9 +32,5 @@ public class CeilingFanBlockEntity extends BlockEntity {
 
     public float getAngle(float tickDelta) {
         return angle + speed * tickDelta;
-    }
-
-    public void toggle() {
-        isOn = !isOn;
     }
 }

@@ -3,7 +3,6 @@ package net.nhatjs.js_furniture_mod.block;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -14,7 +13,6 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -108,7 +106,7 @@ public class CoffeeTableBlock extends BlockWithEntity implements BlockEntityProv
             be.setItem(ItemStack.EMPTY);
         }
 
-        return ActionResult.CONSUME; // đã xử lý
+        return ActionResult.CONSUME;
     }
 
     @Override

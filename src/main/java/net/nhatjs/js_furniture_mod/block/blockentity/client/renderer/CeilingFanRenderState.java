@@ -4,7 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.render.block.entity.state.BlockEntityRenderState;
 import net.minecraft.util.math.BlockPos;
 
-public class CeilingFanBlockEntityRenderState extends BlockEntityRenderState {
+public class CeilingFanRenderState extends BlockEntityRenderState {
     public float angle;
     public BlockState blockState;
     public BlockPos pos;

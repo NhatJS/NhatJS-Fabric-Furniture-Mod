@@ -9,6 +9,5 @@ public class CoffeeTableRenderState extends BlockEntityRenderState {
     public final ItemRenderState itemRenderState = new ItemRenderState();
     public World world;
     public BlockPos pos;
-    public boolean visible;
     public float yaw;
 }
