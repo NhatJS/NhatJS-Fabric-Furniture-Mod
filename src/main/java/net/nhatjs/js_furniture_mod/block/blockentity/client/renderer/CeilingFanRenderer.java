@@ -41,7 +41,12 @@ public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEn
         ms.translate(0.5, 0.9375, 0.5);
         ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(be.getAngle(tickDelta)));
         ms.translate(-0.5, -0.9375, -0.5);
-
+        float blur = 0f;
+        float alpha = 1f;
+        if (be != null) {
+            blur = Math.min(be.speed / 27f, 1f);
+            alpha = 1.0f - (blur * 0.4f);
+        }
         VertexConsumer vc = vcp.getBuffer(RenderLayer.getCutoutMipped());
         BlockVertexConsumerProvider forcedProvider = new BlockVertexConsumerProvider() {
             @Override
