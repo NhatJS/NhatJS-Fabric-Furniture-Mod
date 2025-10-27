@@ -118,4 +118,20 @@ public class CoffeeTableBlock extends BlockWithEntity {
             super.onStateReplaced(state, world, pos, moved);
         } else super.onStateReplaced(state, world, pos, moved);
     }
+
+    @Override
+    public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (!world.isClient()) {
+            BlockEntity be = world.getBlockEntity(pos);
+            if (be instanceof CoffeeTableBlockEntity table) {
+                ItemStack s = table.getItem();
+                if (!s.isEmpty()) {
+                    ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), s);
+                    table.setItem(ItemStack.EMPTY);
+                }
+            }
+        }
+        super.onBreak(world, pos, state, player);
+        return state;
+    }
 }
