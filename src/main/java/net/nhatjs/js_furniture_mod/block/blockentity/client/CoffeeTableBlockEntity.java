@@ -36,17 +36,17 @@ public class CoffeeTableBlockEntity extends BlockEntity {
 
     @Override protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup register) {
         super.writeNbt(nbt, register);
-        if (!stack.isEmpty()) nbt.put("it", stack.toNbt(world.getRegistryManager()));
+        if (!stack.isEmpty()) nbt.put("it", stack.toNbt(register));
         nbt.putInt("rn", renderNonce);
     }
     @Override protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup register) {
         super.readNbt(nbt, register);
         stack = nbt.contains("it")
-                ? ItemStack.fromNbt(world.getRegistryManager(), nbt.getCompoundOrEmpty("it")).orElse(ItemStack.EMPTY)
+                ? ItemStack.fromNbt(register, nbt.getCompoundOrEmpty("it")).orElse(ItemStack.EMPTY)
                 : ItemStack.EMPTY;
         renderNonce = nbt.getInt("rn").get();
     }
 
     @Override public Packet<ClientPlayPacketListener> toUpdatePacket() { return BlockEntityUpdateS2CPacket.create(this); }
-    @Override public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup register) { return createNbt(world.getRegistryManager()); }
+    @Override public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup register) { return createNbt(register); }
 }

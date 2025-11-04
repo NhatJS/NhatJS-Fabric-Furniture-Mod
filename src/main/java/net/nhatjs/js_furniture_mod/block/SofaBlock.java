@@ -25,7 +25,7 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
-import net.nhatjs.js_furniture_mod.entity.client.ChairBlockEntity;
+import net.nhatjs.js_furniture_mod.entity.client.SeatBlockEntity;
 
 import java.util.List;
 
@@ -144,7 +144,7 @@ public class SofaBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient()) {
             Entity entity = null;
-            List<ChairBlockEntity> entities = world.getEntitiesByType(ModEntities.SOFA, new Box(pos), chairBlockEntity -> true);
+            List<SeatBlockEntity> entities = world.getEntitiesByType(ModEntities.SOFA, new Box(pos), seatBlockEntity -> true);
             if(entities.isEmpty()) {
                 entity = ModEntities.SOFA.spawn((ServerWorld) world, pos, SpawnReason.TRIGGERED);
             } else {
