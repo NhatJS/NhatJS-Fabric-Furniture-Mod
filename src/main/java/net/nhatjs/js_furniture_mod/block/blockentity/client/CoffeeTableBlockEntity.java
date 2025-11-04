@@ -60,6 +60,6 @@ public class CoffeeTableBlockEntity extends BlockEntity {
     }
 
     @Override public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup reg) {
-        return createNbt(world != null ? world.getRegistryManager() : reg);
+        return createNbt(reg);
     }
 }
