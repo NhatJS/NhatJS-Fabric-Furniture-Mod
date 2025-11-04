@@ -157,6 +157,11 @@ public class ModBlocks {
             new ChairBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     //end
 
+    //1.0.3 update
+    public static Block TOILET = registerBlock("toilet",
+            new ToiletBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    //end
+
     //unsure
     public static Block HOLOGRAM = registerBlock("hologram",
             new HologramBlock(AbstractBlock.Settings.create().strength(0.4f)));

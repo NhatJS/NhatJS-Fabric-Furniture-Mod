@@ -95,8 +95,12 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_GAMING_CHAIR, RenderLayer.getCutoutMipped());
         BlockEntityRendererFactories.register(ModBlockEntities.CEILING_FAN, CeilingFanRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.COFFEE_TABLE, CoffeeTableRenderer::new);
+        //end
+
+        //1.0.3 update
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TOILET, RenderLayer.getCutoutMipped());
+        //end
 
         ModelLoadingPlugin.register(ctx -> ctx.addModels(CEILING_FAN_BLADES_ID));
-        //end
     }
 }
