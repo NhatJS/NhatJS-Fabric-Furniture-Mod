@@ -35,17 +35,17 @@ public class ToiletBlock extends Block {
     );
 
     private static final VoxelShape EAST = VoxelShapes.union(
-            Block.createCuboidShape(13.35, 0, 4, 14.675, 7.85, 12),
-            Block.createCuboidShape(13.35, 7.85, 4, 16, 17.35, 12),
-            Block.createCuboidShape(2.15, 6.35, 4, 13.35, 9.325, 12),
-            Block.createCuboidShape(5.35, 0, 5.325, 13.35, 6.35, 10.675)
-    );
-
-    private static final VoxelShape WEST = VoxelShapes.union(
             Block.createCuboidShape(1.325, 0, 4, 2.65, 7.85, 12),
             Block.createCuboidShape(0, 7.85, 4, 2.65, 17.35, 12),
             Block.createCuboidShape(2.65, 6.35, 4, 13.85, 9.325, 12),
             Block.createCuboidShape(2.65, 0, 5.325, 10.65, 6.35, 10.675)
+    );
+
+    private static final VoxelShape WEST = VoxelShapes.union(
+            Block.createCuboidShape(13.35, 0, 4, 14.675, 7.85, 12),
+            Block.createCuboidShape(13.35, 7.85, 4, 16, 17.35, 12),
+            Block.createCuboidShape(2.15, 6.35, 4, 13.35, 9.325, 12),
+            Block.createCuboidShape(5.35, 0, 5.325, 13.35, 6.35, 10.675)
     );
 
     @Override
