@@ -8,20 +8,20 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
-import net.nhatjs.js_furniture_mod.entity.client.ChairBlockEntity;
+import net.nhatjs.js_furniture_mod.entity.client.SeatBlockEntity;
 
 public class ModEntities {
     private static final RegistryKey<EntityType<?>> CHAIR_KEY =
             RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(NhatJSFurnitureMod.MOD_ID, "chair_key"));
 
-    public static final EntityType<ChairBlockEntity> CHAIR = Registry.register(Registries.ENTITY_TYPE,
+    public static final EntityType<SeatBlockEntity> CHAIR = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(NhatJSFurnitureMod.MOD_ID, "chair_entity"),
-            EntityType.Builder.create(ChairBlockEntity::new, SpawnGroup.MISC)
+            EntityType.Builder.create(SeatBlockEntity::new, SpawnGroup.MISC)
                     .dimensions(0.5f, 0.675f).build(CHAIR_KEY));
 
-    public static final EntityType<ChairBlockEntity> SOFA = Registry.register(Registries.ENTITY_TYPE,
+    public static final EntityType<SeatBlockEntity> SOFA = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(NhatJSFurnitureMod.MOD_ID, "sofa_entity"),
-            EntityType.Builder.create(ChairBlockEntity::new, SpawnGroup.MISC)
+            EntityType.Builder.create(SeatBlockEntity::new, SpawnGroup.MISC)
                     .dimensions(0.5f, 0.475f).build(CHAIR_KEY));
 
     public static void registerModEntities() {

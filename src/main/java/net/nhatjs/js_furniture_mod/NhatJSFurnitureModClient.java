@@ -12,7 +12,7 @@ import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.renderer.CeilingFanRenderer;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.renderer.CoffeeTableRenderer;
 import net.nhatjs.js_furniture_mod.entity.ModEntities;
-import net.nhatjs.js_furniture_mod.entity.client.renderer.ChairRenderer;
+import net.nhatjs.js_furniture_mod.entity.client.renderer.SeatRenderer;
 
 public class NhatJSFurnitureModClient implements ClientModInitializer {
     public static final Identifier CEILING_FAN_BLADES_ID = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades");
@@ -89,8 +89,8 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_TOWER_GLASS, RenderLayer.getTranslucent());
 
-        EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
-        EntityRendererRegistry.register(ModEntities.SOFA, ChairRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CHAIR, SeatRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SOFA, SeatRenderer::new);
 
         //1.0.2 update
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CEILING_FAN, RenderLayer.getCutoutMipped());
@@ -98,8 +98,12 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_GAMING_CHAIR, RenderLayer.getCutoutMipped());
         BlockEntityRendererFactories.register(ModBlockEntities.CEILING_FAN, CeilingFanRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.COFFEE_TABLE, CoffeeTableRenderer::new);
+        //end
+
+        //1.0.3 update
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TOILET, RenderLayer.getCutoutMipped());
+        //end
 
         ModelLoadingPlugin.register(ctx -> ctx.addModels(CEILING_FAN_BLADES_ID));
-        //end
     }
 }

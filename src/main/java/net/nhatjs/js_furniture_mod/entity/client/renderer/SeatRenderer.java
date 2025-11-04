@@ -4,10 +4,10 @@ import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.state.EntityRenderState;
-import net.nhatjs.js_furniture_mod.entity.client.ChairBlockEntity;
+import net.nhatjs.js_furniture_mod.entity.client.SeatBlockEntity;
 
-public class ChairRenderer extends EntityRenderer<ChairBlockEntity, EntityRenderState> {
-    public ChairRenderer(EntityRendererFactory.Context context) {
+public class SeatRenderer extends EntityRenderer<SeatBlockEntity, EntityRenderState> {
+    public SeatRenderer(EntityRendererFactory.Context context) {
         super(context);
     }
 
@@ -17,7 +17,7 @@ public class ChairRenderer extends EntityRenderer<ChairBlockEntity, EntityRender
     }
 
     @Override
-    public boolean shouldRender(ChairBlockEntity entity, Frustum frustum, double x, double y, double z) {
+    public boolean shouldRender(SeatBlockEntity entity, Frustum frustum, double x, double y, double z) {
         return true;
     }
 }
