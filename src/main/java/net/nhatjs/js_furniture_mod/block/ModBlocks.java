@@ -161,6 +161,11 @@ public class ModBlocks {
             properties -> new ChairBlock(properties.strength(1.0f).nonOpaque()));
     //end
 
+    //1.0.2 update
+    public static Block TOILET = registerBlock("toilet",
+            properties -> new ToiletBlock(properties.strength(1.0f).nonOpaque()));
+    //end
+
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> function) {
         Block toRegister = function.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(NhatJSFurnitureMod.MOD_ID, name))));
         registerBlockItem(name, toRegister);

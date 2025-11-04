@@ -52,5 +52,5 @@ public class CoffeeTableBlockEntity extends BlockEntity {
     }
 
     @Override public Packet<ClientPlayPacketListener> toUpdatePacket() { return BlockEntityUpdateS2CPacket.create(this); }
-    @Override public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup register) { return createNbt(world.getRegistryManager()); }
+    @Override public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup register) { return createNbt(register); }
 }
