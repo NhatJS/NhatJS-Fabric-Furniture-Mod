@@ -1,5 +1,7 @@
 package net.nhatjs.js_furniture_mod.block;
 
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -12,6 +14,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -29,6 +32,32 @@ import java.util.List;
 public class SofaBlock extends Block {
     public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final EnumProperty<Part> PART = EnumProperty.of("part", Part.class);
+
+    private static final MapCodec<SofaBlock> CODEC = RecordCodecBuilder.mapCodec(builder -> {
+        return builder.group(DyeColor.CODEC.fieldOf("color").forGetter(block -> {
+            return block.color;
+        }), createSettingsCodec()).apply(builder, SofaBlock::new);
+    });
+
+    private final DyeColor color;
+
+    public SofaBlock(DyeColor color, Settings settings)
+    {
+        super(settings);
+        this.color = color;
+        this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(PART, Part.SINGLE));
+    }
+
+    public DyeColor getColor()
+    {
+        return this.color;
+    }
+
+    @Override
+    protected MapCodec<SofaBlock> getCodec()
+    {
+        return CODEC;
+    }
 
     public enum Part implements StringIdentifiable
     {
@@ -51,11 +80,6 @@ public class SofaBlock extends Block {
         {
             return name;
         }
-    }
-
-    public SofaBlock(Settings settings) {
-        super(settings);
-        this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(PART, Part.SINGLE));
     }
 
     @Override

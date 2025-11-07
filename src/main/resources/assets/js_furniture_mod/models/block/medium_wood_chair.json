@@ -1,0 +1,7 @@
+{
+	"parent": "js_furniture_mod:block/wood_chair",
+	"textures": {
+		"0": "js_furniture_mod:block/medium_wood",
+		"particle": "js_furniture_mod:block/medium_wood"
+	}
+}
