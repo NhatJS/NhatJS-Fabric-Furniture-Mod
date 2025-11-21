@@ -8,11 +8,12 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ModelTransformationMode;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
+import net.minecraft.util.math.Vec3d;
 import net.nhatjs.js_furniture_mod.block.CoffeeTableBlock;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.CoffeeTableBlockEntity;
@@ -29,7 +30,7 @@ public class CoffeeTableRenderer implements BlockEntityRenderer<CoffeeTableBlock
 
     @Override
     public void render(CoffeeTableBlockEntity be, float tickDelta, MatrixStack ms,
-                       VertexConsumerProvider vcp, int light, int overlay) {
+                       VertexConsumerProvider vcp, int light, int overlay, Vec3d cameraPos) {
         if (be.isRemoved() || be.getWorld() == null) return;
 
         BlockState st = be.getCachedState();
@@ -68,7 +69,7 @@ public class CoffeeTableRenderer implements BlockEntityRenderer<CoffeeTableBlock
         }
 
         MinecraftClient.getInstance().getItemRenderer()
-                .renderItem(stack, ModelTransformationMode.FIXED, light, overlay, ms, vcp, be.getWorld(), 0);
+                .renderItem(stack, ItemDisplayContext.FIXED, light, overlay, ms, vcp, be.getWorld(), 0);
         ms.pop();
     }
 }

@@ -43,9 +43,9 @@ public class CoffeeTableBlockEntity extends BlockEntity {
     @Override protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup register) {
         super.readNbt(nbt, register);
         stack = nbt.contains("it")
-                ? ItemStack.fromNbt(register, nbt.getCompound("it")).orElse(ItemStack.EMPTY)
+                ? ItemStack.fromNbt(register, nbt.getCompoundOrEmpty("it")).orElse(ItemStack.EMPTY)
                 : ItemStack.EMPTY;
-        renderNonce = nbt.getInt("rn");
+        renderNonce = nbt.getInt("rn").get();
     }
 
     @Override public Packet<ClientPlayPacketListener> toUpdatePacket() { return BlockEntityUpdateS2CPacket.create(this); }

@@ -11,6 +11,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
+import net.minecraft.util.math.Vec3d;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.HologramBlockEntity;
 
@@ -24,16 +25,14 @@ public class HologramRenderer implements BlockEntityRenderer<HologramBlockEntity
     public HologramRenderer(BlockEntityRendererFactory.Context ctx) {}
 
     @Override
-    public void render(HologramBlockEntity be, float tickDelta, MatrixStack ms,
-                       VertexConsumerProvider buf, int light, int overlay) {
-
+    public void render(HologramBlockEntity be, float tickDelta, MatrixStack ms, VertexConsumerProvider buf, int light, int overlay, Vec3d cameraPos) {
         ms.push();
 
         BlockState state = be.getCachedState();
         Direction facing = state.getOrEmpty(Properties.HORIZONTAL_FACING).orElse(Direction.NORTH);
 
         ms.translate(0.5, 0.5, 0.5);
-        ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-facing.getId()));
+        ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-facing.getHorizontalQuarterTurns()));
         ms.translate(-0.5, -0.5, -0.5);
 
         VertexConsumer vc = buf.getBuffer(RenderLayer.getEyes(SCREEN_TEX));

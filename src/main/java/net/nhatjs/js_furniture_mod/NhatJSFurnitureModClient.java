@@ -2,10 +2,13 @@ package net.nhatjs.js_furniture_mod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey;
 import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
+import net.fabricmc.fabric.api.client.model.loading.v1.SimpleUnbakedExtraModel;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.model.BlockStateModel;
 import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
 import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
@@ -15,8 +18,10 @@ import net.nhatjs.js_furniture_mod.entity.ModEntities;
 import net.nhatjs.js_furniture_mod.entity.client.renderer.SeatRenderer;
 
 public class NhatJSFurnitureModClient implements ClientModInitializer {
-    public static final Identifier CEILING_FAN_BLADES_ID = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades");
-    public static final Identifier CEILING_FAN_BLADES_B_ID = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades_b");
+    public static final Identifier CEILING_FAN_BLADES = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades");
+    public static final ExtraModelKey<BlockStateModel> CEILING_FAN_BLADES_ID = ExtraModelKey.<BlockStateModel>create(CEILING_FAN_BLADES::toString);
+    public static final Identifier CEILING_FAN_BLADES_B = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades_b");
+    public static final ExtraModelKey<BlockStateModel> CEILING_FAN_BLADES_B_ID = ExtraModelKey.<BlockStateModel>create(CEILING_FAN_BLADES_B::toString);
 
     @Override
     public void onInitializeClient() {
@@ -129,6 +134,9 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B, RenderLayer.getCutoutMipped());
         //end
 
-        ModelLoadingPlugin.register(ctx -> ctx.addModels(CEILING_FAN_BLADES_ID, CEILING_FAN_BLADES_B_ID));
+        ModelLoadingPlugin.register(ctx -> {
+            ctx.addModel(CEILING_FAN_BLADES_ID, SimpleUnbakedExtraModel.blockStateModel(CEILING_FAN_BLADES));
+            ctx.addModel(CEILING_FAN_BLADES_B_ID, SimpleUnbakedExtraModel.blockStateModel(CEILING_FAN_BLADES_B));
+        });
     }
 }
