@@ -28,6 +28,7 @@ public class CoffeeTableBlock extends BlockWithEntity {
 
     public CoffeeTableBlock(Settings settings) {
         super(settings);
+        setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(HAS_ITEM, false));
     }
 
     private static final VoxelShape HORIZONTAL = VoxelShapes.union(

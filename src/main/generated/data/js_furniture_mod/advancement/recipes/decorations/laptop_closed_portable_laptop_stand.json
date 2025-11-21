@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_laptop": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:laptop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_portable_laptop_stand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:portable_laptop_stand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "js_furniture_mod:laptop_closed_portable_laptop_stand"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_laptop",
+      "has_portable_laptop_stand"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "js_furniture_mod:laptop_closed_portable_laptop_stand"
+    ]
+  }
+}

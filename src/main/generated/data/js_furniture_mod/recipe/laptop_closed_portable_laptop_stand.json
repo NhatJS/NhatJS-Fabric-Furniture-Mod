@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:laptop",
+    "2": "js_furniture_mod:portable_laptop_stand"
+  },
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:laptop_closed_portable_laptop_stand"
+  }
+}

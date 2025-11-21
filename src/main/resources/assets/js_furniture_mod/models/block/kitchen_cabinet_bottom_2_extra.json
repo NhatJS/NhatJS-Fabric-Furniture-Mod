@@ -2,10 +2,8 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "js_furniture_mod:block/light_wood",
 		"1": "js_furniture_mod:block/furniture",
-		"2": "js_furniture_mod:block/white_steel",
-		"particle": "js_furniture_mod:block/light_wood"
+		"2": "js_furniture_mod:block/white_steel"
 	},
 	"elements": [
 		{

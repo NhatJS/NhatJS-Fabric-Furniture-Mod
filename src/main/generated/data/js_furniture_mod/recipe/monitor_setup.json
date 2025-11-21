@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:monitor",
+    "2": "js_furniture_mod:keyboard",
+    "3": "js_furniture_mod:computer_mouse",
+    "4": "minecraft:black_carpet"
+  },
+  "pattern": [
+    "14",
+    "23"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:monitor_setup"
+  }
+}

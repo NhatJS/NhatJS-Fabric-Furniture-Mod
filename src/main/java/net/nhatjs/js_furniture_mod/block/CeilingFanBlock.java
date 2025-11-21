@@ -1,6 +1,7 @@
 package net.nhatjs.js_furniture_mod.block;
 
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -9,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -20,12 +22,25 @@ import org.jetbrains.annotations.Nullable;
 public class CeilingFanBlock extends BlockWithEntity {
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
 
-    public CeilingFanBlock(Settings settings) {
+    private static final MapCodec<CeilingFanBlock> CODEC = RecordCodecBuilder.mapCodec(builder -> {
+        return builder.group(DyeColor.CODEC.fieldOf("color").forGetter(block -> {
+            return block.color;
+        }), createSettingsCodec()).apply(builder, CeilingFanBlock::new);
+    });
+
+    private final DyeColor color;
+
+    public CeilingFanBlock(DyeColor color, Settings settings)
+    {
         super(settings);
+        this.color = color;
         setDefaultState(getStateManager().getDefaultState().with(TURN_ON, false));
     }
 
-    public static final MapCodec<CeilingFanBlock> CODEC = createCodec(CeilingFanBlock::new);
+    public DyeColor getColor()
+    {
+        return this.color;
+    }
 
     @Override
     public MapCodec<CeilingFanBlock> getCodec() {

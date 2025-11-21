@@ -10,7 +10,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class SeatBlockEntity extends Entity {
-
     public SeatBlockEntity(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -39,11 +38,6 @@ public class SeatBlockEntity extends Entity {
     }
 
     @Override
-    public boolean damage(ServerWorld world, DamageSource source, float amount) {
-        return false;
-    }
-
-    @Override
     public void tick()
     {
         super.tick();
@@ -56,6 +50,11 @@ public class SeatBlockEntity extends Entity {
                 this.getWorld().updateComparators(pos, this.getWorld().getBlockState(pos).getBlock());
             }
         }
+    }
+
+    @Override
+    public boolean damage(ServerWorld world, DamageSource source, float amount) {
+        return false;
     }
 
     @Override

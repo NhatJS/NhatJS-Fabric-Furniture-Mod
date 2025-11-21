@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "2": "minecraft:white_concrete",
+    "3": "minecraft:redstone",
+    "4": "minecraft:lever"
+  },
+  "pattern": [
+    "222",
+    "334",
+    "2 2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:white_standing_desk_b"
+  }
+}

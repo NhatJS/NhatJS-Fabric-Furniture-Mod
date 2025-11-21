@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:jungle_planks",
+    "3": "minecraft:redstone",
+    "4": "minecraft:lever"
+  },
+  "pattern": [
+    "222",
+    "334",
+    "1 1"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:wood_medium_standing_desk"
+  }
+}

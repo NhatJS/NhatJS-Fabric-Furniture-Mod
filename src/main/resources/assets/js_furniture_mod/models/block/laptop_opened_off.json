@@ -7,7 +7,7 @@
 		"2": "js_furniture_mod:block/laptop3",
 		"3": "js_furniture_mod:block/rgb_off",
 		"4": "js_furniture_mod:block/black_screen",
-		"particle": "minecraft:block/gray_concrete"
+		"particle": "block/gray_concrete"
 	},
 	"elements": [
 		{
@@ -589,7 +589,8 @@
 			"scale": [0.87, 0.87, 0.87]
 		},
 		"fixed": {
-			"translation": [0, 3.75, -6]
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -7]
 		}
 	},
 	"groups": [
