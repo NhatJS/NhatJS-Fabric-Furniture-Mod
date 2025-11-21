@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:iron_block"
-    },
-    "3": {
-      "item": "minecraft:end_crystal"
-    },
-    "4": {
-      "item": "minecraft:gray_concrete"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:iron_block",
+    "3": "minecraft:end_crystal",
+    "4": "minecraft:gray_concrete"
   },
   "pattern": [
     "414",

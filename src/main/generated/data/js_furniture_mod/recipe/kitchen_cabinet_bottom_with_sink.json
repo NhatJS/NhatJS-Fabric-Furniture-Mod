@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:birch_planks"
-    },
-    "2": {
-      "item": "minecraft:chest"
-    },
-    "3": {
-      "item": "minecraft:birch_slab"
-    },
-    "4": {
-      "item": "minecraft:bucket"
-    }
+    "1": "minecraft:birch_planks",
+    "2": "minecraft:chest",
+    "3": "minecraft:birch_slab",
+    "4": "minecraft:bucket"
   },
   "pattern": [
     "343",

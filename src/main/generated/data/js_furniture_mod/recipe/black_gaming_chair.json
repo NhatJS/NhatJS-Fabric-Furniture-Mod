@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:black_wool"
-    },
-    "2": {
-      "item": "minecraft:white_wool"
-    },
-    "3": {
-      "item": "minecraft:black_concrete"
-    }
+    "1": "minecraft:black_wool",
+    "2": "minecraft:white_wool",
+    "3": "minecraft:black_concrete"
   },
   "pattern": [
     "1  ",

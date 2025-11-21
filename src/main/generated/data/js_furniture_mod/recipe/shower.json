@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:black_dye"
-    },
-    "2": {
-      "item": "minecraft:iron_ingot"
-    }
+    "1": "minecraft:black_dye",
+    "2": "minecraft:iron_ingot"
   },
   "pattern": [
     "21"

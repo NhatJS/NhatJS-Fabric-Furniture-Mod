@@ -36,7 +36,7 @@ public class CoffeeTableBlockEntity extends BlockEntity {
 
     @Override protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup register) {
         super.writeNbt(nbt, register);
-        if (!stack.isEmpty()) nbt.put("it", stack.encode(register));
+        if (!stack.isEmpty()) nbt.put("it", stack.toNbt(register));
         nbt.putInt("rn", renderNonce);
     }
 

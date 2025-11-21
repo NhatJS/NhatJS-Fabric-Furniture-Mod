@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:black_concrete"
-    },
-    "2": {
-      "item": "minecraft:birch_planks"
-    },
-    "3": {
-      "item": "minecraft:redstone"
-    },
-    "4": {
-      "item": "minecraft:lever"
-    }
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:birch_planks",
+    "3": "minecraft:redstone",
+    "4": "minecraft:lever"
   },
   "pattern": [
     "222",

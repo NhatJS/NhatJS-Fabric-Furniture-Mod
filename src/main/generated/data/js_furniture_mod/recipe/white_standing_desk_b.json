@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "2": {
-      "item": "minecraft:white_concrete"
-    },
-    "3": {
-      "item": "minecraft:redstone"
-    },
-    "4": {
-      "item": "minecraft:lever"
-    }
+    "2": "minecraft:white_concrete",
+    "3": "minecraft:redstone",
+    "4": "minecraft:lever"
   },
   "pattern": [
     "222",

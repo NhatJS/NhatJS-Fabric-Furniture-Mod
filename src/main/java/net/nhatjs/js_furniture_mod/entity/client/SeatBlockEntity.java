@@ -2,13 +2,14 @@ package net.nhatjs.js_furniture_mod.entity.client;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class SeatBlockEntity extends Entity {
-
     public SeatBlockEntity(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -31,7 +32,9 @@ public class SeatBlockEntity extends Entity {
     @Override
     protected void removePassenger(Entity passenger) {
         super.removePassenger(passenger);
-        this.kill();
+        if(!this.getWorld().isClient()) {
+            this.kill(((ServerWorld) this.getWorld()));
+        }
     }
 
     @Override
@@ -47,6 +50,11 @@ public class SeatBlockEntity extends Entity {
                 this.getWorld().updateComparators(pos, this.getWorld().getBlockState(pos).getBlock());
             }
         }
+    }
+
+    @Override
+    public boolean damage(ServerWorld world, DamageSource source, float amount) {
+        return false;
     }
 
     @Override
