@@ -17,25 +17,34 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.js_furniture_mod.js_furniture_tab"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.WOOD_CHAIR);
+                        entries.add(ModBlocks.WOOD_MEDIUM_CHAIR); //1.0.4 update
                         entries.add(ModBlocks.WHITE_CHAIR);
                         entries.add(ModBlocks.MODERN_CHAIR);
                         entries.add(ModBlocks.SOFA);
+                        entries.add(ModBlocks.BLACK_SOFA); //1.0.4 update
                         entries.add(ModBlocks.WOOD_LIGHT_TABLE);
+                        entries.add(ModBlocks.WOOD_MEDIUM_TABLE); //1.0.4 update
                         entries.add(ModBlocks.BLACK_TABLE);
                         entries.add(ModBlocks.WHITE_TABLE);
                         entries.add(ModBlocks.WOOD_COFFEE_TABLE);
+                        entries.add(ModBlocks.WOOD_MEDIUM_COFFEE_TABLE); //1.0.4 update
                         entries.add(ModBlocks.WHITE_COFFEE_TABLE);
                         entries.add(ModBlocks.WOOD_DESK);
+                        entries.add(ModBlocks.WOOD_MEDIUM_DESK); //1.0.4 update
                         entries.add(ModBlocks.WHITE_DESK);
                         entries.add(ModBlocks.WOOD_STANDING_DESK);
+                        entries.add(ModBlocks.WOOD_MEDIUM_STANDING_DESK); //1.0.4 update
                         entries.add(ModBlocks.WOOD_STANDING_DESK_B);
+                        entries.add(ModBlocks.WOOD_MEDIUM_STANDING_DESK_B); //1.0.4 update
                         entries.add(ModBlocks.BLACK_STANDING_DESK);
                         entries.add(ModBlocks.BLACK_STANDING_DESK_B);
                         entries.add(ModBlocks.WHITE_STANDING_DESK);
                         entries.add(ModBlocks.WHITE_STANDING_DESK_B);
                         entries.add(ModBlocks.WOOD_3_DRAWER_DRESSER);
+                        entries.add(ModBlocks.WOOD_MEDIUM_3_DRAWER_DRESSER); //1.0.4 update
                         entries.add(ModBlocks.WHITE_3_DRAWER_DRESSER);
                         entries.add(ModBlocks.WOOD_LIGHT_TV_STAND);
+                        entries.add(ModBlocks.WOOD_MEDIUM_TV_STAND); //1.0.4 update
                         entries.add(ModBlocks.WHITE_TV_STAND);
                         entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM);
                         entries.add(ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK);
@@ -48,10 +57,23 @@ public class ModItemGroups {
                         entries.add(ModBlocks.KITCHEN_DRAWERS_B);
                         entries.add(ModBlocks.KITCHEN_CABINET_TOP);
                         entries.add(ModBlocks.KITCHEN_CABINET_TOP_B);
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_WITH_SINK); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2_EXTRA); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP); //1.0.4 update
+                        entries.add(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B); //1.0.4 update
                         entries.add(ModBlocks.WOOD_STRIPED_WALL);
+                        entries.add(ModBlocks.WOOD_MEDIUM_STRIPED_WALL); //1.0.4 update
                         entries.add(ModBlocks.BLACK_MIRROR);
                         entries.add(ModBlocks.VERTICAL_BLINDS);
                         entries.add(ModBlocks.CEILING_FAN); //1.0.2 update
+                        entries.add(ModBlocks.CEILING_FAN_B); //1.0.4 update
                         entries.add(ModBlocks.SOCKET);
                         entries.add(ModBlocks.TV);
                         entries.add(ModBlocks.FLOOR_STANDING_SPEAKER);
@@ -72,6 +94,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.LAPTOP);
                         entries.add(ModBlocks.PORTABLE_LAPTOP_STAND);
                         entries.add(ModBlocks.LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND);
+                        entries.add(ModBlocks.MIDI_KEYBOARD_CONTROLLER); //1.0.4 update
                         entries.add(ModBlocks.MIDI_STANDALONE_GROOVEBOX);
                         entries.add(ModBlocks.MIDI_STANDALONE_GROOVEBOX_2);
                         entries.add(ModBlocks.MIDI_STANDALONE_GROOVEBOX_3);
@@ -81,7 +104,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MODERN_BATHROOM_SINK_STORAGE);
                         entries.add(ModBlocks.MODERN_BATHROOM_MIRROR_SHELF);
                         entries.add(ModBlocks.SHOWER);
-                        entries.add(ModBlocks.TOILET);
+                        entries.add(ModBlocks.TOILET); //1.0.3 update
                         entries.add(ModBlocks.WASHING_MACHINE_AI);
                         entries.add(ModBlocks.PLANT_POT);
                         entries.add(ModBlocks.BOOKS);

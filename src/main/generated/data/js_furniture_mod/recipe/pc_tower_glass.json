@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:glass_pane"
+  },
+  "pattern": [
+    "21",
+    "21"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:pc_tower_glass"
+  }
+}

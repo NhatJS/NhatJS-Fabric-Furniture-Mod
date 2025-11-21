@@ -1,0 +1,7 @@
+{
+	"parent": "js_furniture_mod:block/sofa_middle",
+	"textures": {
+		"0": "js_furniture_mod:block/seamless_black_fabric",
+		"particle": "js_furniture_mod:block/seamless_black_fabric"
+	}
+}

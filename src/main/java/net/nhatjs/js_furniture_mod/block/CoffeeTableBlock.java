@@ -6,7 +6,6 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
@@ -29,6 +28,7 @@ public class CoffeeTableBlock extends BlockWithEntity {
 
     public CoffeeTableBlock(Settings settings) {
         super(settings);
+        setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(HAS_ITEM, false));
     }
 
     private static final VoxelShape HORIZONTAL = VoxelShapes.union(
@@ -108,30 +108,15 @@ public class CoffeeTableBlock extends BlockWithEntity {
     }
 
     @Override
-    public void onStateReplaced(BlockState state, ServerWorld world, BlockPos pos, boolean moved) {
-        if (state.getBlock() != state.getBlock()) {
+    public void onStateReplaced(BlockState state, World world, BlockPos pos,
+                                BlockState newState, boolean moved) {
+        if (state.getBlock() != newState.getBlock()) {
             BlockEntity be = world.getBlockEntity(pos);
             if (be instanceof CoffeeTableBlockEntity ct) {
                 ItemStack s = ct.getItem();
                 if (!s.isEmpty()) ItemScatterer.spawn(world, pos, DefaultedList.copyOf(ItemStack.EMPTY, s));
             }
-            super.onStateReplaced(state, world, pos, moved);
-        } else super.onStateReplaced(state, world, pos, moved);
-    }
-
-    @Override
-    public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (!world.isClient()) {
-            BlockEntity be = world.getBlockEntity(pos);
-            if (be instanceof CoffeeTableBlockEntity table) {
-                ItemStack s = table.getItem();
-                if (!s.isEmpty()) {
-                    ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), s);
-                    table.setItem(ItemStack.EMPTY);
-                }
-            }
-        }
-        super.onBreak(world, pos, state, player);
-        return state;
+            super.onStateReplaced(state, world, pos, newState, moved);
+        } else super.onStateReplaced(state, world, pos, newState, moved);
     }
 }

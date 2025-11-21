@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:birch_planks",
+    "2": "minecraft:chest",
+    "3": "minecraft:white_concrete",
+    "4": "minecraft:bucket"
+  },
+  "pattern": [
+    "343",
+    "111",
+    "121"
+  ],
+  "result": {
+    "count": 2,
+    "id": "js_furniture_mod:kitchen_cabinet_bottom_b_with_sink"
+  }
+}
