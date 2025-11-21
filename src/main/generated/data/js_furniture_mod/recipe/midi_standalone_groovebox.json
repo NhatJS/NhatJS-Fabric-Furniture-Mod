@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:black_concrete"
+    },
+    "2": {
+      "item": "minecraft:stone_button"
+    },
+    "3": {
+      "item": "minecraft:end_crystal"
+    }
+  },
+  "pattern": [
+    "111",
+    "132",
+    "222"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:midi_standalone_groovebox"
+  }
+}

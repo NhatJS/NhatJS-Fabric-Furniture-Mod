@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:birch_planks"
+    },
+    "2": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "2  ",
+    "122",
+    "1 1"
+  ],
+  "result": {
+    "count": 4,
+    "id": "js_furniture_mod:wood_chair"
+  }
+}

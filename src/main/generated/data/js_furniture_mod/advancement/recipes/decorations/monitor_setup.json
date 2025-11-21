@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_carpet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:black_carpet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_computer_mouse": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:computer_mouse"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_keyboard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:keyboard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_monitor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:monitor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "js_furniture_mod:monitor_setup"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_monitor",
+      "has_keyboard",
+      "has_computer_mouse",
+      "has_black_carpet"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "js_furniture_mod:monitor_setup"
+    ]
+  }
+}
