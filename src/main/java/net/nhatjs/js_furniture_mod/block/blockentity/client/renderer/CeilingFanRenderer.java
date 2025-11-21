@@ -45,8 +45,8 @@ public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEn
         BakedModel blades_black = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_ID);
         BakedModel blades_white = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_B_ID);
 
-        if (blades_black == null || blades_white == null || blades_black == mc.getBakedModelManager().getMissingModel()
-                || blades_white == mc.getBakedModelManager().getMissingModel()) {
+        if (blades_black == null || blades_white == null || blades_black == mc.getBakedModelManager().getMissingBlockModel()
+                || blades_white == mc.getBakedModelManager().getMissingBlockModel()) {
             return;
         }
 

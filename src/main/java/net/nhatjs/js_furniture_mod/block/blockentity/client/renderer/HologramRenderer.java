@@ -33,7 +33,7 @@ public class HologramRenderer implements BlockEntityRenderer<HologramBlockEntity
         Direction facing = state.getOrEmpty(Properties.HORIZONTAL_FACING).orElse(Direction.NORTH);
 
         ms.translate(0.5, 0.5, 0.5);
-        ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-facing.asRotation()));
+        ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-facing.getId()));
         ms.translate(-0.5, -0.5, -0.5);
 
         VertexConsumer vc = buf.getBuffer(RenderLayer.getEyes(SCREEN_TEX));
