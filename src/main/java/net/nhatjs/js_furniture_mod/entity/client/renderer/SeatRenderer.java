@@ -18,6 +18,6 @@ public class SeatRenderer extends EntityRenderer<SeatBlockEntity, EntityRenderSt
 
     @Override
     public EntityRenderState createRenderState() {
-        return null;
+        return new EntityRenderState();
     }
 }
