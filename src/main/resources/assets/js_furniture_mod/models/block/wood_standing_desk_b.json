@@ -4,7 +4,6 @@
 	"textures": {
 		"0": "js_furniture_mod:block/laptop2",
 		"1": "js_furniture_mod:block/furniture",
-		"2": "js_furniture_mod:block/light_wood",
 		"particle": "block/black_concrete"
 	},
 	"elements": [

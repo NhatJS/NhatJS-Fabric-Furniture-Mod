@@ -3,13 +3,10 @@ package net.nhatjs.js_furniture_mod.block.blockentity.client.renderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.item.ItemModelManager;
-import net.minecraft.client.render.*;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
-import net.minecraft.client.render.command.ModelCommandRenderer;
-import net.minecraft.client.render.command.OrderedRenderCommandQueue;
-import net.minecraft.client.render.state.CameraRenderState;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.item.ItemStack;
@@ -17,68 +14,62 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.LightType;
-import net.minecraft.world.World;
 import net.nhatjs.js_furniture_mod.block.CoffeeTableBlock;
+import net.nhatjs.js_furniture_mod.block.ModBlocks;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.CoffeeTableBlockEntity;
-import org.jetbrains.annotations.Nullable;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Environment(EnvType.CLIENT)
-public class CoffeeTableRenderer implements BlockEntityRenderer<CoffeeTableBlockEntity, CoffeeTableRenderState> {
-    private final ItemModelManager itemModelManager;
+public class CoffeeTableRenderer implements BlockEntityRenderer<CoffeeTableBlockEntity> {
 
-    public CoffeeTableRenderer(BlockEntityRendererFactory.Context context) {
-        itemModelManager = context.itemModelManager();
-    }
+    public CoffeeTableRenderer(BlockEntityRendererFactory.Context ctx) {}
 
-    @Override
-    public CoffeeTableRenderState createRenderState() {
-        return new CoffeeTableRenderState();
-    }
+    private final Map<BlockPos, Integer> lastNonce = new HashMap<>();
 
     @Override
-    public void updateRenderState(CoffeeTableBlockEntity blockEntity, CoffeeTableRenderState state, float tickProgress,
-                                  Vec3d cameraPos, @Nullable ModelCommandRenderer.CrumblingOverlayCommand crumblingOverlay) {
-        BlockEntityRenderer.super.updateRenderState(blockEntity, state, tickProgress, cameraPos, crumblingOverlay);
+    public void render(CoffeeTableBlockEntity be, float tickDelta, MatrixStack ms,
+                       VertexConsumerProvider vcp, int light, int overlay, Vec3d cameraPos) {
+        if (be.isRemoved() || be.getWorld() == null) return;
 
-        state.pos = blockEntity.getPos();
-        state.world = blockEntity.getWorld();
+        BlockState st = be.getCachedState();
+        ItemStack stack = be.getItem();
+        if (stack.isEmpty()) return;
+        if (st.contains(CoffeeTableBlock.HAS_ITEM) && !st.get(CoffeeTableBlock.HAS_ITEM)) return;
 
-        BlockState st = blockEntity.getCachedState();
-        Direction f = st.get(CoffeeTableBlock.FACING);
-        state.yaw = switch (f) {
-            default -> 0f;
-            case SOUTH -> 180f;
-            case WEST  -> 90f;
-            case EAST  -> 270f;
-        };
-        ItemStack stack = blockEntity.getItem();
-        if (stack.isEmpty()) {
-            state.itemRenderState.clear();
+        int now = be.getRenderNonce();
+        Integer prev = lastNonce.get(be.getPos());
+        if (prev == null || prev != now) {
+            lastNonce.put(be.getPos(), now);
             return;
         }
 
-        itemModelManager.clearAndUpdate(state.itemRenderState,
-                blockEntity.getItem(), ItemDisplayContext.FIXED, blockEntity.getWorld(), null, 0);
-    }
+        ms.push();
+        ms.translate(0.5, 0.6, 0.5);
+        if (st.contains(CoffeeTableBlock.FACING)) {
+            Direction facing = st.get(CoffeeTableBlock.FACING);
+            float rotation = switch (facing) {
+                default -> 0f;
+                case SOUTH -> 180f;
+                case WEST -> 90f;
+                case EAST -> 270f;
+            };
+            ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(rotation));
+        }
+        ms.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90));
+        if (stack.isOf(ModBlocks.LAPTOP.asItem()) || stack.isOf(ModBlocks.LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND.asItem())
+                || stack.isOf(ModBlocks.PLANT_POT.asItem()) || stack.isOf(ModBlocks.PORTABLE_LAPTOP_STAND.asItem())
+                || stack.isOf(ModBlocks.MIDI_STANDALONE_GROOVEBOX.asItem()) || stack.isOf(ModBlocks.MIDI_STANDALONE_GROOVEBOX_2.asItem())
+                || stack.isOf(ModBlocks.MIDI_STANDALONE_GROOVEBOX_3.asItem()) || stack.isOf(ModBlocks.MIDI_KEYBOARD_CONTROLLER.asItem())) {
+            ms.scale(1.0f, 1.0f, 1.0f);
+        }
+        else {
+            ms.scale(0.5f, 0.5f, 0.5f);
+        }
 
-    @Override
-    public void render(CoffeeTableRenderState state, MatrixStack matrices, OrderedRenderCommandQueue queue, CameraRenderState cameraState) {
-        matrices.push();
-
-        matrices.translate(0.5f, 0.6f, 0.5f);
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(state.yaw));
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90f));
-        matrices.scale(0.5f, 0.5f, 0.5f);
-
-        state.itemRenderState.render(matrices, queue, getLightLevel(state.world, state.pos), OverlayTexture.DEFAULT_UV, 0);
-
-        matrices.pop();
-    }
-
-    private int getLightLevel(World world, BlockPos pos) {
-        int bLight = world.getLightLevel(LightType.BLOCK, pos);
-        int sLight = world.getLightLevel(LightType.SKY, pos);
-        return LightmapTextureManager.pack(bLight, sLight);
+        MinecraftClient.getInstance().getItemRenderer()
+                .renderItem(stack, ItemDisplayContext.FIXED, light, overlay, ms, vcp, be.getWorld(), 0);
+        ms.pop();
     }
 }

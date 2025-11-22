@@ -13,6 +13,7 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -22,12 +23,13 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.nhatjs.js_furniture_mod.block.blockentity.client.CoffeeTableBlockEntity;
 
-public class CoffeeTableBlock extends BlockWithEntity implements BlockEntityProvider {
+public class CoffeeTableBlock extends BlockWithEntity {
     public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty HAS_ITEM = BooleanProperty.of("has_item");
 
     public CoffeeTableBlock(Settings settings) {
         super(settings);
+        setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(HAS_ITEM, false));
     }
 
     private static final VoxelShape HORIZONTAL = VoxelShapes.union(
@@ -62,7 +64,7 @@ public class CoffeeTableBlock extends BlockWithEntity implements BlockEntityProv
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite()).with(HAS_ITEM, false);
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     @Override
@@ -78,7 +80,6 @@ public class CoffeeTableBlock extends BlockWithEntity implements BlockEntityProv
     }
 
     @Override public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        System.out.println("[CoffeeTableBlock] createBlockEntity at " + pos);
         return new CoffeeTableBlockEntity(pos, state);
     }
 
@@ -90,7 +91,7 @@ public class CoffeeTableBlock extends BlockWithEntity implements BlockEntityProv
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient()) return ActionResult.SUCCESS;
+        if (world.isClient) return ActionResult.SUCCESS;
 
         CoffeeTableBlockEntity be = (CoffeeTableBlockEntity) world.getBlockEntity(pos);
         ItemStack held = player.getMainHandStack();
@@ -99,28 +100,24 @@ public class CoffeeTableBlock extends BlockWithEntity implements BlockEntityProv
         if (be.getItem().isEmpty() && !held.isEmpty()) {
             ItemStack put = held.copy(); put.setCount(1);
             be.setItem(put);
-            be.markDirty();
             held.decrement(1);
         } else if (!be.getItem().isEmpty()) {
             ItemScatterer.spawn(world, pos.getX()+0.5, pos.getY()+1, pos.getZ()+0.5, be.getItem());
             be.setItem(ItemStack.EMPTY);
         }
-
-        return ActionResult.CONSUME;
+        return ActionResult.CONSUME; // đã xử lý
     }
 
     @Override
     public void onStateReplaced(BlockState state, ServerWorld world, BlockPos pos, boolean moved) {
         if (state.getBlock() != state.getBlock()) {
             BlockEntity be = world.getBlockEntity(pos);
-            if (be instanceof CoffeeTableBlockEntity table) {
-                ItemStack s = table.getItem();
-                if (!s.isEmpty()) {
-                    ItemScatterer.spawn(world, pos.getX() + 0.5, pos.getY() + 0.8, pos.getZ() + 0.5, s);
-                }
+            if (be instanceof CoffeeTableBlockEntity ct) {
+                ItemStack s = ct.getItem();
+                if (!s.isEmpty()) ItemScatterer.spawn(world, pos, DefaultedList.copyOf(ItemStack.EMPTY, s));
             }
             super.onStateReplaced(state, world, pos, moved);
-        }
+        } else super.onStateReplaced(state, world, pos, moved);
     }
 
     @Override

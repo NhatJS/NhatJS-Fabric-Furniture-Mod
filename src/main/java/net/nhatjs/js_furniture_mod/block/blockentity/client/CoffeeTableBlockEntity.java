@@ -1,6 +1,5 @@
 package net.nhatjs.js_furniture_mod.block.blockentity.client;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.item.ItemStack;
@@ -19,47 +18,38 @@ import static net.nhatjs.js_furniture_mod.block.CoffeeTableBlock.HAS_ITEM;
 
 public class CoffeeTableBlockEntity extends BlockEntity {
     private ItemStack stack = ItemStack.EMPTY;
+    private int renderNonce = 0;
 
-    public CoffeeTableBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.COFFEE_TABLE, pos, state);
-    }
+    public CoffeeTableBlockEntity(BlockPos pos, BlockState s) { super(ModBlockEntities.COFFEE_TABLE, pos, s); }
 
     public ItemStack getItem() { return stack; }
+    public int getRenderNonce() { return renderNonce; }
 
     public void setItem(ItemStack s) {
         this.stack = (s == null ? ItemStack.EMPTY : s);
+        this.renderNonce++;
         markDirty();
 
-        if (world instanceof ServerWorld server) {
-            boolean has = !this.stack.isEmpty();
-            BlockState cur = getCachedState();
-            if (cur.contains(HAS_ITEM) && cur.get(HAS_ITEM) != has) {
-                server.setBlockState(pos, cur.with(HAS_ITEM, has), 3);
-            }
-            server.getChunkManager().markForUpdate(pos);
-            world.updateListeners(pos, cur, cur, Block.NOTIFY_LISTENERS);
+        if (world != null && !world.isClient) {
+            world.setBlockState(pos, getCachedState().with(HAS_ITEM, !stack.isEmpty()), 3);
+            ((ServerWorld)world).getChunkManager().markForUpdate(pos);
         }
     }
 
-    @Override protected void writeData(WriteView view) {
+    @Override
+    protected void writeData(WriteView view) {
         super.writeData(view);
-        if (stack.isEmpty()) {
-            view.remove("item");
-        } else {
-            view.put("item", ItemStack.CODEC, stack);
-        }
+        if (!stack.isEmpty()) view.put("it", ItemStack.CODEC, stack);
+        view.putInt("rn", renderNonce);
     }
 
-    @Override protected void readData(ReadView view) {
+    @Override
+    protected void readData(ReadView view) {
         super.readData(view);
-        this.stack = view.read("item", ItemStack.CODEC).orElse(ItemStack.EMPTY);
+        stack = view.read("it", ItemStack.CODEC).orElse(ItemStack.EMPTY);
+        renderNonce = view.getInt("rn", 0);
     }
 
-    @Override public Packet<ClientPlayPacketListener> toUpdatePacket() {
-        return BlockEntityUpdateS2CPacket.create(this);
-    }
-
-    @Override public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup reg) {
-        return createNbt(reg);
-    }
+    @Override public Packet<ClientPlayPacketListener> toUpdatePacket() { return BlockEntityUpdateS2CPacket.create(this); }
+    @Override public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup register) { return createNbt(register); }
 }

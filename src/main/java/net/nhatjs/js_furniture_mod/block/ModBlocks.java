@@ -9,6 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
 
@@ -108,7 +109,7 @@ public class ModBlocks {
     public static Block SOCKET = registerBlock("socket",
             properties -> new SocketBlock(properties.strength(0.2f).nonOpaque()));
     public static Block SOFA = registerBlock("sofa",
-            properties -> new SofaBlock(properties.strength(1.0f).nonOpaque()));
+            properties -> new SofaBlock(DyeColor.WHITE, properties.strength(1.0f).nonOpaque()));
     public static Block STUDIO_LIGHT = registerBlock("studio_light",
             properties -> new StudioLightBlock(properties.strength(1.5f).nonOpaque()));
     public static Block TV = registerBlock("tv",
@@ -154,17 +155,70 @@ public class ModBlocks {
 
     //1.0.2 update
     public static Block CEILING_FAN = registerBlock("ceiling_fan",
-            properties -> new CeilingFanBlock(properties.strength(1.0f).nonOpaque()));
+            properties -> new CeilingFanBlock(DyeColor.BLACK, properties.strength(1.0f).nonOpaque()));
     public static Block BLACK_GAMING_CHAIR = registerBlock("black_gaming_chair",
             properties -> new ChairBlock(properties.strength(1.0f).nonOpaque()));
     public static Block WHITE_GAMING_CHAIR = registerBlock("white_gaming_chair",
             properties -> new ChairBlock(properties.strength(1.0f).nonOpaque()));
     //end
 
-    //1.0.2 update
+    //1.0.3 update
     public static Block TOILET = registerBlock("toilet",
             properties -> new ToiletBlock(properties.strength(1.0f).nonOpaque()));
     //end
+
+    //1.0.4 update
+    public static Block CEILING_FAN_B = registerBlock("ceiling_fan_b",
+            properties -> new CeilingFanBlock(DyeColor.WHITE, properties.strength(1.0f).nonOpaque()));
+    public static Block BLACK_SOFA = registerBlock("black_sofa",
+            properties -> new SofaBlock(DyeColor.BLACK, properties.strength(1.0f).nonOpaque()));
+    public static Block MIDI_KEYBOARD_CONTROLLER = registerBlock("midi_keyboard_controller",
+            properties -> new MIDIKeyboardBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_TV_STAND = registerBlock("wood_medium_tv_stand",
+            properties -> new TVStandBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_3_DRAWER_DRESSER = registerBlock("wood_medium_3_drawer_dresser",
+            properties -> new ThreeDrawerDresserBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_CHAIR = registerBlock("wood_medium_chair",
+            properties -> new ChairBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_COFFEE_TABLE = registerBlock("wood_medium_coffee_table",
+            properties -> new CoffeeTableBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_DESK = registerBlock("wood_medium_desk",
+            properties -> new DeskBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_STANDING_DESK = registerBlock("wood_medium_standing_desk",
+            properties -> new StandingDeskBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_STANDING_DESK_B = registerBlock("wood_medium_standing_desk_b",
+            properties -> new StandingDeskBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_STRIPED_WALL = registerBlock("wood_medium_striped_wall",
+            properties -> new WoodStripedWallBlock(properties.strength(0.3f).nonOpaque()));
+    public static Block WOOD_MEDIUM_TABLE = registerBlock("wood_medium_table",
+            properties -> new WoodTableBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM = registerBlock("wood_medium_kitchen_cabinet_bottom",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_WITH_SINK = registerBlock("wood_medium_kitchen_cabinet_bottom_with_sink",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2 = registerBlock("wood_medium_kitchen_cabinet_bottom_2",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2_EXTRA = registerBlock("wood_medium_kitchen_cabinet_bottom_2_extra",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B = registerBlock("wood_medium_kitchen_cabinet_bottom_b",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK = registerBlock("wood_medium_kitchen_cabinet_bottom_b_with_sink",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2 = registerBlock("wood_medium_kitchen_cabinet_bottom_b_2",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_TOP = registerBlock("wood_medium_kitchen_cabinet_top",
+            properties -> new KitchenTopBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_CABINET_TOP_B = registerBlock("wood_medium_kitchen_cabinet_top_b",
+            properties -> new KitchenTopBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_DRAWERS = registerBlock("wood_medium_kitchen_drawers",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    public static Block WOOD_MEDIUM_KITCHEN_DRAWERS_B = registerBlock("wood_medium_kitchen_drawers_b",
+            properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
+    //end
+
+    //unsure
+    public static Block HOLOGRAM = registerBlock("hologram",
+            properties -> new HologramBlock(properties.strength(0.4f)));
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> function) {
         Block toRegister = function.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(NhatJSFurnitureMod.MOD_ID, name))));

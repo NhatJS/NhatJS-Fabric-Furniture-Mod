@@ -1,10 +1,6 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
-	"textures": {
-		"0": "js_furniture_mod:block/seamless_white_fabric",
-		"particle": "js_furniture_mod:block/seamless_white_fabric"
-	},
 	"elements": [
 		{
 			"from": [0.1, 7.31354, 4.20596],

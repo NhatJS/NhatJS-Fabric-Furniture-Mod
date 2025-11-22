@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:black_concrete",
+    "2": "minecraft:note_block"
+  },
+  "pattern": [
+    "2",
+    "1",
+    "1"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:floor_standing_speaker"
+  }
+}

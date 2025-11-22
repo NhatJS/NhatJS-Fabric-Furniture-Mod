@@ -12,7 +12,9 @@ public class CeilingFanBlockEntity extends BlockEntity {
     public float speed = 0f;
 
     private static final float MAX_SPEED = 35f;
-    private static final float ACCEL = 0.02f;
+    private static final float ACCEL = 0.98f;
+
+    private boolean isOn = false;
 
     public CeilingFanBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.CEILING_FAN, pos, state);
@@ -24,7 +26,7 @@ public class CeilingFanBlockEntity extends BlockEntity {
 
         float target = on ? MAX_SPEED : 0f;
 
-        speed = MathHelper.lerp(ACCEL, speed, target);
+        speed = MathHelper.lerp(0.02f, speed, target);
         if (Math.abs(speed) < 0.01f && target == 0f) speed = 0f;
 
         angle = (angle + speed) % 360f;
@@ -32,5 +34,9 @@ public class CeilingFanBlockEntity extends BlockEntity {
 
     public float getAngle(float tickDelta) {
         return angle + speed * tickDelta;
+    }
+
+    public void toggle() {
+        isOn = !isOn;
     }
 }

@@ -21,5 +21,6 @@ public class NhatJSFurnitureMod implements ModInitializer {
         ModItems.registerModItems();
         ModItemGroups.registerItemGroups();
         ModEntities.registerModEntities();
+        ModBlockEntities.registerModBlockEntities();
 	}
 }
