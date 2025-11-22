@@ -30,7 +30,7 @@ public class CoffeeTableBlockEntity extends BlockEntity {
         this.renderNonce++;
         markDirty();
 
-        if (world != null && !world.isClient) {
+        if (world != null && !world.isClient()) {
             world.setBlockState(pos, getCachedState().with(HAS_ITEM, !stack.isEmpty()), 3);
             ((ServerWorld)world).getChunkManager().markForUpdate(pos);
         }

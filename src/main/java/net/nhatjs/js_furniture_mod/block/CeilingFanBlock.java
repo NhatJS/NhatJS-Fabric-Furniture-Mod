@@ -79,7 +79,7 @@ public class CeilingFanBlock extends BlockWithEntity {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state,
                                                                   BlockEntityType<T> type) {
-        return world.isClient
+        return world.isClient()
                 ? (w, p, s, be) -> ((CeilingFanBlockEntity) be).tick()
                 : null;
     }

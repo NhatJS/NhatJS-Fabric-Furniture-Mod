@@ -91,7 +91,7 @@ public class CoffeeTableBlock extends BlockWithEntity {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient) return ActionResult.SUCCESS;
+        if (world.isClient()) return ActionResult.SUCCESS;
 
         CoffeeTableBlockEntity be = (CoffeeTableBlockEntity) world.getBlockEntity(pos);
         ItemStack held = player.getMainHandStack();
