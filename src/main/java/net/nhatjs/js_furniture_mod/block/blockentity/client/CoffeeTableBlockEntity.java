@@ -9,6 +9,8 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.util.math.BlockPos;
 import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
 
@@ -34,18 +36,18 @@ public class CoffeeTableBlockEntity extends BlockEntity {
         }
     }
 
-    @Override protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup register) {
-        super.writeNbt(nbt, register);
-        if (!stack.isEmpty()) nbt.put("it", stack.toNbt(register));
-        nbt.putInt("rn", renderNonce);
+    @Override
+    protected void writeData(WriteView view) {
+        super.writeData(view);
+        if (!stack.isEmpty()) view.put("it", ItemStack.CODEC, stack);
+        view.putInt("rn", renderNonce);
     }
 
-    @Override protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup register) {
-        super.readNbt(nbt, register);
-        stack = nbt.contains("it")
-                ? ItemStack.fromNbt(register, nbt.getCompoundOrEmpty("it")).orElse(ItemStack.EMPTY)
-                : ItemStack.EMPTY;
-        renderNonce = nbt.getInt("rn").get();
+    @Override
+    protected void readData(ReadView view) {
+        super.readData(view);
+        stack = view.read("it", ItemStack.CODEC).orElse(ItemStack.EMPTY);
+        renderNonce = view.getInt("rn", 0);
     }
 
     @Override public Packet<ClientPlayPacketListener> toUpdatePacket() { return BlockEntityUpdateS2CPacket.create(this); }

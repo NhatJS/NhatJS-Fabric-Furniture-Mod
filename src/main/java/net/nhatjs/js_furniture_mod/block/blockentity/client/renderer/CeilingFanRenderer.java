@@ -2,7 +2,9 @@ package net.nhatjs.js_furniture_mod.block.blockentity.client.renderer;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.renderer.v1.render.BlockVertexConsumerProvider;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -52,9 +54,9 @@ public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEn
         ms.translate(-0.5, -0.9375, -0.5);
 
         VertexConsumer vc = vcp.getBuffer(RenderLayer.getCutoutMipped());
-        VertexConsumerProvider forcedProvider = new VertexConsumerProvider() {
+        BlockVertexConsumerProvider forcedProvider = new BlockVertexConsumerProvider() {
             @Override
-            public VertexConsumer getBuffer(RenderLayer layer) {
+            public VertexConsumer getBuffer(BlockRenderLayer blockRenderLayer) {
                 // BỎ (bỏ vào) CutoutMipped: luôn trả về đúng vc đã lấy ở CutoutMipped
                 return vc;
             }
