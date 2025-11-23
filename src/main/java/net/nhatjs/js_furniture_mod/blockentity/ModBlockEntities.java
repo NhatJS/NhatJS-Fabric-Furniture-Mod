@@ -1,4 +1,4 @@
-package net.nhatjs.js_furniture_mod.block.blockentity;
+package net.nhatjs.js_furniture_mod.blockentity;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
@@ -7,9 +7,9 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.CeilingFanBlockEntity;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.CoffeeTableBlockEntity;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.HologramBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.client.CeilingFanBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.client.CoffeeTableBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.client.HologramBlockEntity;
 
 public final class ModBlockEntities {
     public static final BlockEntityType<HologramBlockEntity> HOLOGRAM = Registry.register(Registries.BLOCK_ENTITY_TYPE,
