@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.CeilingFanBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.client.CeilingFanBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class CeilingFanBlock extends BlockWithEntity {

@@ -1,4 +1,4 @@
-package net.nhatjs.js_furniture_mod.block.blockentity.client.renderer;
+package net.nhatjs.js_furniture_mod.blockentity.renderer;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -17,7 +17,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureModClient;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.CeilingFanBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.client.CeilingFanBlockEntity;
 
 @Environment(EnvType.CLIENT)
 public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEntity> {
