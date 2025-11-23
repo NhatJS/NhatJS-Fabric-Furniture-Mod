@@ -1,25 +1,19 @@
-package net.nhatjs.js_furniture_mod.block.blockentity.client.renderer;
+package net.nhatjs.js_furniture_mod.blockentity.renderer;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.command.ModelCommandRenderer;
 import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.state.CameraRenderState;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.HologramBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.client.HologramBlockEntity;
 import org.jetbrains.annotations.Nullable;
-
-import static java.text.DateFormat.FULL;
 
 @Environment(EnvType.CLIENT)
 public class HologramRenderer implements BlockEntityRenderer<HologramBlockEntity, HologramRenderState> {

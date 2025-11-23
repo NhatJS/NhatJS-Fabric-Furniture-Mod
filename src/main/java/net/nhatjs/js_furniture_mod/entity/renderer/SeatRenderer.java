@@ -1,4 +1,4 @@
-package net.nhatjs.js_furniture_mod.entity.client.renderer;
+package net.nhatjs.js_furniture_mod.entity.renderer;
 
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
