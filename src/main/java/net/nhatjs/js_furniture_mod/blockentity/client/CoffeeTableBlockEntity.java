@@ -1,4 +1,4 @@
-package net.nhatjs.js_furniture_mod.block.blockentity.client;
+package net.nhatjs.js_furniture_mod.blockentity.client;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -10,7 +10,7 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
+import net.nhatjs.js_furniture_mod.blockentity.ModBlockEntities;
 
 import static net.nhatjs.js_furniture_mod.block.CoffeeTableBlock.HAS_ITEM;
 
