@@ -1,4 +1,4 @@
-package net.nhatjs.js_furniture_mod.block.blockentity.client.renderer;
+package net.nhatjs.js_furniture_mod.blockentity.renderer;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -13,7 +13,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
-import net.nhatjs.js_furniture_mod.block.blockentity.client.HologramBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.client.HologramBlockEntity;
 
 import static java.text.DateFormat.FULL;
 
