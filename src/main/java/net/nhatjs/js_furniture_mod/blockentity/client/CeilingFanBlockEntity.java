@@ -1,11 +1,11 @@
-package net.nhatjs.js_furniture_mod.block.blockentity.client;
+package net.nhatjs.js_furniture_mod.blockentity.client;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.nhatjs.js_furniture_mod.block.CeilingFanBlock;
-import net.nhatjs.js_furniture_mod.block.blockentity.ModBlockEntities;
+import net.nhatjs.js_furniture_mod.blockentity.ModBlockEntities;
 
 public class CeilingFanBlockEntity extends BlockEntity {
     public float angle = 0f;
