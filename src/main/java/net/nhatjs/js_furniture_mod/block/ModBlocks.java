@@ -216,6 +216,13 @@ public class ModBlocks {
             properties -> new KitchenBottomBlock(properties.strength(1.0f).nonOpaque()));
     //end
 
+    //cannot be used for creative tab
+    public static Block CEILING_FAN_BLADES = registerBlock("ceiling_fan_blades",
+            properties -> new CeilingFanBladesBlock(properties.strength(0.0f).nonOpaque().noCollision().dropsNothing()));
+    public static Block CEILING_FAN_BLADES_B = registerBlock("ceiling_fan_blades_b",
+            properties -> new CeilingFanBladesBlock(properties.strength(0.0f).nonOpaque().noCollision().dropsNothing()));
+    //
+
     //unsure
     public static Block HOLOGRAM = registerBlock("hologram",
             properties -> new HologramBlock(properties.strength(0.4f)));
