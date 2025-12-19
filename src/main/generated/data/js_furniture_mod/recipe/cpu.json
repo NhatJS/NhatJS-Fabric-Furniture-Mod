@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:end_crystal",
+    "2": "minecraft:green_dye"
+  },
+  "pattern": [
+    " 2 ",
+    "212",
+    " 2 "
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:cpu"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_bottom",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_bottom"
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_bottom",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_bottom",
+      "y": 270
+    }
+  }
+}
