@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "js_furniture_mod:block/light_wood_kitchen_drawers",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "js_furniture_mod:block/light_wood_kitchen_drawers"
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/light_wood_kitchen_drawers",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/light_wood_kitchen_drawers",
+      "y": 270
+    }
+  }
+}

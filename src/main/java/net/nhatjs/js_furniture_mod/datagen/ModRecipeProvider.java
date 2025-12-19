@@ -11,6 +11,8 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
+import net.nhatjs.js_furniture_mod.item.ModItems;
+
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -41,10 +43,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         //concrete
         Block concreteBlack = Blocks.BLACK_CONCRETE;
         Block concreteGray = Blocks.GRAY_CONCRETE;
+        Block concreteLightGray = Blocks.LIGHT_GRAY_CONCRETE;
         Block concreteWhite = Blocks.WHITE_CONCRETE;
 
         //dye
         Item dyeBlack = Items.BLACK_DYE;
+        Item dyeGreen = Items.GREEN_DYE;
         Item dyeWhite = Items.WHITE_DYE;
 
         //misc
@@ -58,6 +62,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         Item redstone = Items.REDSTONE;
         Item lever = Items.LEVER;
         Block redstoneLamp = Blocks.REDSTONE_LAMP;
+        Item redstoneComparator = Items.COMPARATOR;
 
         //furniture mod
         Block laptop = ModBlocks.LAPTOP;
@@ -66,6 +71,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         Block monitor = ModBlocks.MONITOR;
         Block keyboard = ModBlocks.KEYBOARD;
         Block computerMouse = ModBlocks.COMPUTER_MOUSE;
+        Item computerFan = ModItems.COMPUTER_FAN;
 
         //others
         Item book = Items.BOOK;
@@ -74,6 +80,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         Block chest = Blocks.CHEST;
         Item bucket = Items.BUCKET;
         Block flowerPot = Blocks.FLOWER_POT;
+        Item clock = Items.CLOCK;
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.AIO_COOLER)
+                .pattern("111")
+                .pattern("222")
+                .pattern("3  ")
+                .input('1', concreteBlack)
+                .input('2', computerFan)
+                .input('3', redstone)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(computerFan), conditionsFromItem(computerFan))
+                .criterion(hasItem(redstone), conditionsFromItem(redstone))
+                .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_GAMING_CHAIR)
                 .pattern("1  ")
@@ -168,6 +187,26 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(redstone), conditionsFromItem(redstone))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.COMPUTER_CASE)
+                .pattern("212")
+                .pattern("112")
+                .pattern("112")
+                .input('1', concreteBlack)
+                .input('2', computerFan)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(computerFan), conditionsFromItem(computerFan))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.COMPUTER_FAN, 3)
+                .pattern("121")
+                .pattern("212")
+                .pattern("121")
+                .input('1', concreteBlack)
+                .input('2', concreteWhite)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.COMPUTER_MOUSE)
                 .pattern("2")
                 .pattern("1")
@@ -183,6 +222,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('2', redstone)
                 .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
                 .criterion(hasItem(redstone), conditionsFromItem(redstone))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.CPU)
+                .pattern(" 2 ")
+                .pattern("212")
+                .pattern(" 2 ")
+                .input('1', endCrystal)
+                .input('2', dyeGreen)
+                .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
+                .criterion(hasItem(dyeGreen), conditionsFromItem(dyeGreen))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.FLOOR_STANDING_SPEAKER)
@@ -221,6 +270,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ironBlock), conditionsFromItem(ironBlock))
                 .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
                 .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.GPU)
+                .pattern("111")
+                .pattern("333")
+                .pattern("121")
+                .input('1', concreteLightGray)
+                .input('2', endCrystal)
+                .input('3', computerFan)
+                .criterion(hasItem(concreteLightGray), conditionsFromItem(concreteLightGray))
+                .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
+                .criterion(hasItem(computerFan), conditionsFromItem(computerFan))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KEYBOARD)
@@ -364,6 +425,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.MAINBOARD)
+                .pattern("111")
+                .pattern("121")
+                .pattern("111")
+                .input('1', concreteGray)
+                .input('2', endCrystal)
+                .criterion(hasItem(concreteGray), conditionsFromItem(concreteGray))
+                .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.LAPTOP)
                 .pattern("111")
                 .pattern("523")
@@ -496,6 +567,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(woolWhite), conditionsFromItem(woolWhite))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.MODERN_CLOCK)
+                .pattern(" 1 ")
+                .pattern("121")
+                .pattern(" 1 ")
+                .input('1', concreteBlack)
+                .input('2', clock)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(clock), conditionsFromItem(clock))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.MODERN_LIGHT, 4)
                 .pattern("121")
                 .input('1', concreteBlack)
@@ -529,20 +610,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(carpetBlack), conditionsFromItem(carpetBlack))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.PC)
-                .pattern("114")
-                .pattern("322")
-                .pattern("111")
-                .input('1', concreteBlack)
-                .input('2', endCrystal)
-                .input('3', redstone)
-                .input('4', buttonStone)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(buttonStone), conditionsFromItem(buttonStone))
-                .offerTo(recipeExporter);
-
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.PC_TOWER_GLASS)
                 .pattern("21")
                 .pattern("21")
@@ -569,6 +636,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("1 1")
                 .input('1', ironIngot)
                 .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.PSU)
+                .pattern("111")
+                .pattern("321")
+                .input('1', concreteBlack)
+                .input('2', endCrystal)
+                .input('3', redstoneComparator)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
+                .criterion(hasItem(redstoneComparator), conditionsFromItem(redstoneComparator))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.RAM, 2)
+                .pattern("211")
+                .pattern("333")
+                .input('1', concreteBlack)
+                .input('2', ironIngot)
+                .input('3', redstone)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
+                .criterion(hasItem(redstone), conditionsFromItem(redstone))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.SHOWER)

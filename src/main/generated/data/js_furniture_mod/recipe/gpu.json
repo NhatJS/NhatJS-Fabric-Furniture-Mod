@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:light_gray_concrete"
+    },
+    "2": {
+      "item": "minecraft:end_crystal"
+    },
+    "3": {
+      "item": "js_furniture_mod:computer_fan"
+    }
+  },
+  "pattern": [
+    "111",
+    "333",
+    "121"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:gpu"
+  }
+}

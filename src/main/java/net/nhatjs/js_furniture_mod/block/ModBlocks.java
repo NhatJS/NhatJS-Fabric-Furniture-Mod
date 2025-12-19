@@ -10,6 +10,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
+import net.nhatjs.js_furniture_mod.block.added.*;
 
 import static net.nhatjs.js_furniture_mod.NhatJSFurnitureMod.MOD_ID;
 
@@ -210,6 +211,33 @@ public class ModBlocks {
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
     public static Block WOOD_MEDIUM_KITCHEN_DRAWERS_B = registerBlock("wood_medium_kitchen_drawers_b",
             new KitchenBottomBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque()));
+    //end
+
+    //1.0.5 update - cannot be used for creative tab
+    public static Block COMPUTER_CASE = registerBlock("computer_case",
+            new ComputerCaseBlock(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_1 = registerBlock("pc_added_1",
+            new PCAdded1Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_2 = registerBlock("pc_added_2",
+            new PCAdded2Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_3 = registerBlock("pc_added_3",
+            new PCAdded3Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_4 = registerBlock("pc_added_4",
+            new PCAdded4Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_5 = registerBlock("pc_added_5",
+            new PCAdded5Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_6 = registerBlock("pc_added_6",
+            new PCAdded6Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_7 = registerBlock("pc_added_7",
+            new PCAdded7Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_8 = registerBlock("pc_added_8",
+            new PCAdded8Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_9 = registerBlock("pc_added_9",
+            new PCAdded9Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_10 = registerBlock("pc_added_10",
+            new PCAdded10Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
+    public static Block PC_ADDED_11 = registerBlock("pc_added_11",
+            new PCAdded11Block(AbstractBlock.Settings.create().strength(0.75f).nonOpaque()));
     //end
 
     //unsure

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:black_concrete"
+    },
+    "2": {
+      "item": "js_furniture_mod:computer_fan"
+    },
+    "3": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "111",
+    "222",
+    "3  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:aio_cooler"
+  }
+}

@@ -1,5 +1,12 @@
 {
   "item.js_furniture_mod.remote_control_rgb": "Remote Control RGB",
+  "item.js_furniture_mod.cpu": "CPU",
+  "item.js_furniture_mod.mainboard": "Mainboard",
+  "item.js_furniture_mod.ram": "RAM",
+  "item.js_furniture_mod.aio_cooler": "AIO Cooler",
+  "item.js_furniture_mod.computer_fan": "Computer Fan",
+  "item.js_furniture_mod.gpu": "GPU",
+  "item.js_furniture_mod.psu": "PSU",
 
   "block.js_furniture_mod.wood_chair": "Light Wood Chair",
   "block.js_furniture_mod.wood_medium_chair": "Medium Wood Chair",
@@ -95,6 +102,7 @@
   "block.js_furniture_mod.washing_machine_ai": "Washing Machine AI",
   "block.js_furniture_mod.plant_pot": "Plant Pot",
   "block.js_furniture_mod.books": "Books",
+  "block.js_furniture_mod.computer_case": "Computer Case",
 
   "itemgroup.js_furniture_mod.js_furniture_tab": "NhatJS's Furniture Mod"
 }

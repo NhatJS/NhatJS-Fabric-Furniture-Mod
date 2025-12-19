@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:black_concrete"
+    },
+    "2": {
+      "item": "minecraft:end_crystal"
+    },
+    "3": {
+      "item": "minecraft:comparator"
+    }
+  },
+  "pattern": [
+    "111",
+    "321"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:psu"
+  }
+}
