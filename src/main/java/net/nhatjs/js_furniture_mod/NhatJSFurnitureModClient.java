@@ -129,6 +129,21 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B, RenderLayer.getCutoutMipped());
         //end
 
+        //1.0.5 update
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COMPUTER_CASE, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_1, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_2, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_3, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_4, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_5, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_6, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_7, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_8, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_9, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_10, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PC_ADDED_11, RenderLayer.getCutoutMipped());
+        //end
+
         ModelLoadingPlugin.register(ctx -> ctx.addModels(CEILING_FAN_BLADES_ID, CEILING_FAN_BLADES_B_ID));
     }
 }

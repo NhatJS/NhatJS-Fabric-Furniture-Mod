@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:gray_concrete",
+    "2": "minecraft:end_crystal"
+  },
+  "pattern": [
+    "111",
+    "121",
+    "111"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:mainboard"
+  }
+}
