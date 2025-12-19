@@ -117,5 +117,20 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP);
         addDrop(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B);
         //end
+
+        //1.0.5 update
+        addDrop(ModBlocks.COMPUTER_CASE);
+        addDrop(ModBlocks.PC_ADDED_1);
+        addDrop(ModBlocks.PC_ADDED_2);
+        addDrop(ModBlocks.PC_ADDED_3);
+        addDrop(ModBlocks.PC_ADDED_4);
+        addDrop(ModBlocks.PC_ADDED_5);
+        addDrop(ModBlocks.PC_ADDED_6);
+        addDrop(ModBlocks.PC_ADDED_7);
+        addDrop(ModBlocks.PC_ADDED_8);
+        addDrop(ModBlocks.PC_ADDED_9);
+        addDrop(ModBlocks.PC_ADDED_10);
+        addDrop(ModBlocks.PC_ADDED_11);
+        //end
     }
 }

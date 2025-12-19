@@ -134,6 +134,21 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B, BlockRenderLayer.CUTOUT_MIPPED);
         //end
 
+        //1.0.5 update
+        BlockRenderLayerMap.putBlock(ModBlocks.COMPUTER_CASE, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_1, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_2, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_3, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_4, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_5, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_6, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_7, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_8, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_9, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_10, BlockRenderLayer.CUTOUT_MIPPED);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_11, BlockRenderLayer.CUTOUT_MIPPED);
+        //end
+
         ModelLoadingPlugin.register(ctx -> {
             ctx.addModel(CEILING_FAN_BLADES_ID, SimpleUnbakedExtraModel.blockStateModel(CEILING_FAN_BLADES));
             ctx.addModel(CEILING_FAN_BLADES_B_ID, SimpleUnbakedExtraModel.blockStateModel(CEILING_FAN_BLADES_B));
