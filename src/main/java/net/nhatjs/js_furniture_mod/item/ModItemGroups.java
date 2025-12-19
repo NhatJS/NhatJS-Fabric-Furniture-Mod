@@ -109,6 +109,14 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PLANT_POT);
                         entries.add(ModBlocks.BOOKS);
                         entries.add(ModItems.REMOTE_CONTROL_RGB);
+                        entries.add(ModBlocks.COMPUTER_CASE); //1.0.5 update
+                        entries.add(ModItems.CPU); //1.0.5 update
+                        entries.add(ModItems.MAINBOARD); //1.0.5 update
+                        entries.add(ModItems.RAM); //1.0.5 update
+                        entries.add(ModItems.AIO_COOLER); //1.0.5 update
+                        entries.add(ModItems.COMPUTER_FAN); //1.0.5 update
+                        entries.add(ModItems.GPU); //1.0.5 update
+                        entries.add(ModItems.PSU); //1.0.5 update
                     }).build());
 
     public static void registerItemGroups() {

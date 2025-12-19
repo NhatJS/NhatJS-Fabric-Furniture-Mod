@@ -3,6 +3,7 @@ package net.nhatjs.js_furniture_mod;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.nhatjs.js_furniture_mod.datagen.ModLootTableProvider;
+import net.nhatjs.js_furniture_mod.datagen.ModModelProvider;
 import net.nhatjs.js_furniture_mod.datagen.ModRecipeProvider;
 
 public class NhatJSFurnitureModDataGenerator implements DataGeneratorEntrypoint {
@@ -12,5 +13,6 @@ public class NhatJSFurnitureModDataGenerator implements DataGeneratorEntrypoint 
 
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModModelProvider::new);
 	}
 }
