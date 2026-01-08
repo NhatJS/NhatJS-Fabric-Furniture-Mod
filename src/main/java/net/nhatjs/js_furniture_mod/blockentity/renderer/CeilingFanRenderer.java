@@ -9,14 +9,18 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.command.ModelCommandRenderer;
 import net.minecraft.client.render.command.OrderedRenderCommandQueue;
+import net.minecraft.client.render.model.BlockStateModel;
 import net.minecraft.client.render.state.CameraRenderState;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.nhatjs.js_furniture_mod.NhatJSFurnitureModClient;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
 import net.nhatjs.js_furniture_mod.blockentity.client.CeilingFanBlockEntity;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Function;
 
 @Environment(EnvType.CLIENT)
 public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEntity, CeilingFanRenderState> {
@@ -61,8 +65,8 @@ public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEn
                        CameraRenderState cameraState) {
         if (state.blockState == null || state.pos == null) return;
 
-        BlockState blades_black = ModBlocks.CEILING_FAN_BLADES.getDefaultState();
-        BlockState blades_white = ModBlocks.CEILING_FAN_BLADES_B.getDefaultState();
+        BlockStateModel blades_black = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_ID);
+        BlockStateModel blades_white = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_B_ID);
 
         ms.push();
         try {
@@ -78,11 +82,15 @@ public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEn
                 alpha = 1.0f - (blur * 0.4f);
             }
 
+            Function<BlockRenderLayer, RenderLayer> layerMapper = (ignored) -> RenderLayers.cutout();
+
             if (state.blockState.getBlock() == ModBlocks.CEILING_FAN) {
-                queue.submitBlock(ms, blades_black, state.light, state.overlay, 0);
+                queue.submitBlockStateModel(ms, layerMapper, blades_black, 1f, 1f, 1f, state.light,
+                        state.overlay, 0, mc.world, state.pos, state.blockState);
             }
             else if (state.blockState.getBlock() == ModBlocks.CEILING_FAN_B) {
-                queue.submitBlock(ms, blades_white, state.light, state.overlay, 0);
+                queue.submitBlockStateModel(ms, layerMapper, blades_white, 1f, 1f, 1f, state.light,
+                        state.overlay, 0, mc.world, state.pos, state.blockState);
             }
         } finally {
             ms.pop();

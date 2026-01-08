@@ -1,10 +1,15 @@
 package net.nhatjs.js_furniture_mod;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.model.loading.v1.ExtraModelKey;
+import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
+import net.fabricmc.fabric.api.client.model.loading.v1.SimpleUnbakedExtraModel;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.model.BlockStateModel;
+import net.minecraft.util.Identifier;
 import net.nhatjs.js_furniture_mod.block.ModBlocks;
 import net.nhatjs.js_furniture_mod.blockentity.ModBlockEntities;
 import net.nhatjs.js_furniture_mod.blockentity.renderer.CeilingFanRenderer;
@@ -13,6 +18,11 @@ import net.nhatjs.js_furniture_mod.entity.ModEntities;
 import net.nhatjs.js_furniture_mod.entity.renderer.SeatRenderer;
 
 public class NhatJSFurnitureModClient implements ClientModInitializer {
+    public static final Identifier CEILING_FAN_BLADES = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades");
+    public static final ExtraModelKey<BlockStateModel> CEILING_FAN_BLADES_ID = ExtraModelKey.<BlockStateModel>create(CEILING_FAN_BLADES::toString);
+    public static final Identifier CEILING_FAN_BLADES_B = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/ceiling_fan_blades_b");
+    public static final ExtraModelKey<BlockStateModel> CEILING_FAN_BLADES_B_ID = ExtraModelKey.<BlockStateModel>create(CEILING_FAN_BLADES_B::toString);
+
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_CHAIR, BlockRenderLayer.CUTOUT);
@@ -118,10 +128,30 @@ public class NhatJSFurnitureModClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS, BlockRenderLayer.TRIPWIRE);
+        BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B, BlockRenderLayer.CUTOUT);
         //end
+
+        //1.0.5 update
+        BlockRenderLayerMap.putBlock(ModBlocks.COMPUTER_CASE, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_1, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_2, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_3, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_4, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_5, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_6, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_7, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_8, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_9, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_10, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PC_ADDED_11, BlockRenderLayer.CUTOUT);
+        //end
+
+        ModelLoadingPlugin.register(ctx -> {
+            ctx.addModel(CEILING_FAN_BLADES_ID, SimpleUnbakedExtraModel.blockStateModel(CEILING_FAN_BLADES));
+            ctx.addModel(CEILING_FAN_BLADES_B_ID, SimpleUnbakedExtraModel.blockStateModel(CEILING_FAN_BLADES_B));
+        });
     }
 }
