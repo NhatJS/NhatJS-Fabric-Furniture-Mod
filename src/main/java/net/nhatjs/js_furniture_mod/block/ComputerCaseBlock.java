@@ -17,7 +17,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.nhatjs.js_furniture_mod.item.ModItems;
+import net.nhatjs.js_furniture_mod.core.ModBlocks;
+import net.nhatjs.js_furniture_mod.core.ModItems;
 
 public class ComputerCaseBlock extends Block{
     public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;

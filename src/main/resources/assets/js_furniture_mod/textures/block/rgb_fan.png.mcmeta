@@ -1,8 +1,4 @@
 {
-  "fusion": {
-    "emissive": true,
-    "render_type": "cutout"
-  },
   "animation": {
     "frametime": 20,
     "interpolate": true,

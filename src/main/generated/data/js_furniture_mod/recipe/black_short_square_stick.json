@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:black_square_stick"
+  },
+  "pattern": [
+    "1"
+  ],
+  "result": {
+    "count": 2,
+    "id": "js_furniture_mod:black_short_square_stick"
+  }
+}

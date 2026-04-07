@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "js_furniture_mod:wood_light_desk"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood_light_drawer_single": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:wood_light_drawer_single"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wood_light_panel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:wood_light_panel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wood_light_square_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:wood_light_square_stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wood_light_square_stick",
+      "has_wood_light_panel",
+      "has_wood_light_drawer_single"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "js_furniture_mod:wood_light_desk"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:wood_light_square_stick"
+  },
+  "pattern": [
+    "1  ",
+    "111",
+    "1 1"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:wood_light_chair"
+  }
+}

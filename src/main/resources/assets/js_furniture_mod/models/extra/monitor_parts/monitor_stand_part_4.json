@@ -1,0 +1,19 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "js_furniture_mod:block/monitor_stand",
+		"particle": "js_furniture_mod:block/monitor_stand"
+	},
+	"elements": [
+		{
+			"from": [7.51875, 0, 5.76864],
+			"to": [8.48125, 0, 10.23137],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"down": {"uv": [6.3125, 10.125, 14.0625, 11.75], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

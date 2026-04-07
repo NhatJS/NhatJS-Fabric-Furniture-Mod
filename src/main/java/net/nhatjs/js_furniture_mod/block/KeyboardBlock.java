@@ -3,18 +3,13 @@ package net.nhatjs.js_furniture_mod.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.nhatjs.js_furniture_mod.block.core.FurnitureHorizontalBlock;
 
-public class KeyboardBlock extends Block {
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
-
+public class KeyboardBlock extends FurnitureHorizontalBlock {
     public KeyboardBlock(Settings settings) {
         super(settings);
     }
@@ -22,16 +17,11 @@ public class KeyboardBlock extends Block {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
-            default -> Block.createCuboidShape(3.5, 0, 6, 12.5, 0.3, 10);
-            case SOUTH -> Block.createCuboidShape(3.5, 0, 6, 12.5, 0.3, 10);
-            case EAST -> Block.createCuboidShape(6, 0, 3.5, 10, 0.3, 12.5);
-            case WEST -> Block.createCuboidShape(6, 0, 3.5, 10, 0.3, 12.5);
+            default -> Block.createCuboidShape(3.0375, 0, 6.175, 12.9625, 0.275, 9.825);
+            case SOUTH -> Block.createCuboidShape(3.0375, 0, 6.175, 12.9625, 0.275, 9.825);
+            case EAST -> Block.createCuboidShape(6.175, 0, 3.0375, 9.825, 0.275, 12.9625);
+            case WEST -> Block.createCuboidShape(6.175, 0, 3.0375, 9.825, 0.275, 12.9625);
         };
-    }
-
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     @Override

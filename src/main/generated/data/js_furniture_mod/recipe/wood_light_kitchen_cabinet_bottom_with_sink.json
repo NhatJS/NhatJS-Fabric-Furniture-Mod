@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:kitchen_cabinet_bottom",
+    "2": "minecraft:bucket"
+  },
+  "pattern": [
+    "2",
+    "1"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:wood_light_kitchen_cabinet_bottom_with_sink"
+  }
+}

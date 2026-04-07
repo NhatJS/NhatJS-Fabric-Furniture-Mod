@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,turn_on=false": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2",
+      "y": 90
+    },
+    "facing=east,turn_on=true": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2_on",
+      "y": 90
+    },
+    "facing=north,turn_on=false": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2"
+    },
+    "facing=north,turn_on=true": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2_on"
+    },
+    "facing=south,turn_on=false": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2",
+      "y": 180
+    },
+    "facing=south,turn_on=true": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2_on",
+      "y": 180
+    },
+    "facing=west,turn_on=false": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2",
+      "y": 270
+    },
+    "facing=west,turn_on=true": {
+      "model": "js_furniture_mod:block/midi_standalone_groovebox_2_on",
+      "y": 270
+    }
+  }
+}

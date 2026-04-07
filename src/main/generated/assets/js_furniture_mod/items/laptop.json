@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "js_furniture_mod:block/laptop_opened_off"
+    "model": "js_furniture_mod:item/laptop"
   }
 }

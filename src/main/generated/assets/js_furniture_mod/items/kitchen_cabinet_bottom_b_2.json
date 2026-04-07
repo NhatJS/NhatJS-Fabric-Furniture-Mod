@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "js_furniture_mod:block/light_wood_kitchen_cabinet_bottom_b_2"
+    "model": "js_furniture_mod:item/kitchen_cabinet_bottom_b_2"
   }
 }
