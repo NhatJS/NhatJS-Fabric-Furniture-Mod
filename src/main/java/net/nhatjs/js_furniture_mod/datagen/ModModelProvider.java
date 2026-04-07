@@ -233,7 +233,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_TOP_B.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_top_b")), empty));
         itemModelGenerator.register(ModBlocks.KITCHEN_DRAWERS.asItem(), new Model(Optional.of(id("wood_light_kitchen_drawers")), empty));
         itemModelGenerator.register(ModBlocks.KITCHEN_DRAWERS_B.asItem(), new Model(Optional.of(id("wood_light_kitchen_drawers_b")), empty));
-        itemModelGenerator.register(ModBlocks.LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND.asItem(), new Model(Optional.of(id("laptop_opened_on_portable_laptop_stand")), empty));
+        itemModelGenerator.register(ModBlocks.LAPTOP.asItem(), new Model(Optional.of(id("laptop_opened_off")), empty));
+        itemModelGenerator.register(ModBlocks.LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND.asItem(), new Model(Optional.of(id("laptop_opened_off_portable_laptop_stand")), empty));
         itemModelGenerator.register(ModBlocks.VERTICAL_BLINDS.asItem(), new Model(Optional.of(id("white_vertical_blinds")), empty));
         itemModelGenerator.register(ModBlocks.WOOD_3_DRAWER_DRESSER.asItem(), new Model(Optional.of(id("wood_light_3_drawer_dresser")), empty));
         itemModelGenerator.register(ModBlocks.WOOD_CHAIR.asItem(), new Model(Optional.of(id("wood_light_chair")), empty));

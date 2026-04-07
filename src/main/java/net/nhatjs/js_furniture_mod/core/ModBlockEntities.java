@@ -56,7 +56,7 @@ public class ModBlockEntities {
                     ModBlocks.LAPTOP,
                     ModBlocks.LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND).build(null));
 
-        public static final BlockEntityType<MonitorBlockEntity> MONITOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+    public static final BlockEntityType<MonitorBlockEntity> MONITOR = Registry.register(Registries.BLOCK_ENTITY_TYPE,
             Identifier.of(NhatJSFurnitureMod.MOD_ID, "monitor"),
             FabricBlockEntityTypeBuilder.create(MonitorBlockEntity::new,
                     ModBlocks.MONITOR,
