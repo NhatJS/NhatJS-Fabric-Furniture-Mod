@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "js_furniture_mod:black_short_square_stick"
+    },
+    "2": {
+      "item": "js_furniture_mod:black_panel"
+    }
+  },
+  "pattern": [
+    "22",
+    "11"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:black_coffee_table"
+  }
+}

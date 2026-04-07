@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:jungle_planks"
+    },
+    "2": {
+      "item": "minecraft:chest"
+    }
+  },
+  "pattern": [
+    "121"
+  ],
+  "result": {
+    "count": 3,
+    "id": "js_furniture_mod:wood_medium_drawer_single"
+  }
+}

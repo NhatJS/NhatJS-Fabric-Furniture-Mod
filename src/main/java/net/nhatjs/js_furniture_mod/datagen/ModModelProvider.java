@@ -4,12 +4,16 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureMod;
-import net.nhatjs.js_furniture_mod.block.ModBlocks;
-import net.nhatjs.js_furniture_mod.item.ModItems;
+import net.nhatjs.js_furniture_mod.block.*;
+import net.nhatjs.js_furniture_mod.core.ModBlocks;
+import net.nhatjs.js_furniture_mod.core.ModItems;
 
 import java.util.Optional;
 
@@ -20,11 +24,27 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_COMPARTMENT_STORAGE_CABINET);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_COMPUTER_MOUSE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_3_DRAWER_DRESSER);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_CHAIR);
+        registerSimpleState(blockStateModelGenerator, ModBlocks.BLACK_CEILING_FAN_BLACK, id("ceiling_fan_base_black"));
+        registerSimpleState(blockStateModelGenerator, ModBlocks.BLACK_CEILING_FAN_WHITE, id("ceiling_fan_base_white"));
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_COFFEE_TABLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_DESK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_DESK_COLUMN);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_DRAWER_SINGLE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_GAMING_CHAIR);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_KEYBOARD);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_MIRROR);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_STANDING_DESK);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_STANDING_DESK_B);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_TABLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BLACK_TV_STAND);
+
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.BLACK_VERTICAL_BLINDS,
+                VerticalBlindsBlock.TURN_ON, id("black_vertical_blinds"), id("black_vertical_blinds_open"));
+
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BOOKS);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.COMPUTER_CASE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.COMPUTER_MOUSE);
@@ -33,22 +53,52 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.FRIDGE_A);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.FRIDGE_B);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.KEYBOARD);
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM, "light_wood_kitchen_cabinet_bottom");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_2, "light_wood_kitchen_cabinet_bottom_2");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_2_EXTRA, "light_wood_kitchen_cabinet_bottom_2_extra");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_B, "light_wood_kitchen_cabinet_bottom_b");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_B_2, "light_wood_kitchen_cabinet_bottom_b_2");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_B_WITH_SINK, "light_wood_kitchen_cabinet_bottom_b_with_sink");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK, "light_wood_kitchen_cabinet_bottom_with_sink");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_TOP, "light_wood_kitchen_cabinet_top");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_TOP_B, "light_wood_kitchen_cabinet_top_b");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_DRAWERS, "light_wood_kitchen_drawers");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.KITCHEN_DRAWERS_B, "light_wood_kitchen_drawers_b");
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM, id("wood_light_kitchen_cabinet_bottom"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_2, id("wood_light_kitchen_cabinet_bottom_2"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_2_EXTRA, id("wood_light_kitchen_cabinet_bottom_2_extra"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_B, id("wood_light_kitchen_cabinet_bottom_b"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_B_2, id("wood_light_kitchen_cabinet_bottom_b_2"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_B_WITH_SINK, id("wood_light_kitchen_cabinet_bottom_b_with_sink"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK, id("wood_light_kitchen_cabinet_bottom_with_sink"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_TOP, id("wood_light_kitchen_cabinet_top"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_CABINET_TOP_B, id("wood_light_kitchen_cabinet_top_b"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_DRAWERS, id("wood_light_kitchen_drawers"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.KITCHEN_DRAWERS_B, id("wood_light_kitchen_drawers_b"));
+
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.LED_FLOOR_LAMP,
+                LEDFloorLampBlock.TURN_ON, id("led_floor_lamp"), id("led_floor_lamp_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.LED_FLOOR_LAMP_RGB_OFF,
+                LEDFloorLampRGBBlock.TURN_ON, id("led_floor_lamp_rgb_off"), id("led_floor_lamp_rgb_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.LED_FLOOR_LAMP_RGB_OFF_2,
+                LEDFloorLampRGBAltBlock.TURN_ON, id("led_floor_lamp_rgb_off_2"), id("led_floor_lamp_rgb_on_2"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.LED_RGB_TRIANGLE_PANEL,
+                LEDRGBTrianglePanelBlock.TURN_ON, id("led_rgb_triangle_panel"), id("led_rgb_triangle_panel_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.MIDI_KEYBOARD_CONTROLLER,
+                MIDIKeyboardBlock.TURN_ON, id("midi_keyboard_controller"), id("midi_keyboard_controller_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.MIDI_STANDALONE_GROOVEBOX,
+                GrooveboxBlock.TURN_ON, id("midi_standalone_groovebox"), id("midi_standalone_groovebox_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.MIDI_STANDALONE_GROOVEBOX_2,
+                Groovebox2Block.TURN_ON, id("midi_standalone_groovebox_2"), id("midi_standalone_groovebox_2_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.MIDI_STANDALONE_GROOVEBOX_3,
+                Groovebox3Block.TURN_ON, id("midi_standalone_groovebox_3"), id("midi_standalone_groovebox_3_on"));
+
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MODERN_BATHROOM_MIRROR_SHELF);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MODERN_BATHROOM_SINK_STORAGE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MODERN_CHAIR);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MODERN_CLOCK);
+
+        allDirectionWithCustomModelAndBoolean(blockStateModelGenerator, ModBlocks.MODERN_LIGHT,
+                Properties.FACING, ModernLightBlock.TURN_ON, id("modern_light"), id("modern_light_on"));
+
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MONITOR);
+
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.MONITOR_SETUP,
+                MonitorSetupBlock.TURN_ON, id("monitor_setup"), id("monitor_setup_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.PC,
+                DesktopBlock.TURN_ON, id("pc"), id("pc_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.PC_RGB1_OFF,
+                DesktopAltBlock.TURN_ON, id("pc_rgb1_off"), id("pc_rgb1_on"));
+
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PC_ADDED_1);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PC_ADDED_2);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PC_ADDED_3);
@@ -64,45 +114,94 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PLANT_POT);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PORTABLE_LAPTOP_STAND);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.SHOWER);
+
         allDirectionWithCustomModel(blockStateModelGenerator, ModBlocks.SOCKET, "socket");
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.TOILET);
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.STUDIO_LIGHT,
+                StudioLightBlock.TURN_ON, id("studio_light"), id("studio_light_on"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.TOILET,
+                ToiletBlock.OPEN, id("toilet"), id("toilet_open"));
+        registerTVStates(blockStateModelGenerator, ModBlocks.TV, Properties.HORIZONTAL_FACING,
+                TVBlock.MOUNT, id("tv"), id("tv_wall_mount"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.VERTICAL_BLINDS,
+                VerticalBlindsBlock.TURN_ON, id("white_vertical_blinds"), id("white_vertical_blinds_open"));
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.WASHING_MACHINE_AI,
+                WashingMachineBlock.TURN_ON, id("washing_machine_ai"), id("washing_machine_ai_open"));
+
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_COMPARTMENT_STORAGE_CABINET);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_3_DRAWER_DRESSER);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_CHAIR);
+        registerSimpleState(blockStateModelGenerator, ModBlocks.WHITE_CEILING_FAN_BLACK, id("ceiling_fan_base_black"));
+        registerSimpleState(blockStateModelGenerator, ModBlocks.WHITE_CEILING_FAN_WHITE, id("ceiling_fan_base_white"));
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_COFFEE_TABLE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_DESK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_DESK_COLUMN);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_DRAWER_SINGLE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_GAMING_CHAIR);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_STANDING_DESK);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_STANDING_DESK_B);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_TABLE);
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WHITE_TV_STAND, "tv_stand_2");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_3_DRAWER_DRESSER, "light_wood_3_drawer_dresser");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_CHAIR, "light_wood_chair");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_COFFEE_TABLE, "light_wood_coffee_table");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_DESK, "light_wood_desk");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_LIGHT_TABLE, "light_wood_table");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_LIGHT_TV_STAND, "light_wood_tv_stand");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_3_DRAWER_DRESSER, "medium_wood_3_drawer_dresser");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_CHAIR, "medium_wood_chair");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_COFFEE_TABLE, "medium_wood_coffee_table");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_DESK, "medium_wood_desk");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM, "medium_wood_kitchen_cabinet_bottom");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2, "medium_wood_kitchen_cabinet_bottom_2");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2_EXTRA, "medium_wood_kitchen_cabinet_bottom_2_extra");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B, "medium_wood_kitchen_cabinet_bottom_b");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2, "medium_wood_kitchen_cabinet_bottom_b_2");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK, "medium_wood_kitchen_cabinet_bottom_b_with_sink");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_WITH_SINK, "medium_wood_kitchen_cabinet_bottom_with_sink");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP, "medium_wood_kitchen_cabinet_top");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B, "medium_wood_kitchen_cabinet_top_b");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS, "medium_wood_kitchen_drawers");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B, "medium_wood_kitchen_drawers_b");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_STANDING_DESK, "medium_wood_standing_desk");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_STANDING_DESK_B, "medium_wood_standing_desk_b");
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WHITE_TV_STAND);
+
+        registerHorizontalWithBoolean(blockStateModelGenerator, ModBlocks.WHITE_VERTICAL_BLINDS,
+                VerticalBlindsBlock.TURN_ON, id("white_vertical_blinds"), id("white_vertical_blinds_open"));
+
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_COMPARTMENT_STORAGE_CABINET);
+        registerHorizontal(blockStateModelGenerator, ModBlocks.WOOD_3_DRAWER_DRESSER, id("wood_light_3_drawer_dresser"));
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_3_DRAWER_DRESSER);
+        registerHorizontal(blockStateModelGenerator, ModBlocks.WOOD_CHAIR, id("wood_light_chair"));
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_CHAIR);
+        registerSimpleState(blockStateModelGenerator, ModBlocks.WOOD_LIGHT_CEILING_FAN_BLACK, id("ceiling_fan_base_black"));
+        registerSimpleState(blockStateModelGenerator, ModBlocks.WOOD_LIGHT_CEILING_FAN_WHITE, id("ceiling_fan_base_white"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.WOOD_COFFEE_TABLE, id("wood_light_coffee_table"));
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_COFFEE_TABLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_DRAWER_SINGLE);
+        registerHorizontal(blockStateModelGenerator, ModBlocks.WOOD_DESK, id("wood_light_desk"));
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_DESK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_2);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_2_EXTRA);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B_2);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B_WITH_SINK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_WITH_SINK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_TOP);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_TOP_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_DRAWERS);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_KITCHEN_DRAWERS_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_STANDING_DESK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_STANDING_DESK_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_LIGHT_TABLE);
+        registerHorizontal(blockStateModelGenerator, ModBlocks.WOOD_LIGHT_TV_STAND, id("wood_light_tv_stand"));
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_COMPARTMENT_STORAGE_CABINET);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_3_DRAWER_DRESSER);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_CHAIR);
+        registerSimpleState(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_CEILING_FAN_BLACK, id("ceiling_fan_base_black"));
+        registerSimpleState(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_CEILING_FAN_WHITE, id("ceiling_fan_base_white"));
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_COFFEE_TABLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_DRAWER_SINGLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_DESK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2_EXTRA);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_WITH_SINK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_STANDING_DESK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_STANDING_DESK_B);
         horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_STRIPED_WALL, "medium_wood_striped_wall");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_TABLE, "medium_wood_table");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_MEDIUM_TV_STAND, "medium_wood_tv_stand");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_STANDING_DESK, "light_wood_standing_desk");
-        horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_STANDING_DESK_B, "light_wood_standing_desk_b");
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_TABLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.WOOD_MEDIUM_TV_STAND);
+        registerHorizontal(blockStateModelGenerator, ModBlocks.WOOD_STANDING_DESK, id("wood_light_standing_desk"));
+        registerHorizontal(blockStateModelGenerator, ModBlocks.WOOD_STANDING_DESK_B, id("wood_light_standing_desk_b"));
         horizontalWithCustomModel(blockStateModelGenerator, ModBlocks.WOOD_STRIPED_WALL, "light_wood_striped_wall");
     }
 
@@ -114,92 +213,37 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CPU, Models.GENERATED);
         itemModelGenerator.register(ModBlocks.BLACK_MIRROR.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModItems.MAINBOARD, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.MONITOR.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.MONITOR_SETUP.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModItems.RAM, Models.GENERATED);
         itemModelGenerator.register(ModItems.AIO_COOLER, Models.GENERATED);
         itemModelGenerator.register(ModItems.COMPUTER_FAN, Models.GENERATED);
         itemModelGenerator.register(ModItems.GPU, Models.GENERATED);
         itemModelGenerator.register(ModItems.PSU, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GARBAGE_ITEM, Models.GENERATED);
 
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_bottom")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_2.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_bottom_2")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_2_EXTRA.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_bottom_2_extra")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_bottom_b")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_B_2.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_bottom_b_2")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_B_WITH_SINK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_bottom_b_with_sink")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_bottom_with_sink")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_TOP.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_top")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_TOP_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_cabinet_top_b")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_DRAWERS.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_drawers")), empty));
-        itemModelGenerator.register(ModBlocks.KITCHEN_DRAWERS_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_kitchen_drawers_b")), empty));
-        itemModelGenerator.register(ModBlocks.WHITE_TV_STAND.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/tv_stand_2")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_3_DRAWER_DRESSER.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_3_drawer_dresser")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_CHAIR.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_chair")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_COFFEE_TABLE.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_coffee_table")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_DESK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_desk")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_LIGHT_TABLE.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_table")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_LIGHT_TV_STAND.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_tv_stand")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_3_DRAWER_DRESSER.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_3_drawer_dresser")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_CHAIR.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_chair")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_COFFEE_TABLE.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_coffee_table")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_DESK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_desk")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_bottom")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_bottom_2")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2_EXTRA.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_bottom_2_extra")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_bottom_b")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_bottom_b_2")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_bottom_b_with_sink")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_WITH_SINK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_bottom_with_sink")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_top")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_cabinet_top_b")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_drawers")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_kitchen_drawers_b")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_STANDING_DESK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_standing_desk")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_STANDING_DESK_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_standing_desk_b")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_bottom")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_2.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_bottom_2")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_2_EXTRA.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_bottom_2_extra")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_B.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_bottom_b")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_B_2.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_bottom_b_2")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_B_WITH_SINK.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_bottom_b_with_sink")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_bottom_with_sink")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_TOP.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_top")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_CABINET_TOP_B.asItem(), new Model(Optional.of(id("wood_light_kitchen_cabinet_top_b")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_DRAWERS.asItem(), new Model(Optional.of(id("wood_light_kitchen_drawers")), empty));
+        itemModelGenerator.register(ModBlocks.KITCHEN_DRAWERS_B.asItem(), new Model(Optional.of(id("wood_light_kitchen_drawers_b")), empty));
+        itemModelGenerator.register(ModBlocks.LAPTOP_CLOSED_PORTABLE_LAPTOP_STAND.asItem(), new Model(Optional.of(id("laptop_opened_on_portable_laptop_stand")), empty));
+        itemModelGenerator.register(ModBlocks.VERTICAL_BLINDS.asItem(), new Model(Optional.of(id("white_vertical_blinds")), empty));
+        itemModelGenerator.register(ModBlocks.WOOD_3_DRAWER_DRESSER.asItem(), new Model(Optional.of(id("wood_light_3_drawer_dresser")), empty));
+        itemModelGenerator.register(ModBlocks.WOOD_CHAIR.asItem(), new Model(Optional.of(id("wood_light_chair")), empty));
+        itemModelGenerator.register(ModBlocks.WOOD_COFFEE_TABLE.asItem(), new Model(Optional.of(id("wood_light_coffee_table")), empty));
+        itemModelGenerator.register(ModBlocks.WOOD_DESK.asItem(), new Model(Optional.of(id("wood_light_desk")), empty));
+        itemModelGenerator.register(ModBlocks.WOOD_LIGHT_TV_STAND.asItem(), new Model(Optional.of(id("wood_light_tv_stand")), empty));
         itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_STRIPED_WALL.asItem(),
                 new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_striped_wall")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_TABLE.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_table")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_MEDIUM_TV_STAND.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/medium_wood_tv_stand")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_STANDING_DESK.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_standing_desk")), empty));
-        itemModelGenerator.register(ModBlocks.WOOD_STANDING_DESK_B.asItem(),
-                new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_standing_desk_b")), empty));
+        itemModelGenerator.register(ModBlocks.WOOD_STANDING_DESK.asItem(), new Model(Optional.of(id("wood_light_standing_desk")), empty));
+        itemModelGenerator.register(ModBlocks.WOOD_STANDING_DESK_B.asItem(), new Model(Optional.of(id("wood_light_standing_desk_b")), empty));
         itemModelGenerator.register(ModBlocks.WOOD_STRIPED_WALL.asItem(),
                 new Model(Optional.of(Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/light_wood_striped_wall")), empty));
     }
@@ -214,6 +258,27 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(map));
     }
 
+    private void registerHorizontalWithBoolean(BlockStateModelGenerator blockStateModelGenerator, Block block,
+                                               BooleanProperty booleanProperty, Identifier modelBoolean, Identifier model) {
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateModelGenerator.createBooleanModelMap(booleanProperty, model, modelBoolean))
+                .coordinate(BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()));
+    }
+
+    private void registerHorizontal(BlockStateModelGenerator blockStateModelGenerator, Block block, Identifier model) {
+        BlockStateVariantMap map = BlockStateVariantMap.create(Properties.HORIZONTAL_FACING)
+                .register(Direction.NORTH,  BlockStateVariant.create().put(VariantSettings.MODEL, model))
+                .register(Direction.EAST,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .register(Direction.SOUTH,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.WEST,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R270));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(map));
+    }
+
+    private void registerSimpleState(BlockStateModelGenerator blockStateModelGenerator, Block block, Identifier model) {
+        BlockStateVariant map = BlockStateVariant.create().put(VariantSettings.MODEL, model);
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block, map));
+    }
+
     private void allDirectionWithCustomModel(BlockStateModelGenerator blockStateModelGenerator, Block block, String name) {
         Identifier model = Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/" + name);
         BlockStateVariantMap map = BlockStateVariantMap.create(Properties.FACING)
@@ -224,5 +289,41 @@ public class ModModelProvider extends FabricModelProvider {
                 .register(Direction.UP,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.X, VariantSettings.Rotation.R270))
                 .register(Direction.DOWN,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.X, VariantSettings.Rotation.R90));
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(map));
+    }
+
+    private void allDirectionWithCustomModelAndBoolean(BlockStateModelGenerator blockStateModelGenerator, Block block, DirectionProperty facing,
+                                                       BooleanProperty facingBoolean, Identifier model, Identifier modelBoolean) {
+        BlockStateVariantMap.DoubleProperty<Direction, Boolean> map = BlockStateVariantMap.create(facing, facingBoolean)
+                .register(Direction.NORTH, false,  BlockStateVariant.create().put(VariantSettings.MODEL, model))
+                .register(Direction.NORTH, true,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean))
+                .register(Direction.EAST, false,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .register(Direction.EAST, true,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .register(Direction.SOUTH, false,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.SOUTH, true,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.WEST, false,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                .register(Direction.WEST, true,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                .register(Direction.UP, false,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.X, VariantSettings.Rotation.R270))
+                .register(Direction.UP, true,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.X, VariantSettings.Rotation.R270))
+                .register(Direction.DOWN, false,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.X, VariantSettings.Rotation.R90))
+                .register(Direction.DOWN, true,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.X, VariantSettings.Rotation.R90));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(map));
+    }
+
+    private void registerTVStates(BlockStateModelGenerator blockStateModelGenerator, Block block, DirectionProperty facing,
+                                  EnumProperty<TVBlock.Mount> facingBoolean, Identifier model, Identifier modelBoolean) {
+        BlockStateVariantMap.DoubleProperty<Direction, TVBlock.Mount> map = BlockStateVariantMap.create(facing, facingBoolean)
+                .register(Direction.NORTH, TVBlock.Mount.STAND,  BlockStateVariant.create().put(VariantSettings.MODEL, model))
+                .register(Direction.NORTH, TVBlock.Mount.WALL,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean))
+                .register(Direction.EAST, TVBlock.Mount.STAND,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .register(Direction.EAST, TVBlock.Mount.WALL,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .register(Direction.SOUTH, TVBlock.Mount.STAND,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.SOUTH, TVBlock.Mount.WALL,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.WEST, TVBlock.Mount.STAND,  BlockStateVariant.create().put(VariantSettings.MODEL, model).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                .register(Direction.WEST, TVBlock.Mount.WALL,  BlockStateVariant.create().put(VariantSettings.MODEL, modelBoolean).put(VariantSettings.Y, VariantSettings.Rotation.R270));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(map));
+    }
+
+    public static Identifier id(String path) {
+        return Identifier.of(NhatJSFurnitureMod.MOD_ID, "block/" + path);
     }
 }

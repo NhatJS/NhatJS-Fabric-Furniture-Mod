@@ -1,0 +1,65 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "js_furniture_mod:block/laptop_keyboard_emissive",
+		"1": "js_furniture_mod:block/display_screen",
+		"2": "js_furniture_mod:block/rgb",
+		"particle": "js_furniture_mod:block/laptop_keyboard_emissive"
+	},
+	"elements": [
+		{
+			"from": [1.98275, 0.8592, 3.17418],
+			"to": [14.01725, 0.8592, 12.18593],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2.54081, 8.17939]},
+			"faces": {
+				"up": {"uv": [15.9375, 11.9375, 0.0625, 0.0625], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3.4235, 0.75972, 11.99599],
+			"to": [12.5765, 0.85619, 12.18593],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2.54081, 8.17939]},
+			"faces": {
+				"south": {"uv": [0, 0, 8.11875, 0.27321], "texture": "#2"},
+				"up": {"uv": [0, 0, 8.11875, 0.6375], "texture": "#2"}
+			}
+		},
+		{
+			"from": [1.9771, 0.43244, 3.17418],
+			"to": [14.0229, 0.54544, 4.75618],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2.54081, 8.17939]},
+			"faces": {
+				"north": {"uv": [0, 0, 13.5792, 0.61875], "texture": "#2"},
+				"east": {"uv": [0, 0, 1.78339, 0.61875], "texture": "#2"},
+				"west": {"uv": [13.57443, 0, 15.35781, 0.61875], "texture": "#2"}
+			}
+		},
+		{
+			"from": [1.98716, 2.16689, 11.6837],
+			"to": [14.01284, 2.47596, 11.6837],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 2.54081, 8.17939]},
+			"faces": {
+				"north": {"uv": [0.0625, 12.1875, 15.9375, 12.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "screen",
+			"from": [2.186, 3.1739, 11.6918],
+			"to": [13.839, 10.53169, 11.6918],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 2.54081, 8.17939]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 9], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "LED",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
+}

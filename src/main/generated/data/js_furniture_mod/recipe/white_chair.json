@@ -3,19 +3,16 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:white_concrete"
-    },
-    "2": {
-      "item": "minecraft:white_wool"
+      "item": "js_furniture_mod:white_square_stick"
     }
   },
   "pattern": [
-    "2  ",
-    "122",
+    "1  ",
+    "111",
     "1 1"
   ],
   "result": {
-    "count": 4,
+    "count": 1,
     "id": "js_furniture_mod:white_chair"
   }
 }

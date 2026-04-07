@@ -1,24 +1,10 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "1": {
-      "item": "minecraft:jungle_planks"
-    },
-    "2": {
-      "item": "minecraft:chest"
-    },
-    "3": {
-      "item": "minecraft:white_concrete"
-    }
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "js_furniture_mod:wood_medium_panel"
   },
-  "pattern": [
-    "333",
-    "111",
-    "121"
-  ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "js_furniture_mod:wood_medium_kitchen_cabinet_bottom_b"
   }
 }

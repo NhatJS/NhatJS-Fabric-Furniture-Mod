@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "js_furniture_mod:wood_medium_panel"
+  },
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:wood_medium_compartment_storage_cabinet"
+  }
+}

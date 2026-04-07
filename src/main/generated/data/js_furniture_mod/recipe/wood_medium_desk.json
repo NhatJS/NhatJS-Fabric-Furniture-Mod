@@ -3,19 +3,22 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:jungle_planks"
+      "item": "js_furniture_mod:wood_medium_square_stick"
     },
     "2": {
-      "item": "minecraft:chest"
+      "item": "js_furniture_mod:wood_medium_panel"
+    },
+    "3": {
+      "item": "js_furniture_mod:wood_medium_drawer_single"
     }
   },
   "pattern": [
-    "121",
-    "1 1",
-    "1 1"
+    "22",
+    "33",
+    "11"
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "js_furniture_mod:wood_medium_desk"
   }
 }

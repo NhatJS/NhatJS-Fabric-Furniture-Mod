@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "js_furniture_mod:wood_light_panel"
+  },
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:wood_light_kitchen_cabinet_bottom_b_2"
+  }
+}

@@ -3,22 +3,18 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:black_concrete"
+      "item": "js_furniture_mod:wood_medium_panel"
     },
     "2": {
-      "item": "minecraft:jungle_planks"
+      "item": "js_furniture_mod:black_desk_column"
     },
     "3": {
-      "item": "minecraft:redstone"
-    },
-    "4": {
-      "item": "minecraft:lever"
+      "item": "js_furniture_mod:black_square_stick"
     }
   },
   "pattern": [
-    "222",
-    "334",
-    "1 1"
+    "111",
+    "232"
   ],
   "result": {
     "count": 1,

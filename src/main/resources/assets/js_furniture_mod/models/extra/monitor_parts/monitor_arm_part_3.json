@@ -1,0 +1,20 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "js_furniture_mod:block/monitor_arm",
+		"particle": "js_furniture_mod:block/monitor_arm"
+	},
+	"elements": [
+		{
+			"from": [7.3876, 0, 8.0005],
+			"to": [8.6124, 9.9, 7.9995],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 4.95, 8]},
+			"faces": {
+				"north": {"uv": [2.125, 0.1875, 0.1875, 15.75], "texture": "#0"},
+				"south": {"uv": [0.1875, 0.1875, 2.125, 15.75], "texture": "#0"}
+			}
+		}
+	]
+}

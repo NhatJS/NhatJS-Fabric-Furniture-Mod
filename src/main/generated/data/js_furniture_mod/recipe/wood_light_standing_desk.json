@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "js_furniture_mod:wood_light_panel"
+    },
+    "2": {
+      "item": "js_furniture_mod:black_desk_column"
+    },
+    "3": {
+      "item": "js_furniture_mod:black_square_stick"
+    }
+  },
+  "pattern": [
+    "111",
+    "232"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:wood_light_standing_desk"
+  }
+}

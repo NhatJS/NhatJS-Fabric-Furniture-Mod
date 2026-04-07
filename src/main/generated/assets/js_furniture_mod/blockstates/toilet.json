@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,open=false": {
       "model": "js_furniture_mod:block/toilet",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,open=true": {
+      "model": "js_furniture_mod:block/toilet_open",
+      "y": 90
+    },
+    "facing=north,open=false": {
       "model": "js_furniture_mod:block/toilet"
     },
-    "facing=south": {
+    "facing=north,open=true": {
+      "model": "js_furniture_mod:block/toilet_open"
+    },
+    "facing=south,open=false": {
       "model": "js_furniture_mod:block/toilet",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,open=true": {
+      "model": "js_furniture_mod:block/toilet_open",
+      "y": 180
+    },
+    "facing=west,open=false": {
       "model": "js_furniture_mod:block/toilet",
+      "y": 270
+    },
+    "facing=west,open=true": {
+      "model": "js_furniture_mod:block/toilet_open",
       "y": 270
     }
   }

@@ -1,0 +1,7 @@
+{
+	"parent": "js_furniture_mod:type/kitchen_drawers_b",
+	"textures": {
+		"2": "js_furniture_mod:block/light_wood",
+		"particle": "js_furniture_mod:block/light_wood"
+	}
+}

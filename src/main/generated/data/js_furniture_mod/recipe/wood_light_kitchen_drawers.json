@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "js_furniture_mod:wood_light_kitchen_compartment_storage_cabinet"
+    },
+    "2": {
+      "item": "js_furniture_mod:wood_light_drawer_single"
+    }
+  },
+  "pattern": [
+    " 2",
+    "12",
+    " 2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:wood_light_kitchen_drawers"
+  }
+}

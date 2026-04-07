@@ -3,15 +3,18 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:jungle_planks"
+      "item": "js_furniture_mod:wood_medium_short_square_stick"
+    },
+    "2": {
+      "item": "js_furniture_mod:wood_medium_panel"
     }
   },
   "pattern": [
-    "111",
-    "1 1"
+    "22",
+    "11"
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "js_furniture_mod:wood_medium_coffee_table"
   }
 }

@@ -2,11 +2,7 @@ package net.nhatjs.js_furniture_mod;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.nhatjs.js_furniture_mod.block.ModBlocks;
-import net.nhatjs.js_furniture_mod.blockentity.ModBlockEntities;
-import net.nhatjs.js_furniture_mod.entity.ModEntities;
-import net.nhatjs.js_furniture_mod.item.ModItemGroups;
-import net.nhatjs.js_furniture_mod.item.ModItems;
+import net.nhatjs.js_furniture_mod.core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

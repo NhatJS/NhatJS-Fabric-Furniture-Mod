@@ -3,19 +3,18 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:black_concrete"
+      "item": "js_furniture_mod:wood_light_square_stick"
     },
     "2": {
-      "item": "minecraft:birch_planks"
+      "item": "js_furniture_mod:wood_light_panel"
     }
   },
   "pattern": [
     "222",
-    "1 1",
     "1 1"
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "js_furniture_mod:wood_light_table"
   }
 }

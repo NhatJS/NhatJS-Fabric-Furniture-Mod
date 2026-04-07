@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_short_square_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:black_short_square_stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_black_square_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:black_square_stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "js_furniture_mod:wood_medium_ceiling_fan_black"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood_medium_square_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:wood_medium_square_stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_black_square_stick",
+      "has_black_short_square_stick",
+      "has_wood_medium_square_stick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "js_furniture_mod:wood_medium_ceiling_fan_black"
+    ]
+  }
+}

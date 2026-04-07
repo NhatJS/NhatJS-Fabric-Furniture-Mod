@@ -1,37 +1,17 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chest": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:chest"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_jungle_planks": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:jungle_planks"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "js_furniture_mod:wood_medium_kitchen_cabinet_bottom_b"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_concrete": {
+    "has_wood_medium_panel": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:white_concrete"
+            "items": "js_furniture_mod:wood_medium_panel"
           }
         ]
       },
@@ -41,9 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_jungle_planks",
-      "has_chest",
-      "has_white_concrete"
+      "has_wood_medium_panel"
     ]
   ],
   "rewards": {

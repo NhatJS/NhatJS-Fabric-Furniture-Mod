@@ -3,25 +3,18 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:jungle_planks"
+      "item": "js_furniture_mod:wood_medium_kitchen_cabinet_bottom"
     },
     "2": {
-      "item": "minecraft:chest"
-    },
-    "3": {
-      "item": "minecraft:jungle_slab"
-    },
-    "4": {
       "item": "minecraft:bucket"
     }
   },
   "pattern": [
-    "343",
-    "111",
-    "121"
+    "2",
+    "1"
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "js_furniture_mod:wood_medium_kitchen_cabinet_bottom_with_sink"
   }
 }

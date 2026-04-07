@@ -3,19 +3,22 @@
   "category": "misc",
   "key": {
     "1": {
-      "item": "minecraft:white_concrete"
+      "item": "js_furniture_mod:white_square_stick"
     },
     "2": {
-      "item": "minecraft:chest"
+      "item": "js_furniture_mod:white_panel"
+    },
+    "3": {
+      "item": "js_furniture_mod:white_drawer_single"
     }
   },
   "pattern": [
-    "121",
-    "1 1",
-    "1 1"
+    "22",
+    "33",
+    "11"
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "js_furniture_mod:white_desk"
   }
 }

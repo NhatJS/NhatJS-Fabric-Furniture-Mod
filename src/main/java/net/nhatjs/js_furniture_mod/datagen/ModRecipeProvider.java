@@ -6,12 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.StonecuttingRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.nhatjs.js_furniture_mod.block.ModBlocks;
-import net.nhatjs.js_furniture_mod.item.ModItems;
+import net.nhatjs.js_furniture_mod.core.ModBlocks;
+import net.nhatjs.js_furniture_mod.core.ModItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -39,6 +41,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //banner
         Block bannerWhite = Blocks.WHITE_BANNER;
+        Block bannerBlack = Blocks.BLACK_BANNER;
 
         //concrete
         Block concreteBlack = Blocks.BLACK_CONCRETE;
@@ -60,7 +63,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //electronic
         Item redstone = Items.REDSTONE;
-        Item lever = Items.LEVER;
         Block redstoneLamp = Blocks.REDSTONE_LAMP;
         Item redstoneComparator = Items.COMPARATOR;
 
@@ -69,9 +71,40 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         Block portableLaptopStand = ModBlocks.PORTABLE_LAPTOP_STAND;
         Block midiGroovebox = ModBlocks.MIDI_STANDALONE_GROOVEBOX;
         Block monitor = ModBlocks.MONITOR;
-        Block keyboard = ModBlocks.KEYBOARD;
-        Block computerMouse = ModBlocks.COMPUTER_MOUSE;
+        Block blackKeyboard = ModBlocks.BLACK_KEYBOARD;
+        Block blackComputerMouse = ModBlocks.BLACK_COMPUTER_MOUSE;
         Item computerFan = ModItems.COMPUTER_FAN;
+        Block woodLightDrawerSingle = ModBlocks.WOOD_LIGHT_DRAWER_SINGLE;
+        Block woodLightCompartmentStorageCabinet = ModBlocks.WOOD_LIGHT_COMPARTMENT_STORAGE_CABINET;
+        Block woodLightKitchenCompartmentStorageCabinet = ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET;
+        Block woodLightKitchenCompartmentStorageCabinetB = ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET_B;
+        Block woodLightKitchenCabinetBottom = ModBlocks.KITCHEN_CABINET_BOTTOM;
+        Block woodLightKitchenCabinetBottomB = ModBlocks.KITCHEN_CABINET_BOTTOM_B;
+        Item woodLightSquareStick = ModItems.WOOD_LIGHT_SQUARE_STICK;
+        Item woodLightShortSquareStick = ModItems.WOOD_LIGHT_SHORT_SQUARE_STICK;
+        Item woodLightPanel = ModItems.WOOD_LIGHT_PANEL;
+        Block woodMediumDrawerSingle = ModBlocks.WOOD_MEDIUM_DRAWER_SINGLE;
+        Block woodMediumCompartmentStorageCabinet = ModBlocks.WOOD_MEDIUM_COMPARTMENT_STORAGE_CABINET;
+        Block woodMediumKitchenCompartmentStorageCabinet = ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET;
+        Block woodMediumKitchenCompartmentStorageCabinetB = ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET_B;
+        Block woodMediumKitchenCabinetBottom = ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM;
+        Block woodMediumKitchenCabinetBottomB = ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B;
+        Item woodMediumSquareStick = ModItems.WOOD_MEDIUM_SQUARE_STICK;
+        Item woodMediumShortSquareStick = ModItems.WOOD_MEDIUM_SHORT_SQUARE_STICK;
+        Item woodMediumPanel = ModItems.WOOD_MEDIUM_PANEL;
+        Block blackDrawerSingle = ModBlocks.BLACK_DRAWER_SINGLE;
+        Block blackCompartmentStorageCabinet = ModBlocks.BLACK_COMPARTMENT_STORAGE_CABINET;
+        Item blackSquareStick = ModItems.BLACK_SQUARE_STICK;
+        Item blackShortSquareStick = ModItems.BLACK_SHORT_SQUARE_STICK;
+        Item blackPanel = ModItems.BLACK_PANEL;
+        Block blackDeskColumn = ModBlocks.BLACK_DESK_COLUMN;
+        Block whiteDrawerSingle = ModBlocks.WHITE_DRAWER_SINGLE;
+        Block whiteCompartmentStorageCabinet = ModBlocks.WHITE_COMPARTMENT_STORAGE_CABINET;
+        Item whiteSquareStick = ModItems.WHITE_SQUARE_STICK;
+        Item whiteShortSquareStick = ModItems.WHITE_SHORT_SQUARE_STICK;
+        Item whitePanel = ModItems.WHITE_PANEL;
+        Block whiteDeskColumn = ModBlocks.WHITE_DESK_COLUMN;
+
 
         //others
         Item book = Items.BOOK;
@@ -94,6 +127,100 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(redstone), conditionsFromItem(redstone))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_3_DRAWER_DRESSER)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', blackCompartmentStorageCabinet)
+                .input('2', blackDrawerSingle)
+                .criterion(hasItem(blackCompartmentStorageCabinet), conditionsFromItem(blackCompartmentStorageCabinet))
+                .criterion(hasItem(blackDrawerSingle), conditionsFromItem(blackDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_CEILING_FAN_BLACK)
+                .pattern(" 1 ")
+                .pattern("121")
+                .input('1', blackSquareStick)
+                .input('2', blackShortSquareStick)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(blackShortSquareStick), conditionsFromItem(blackShortSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_CEILING_FAN_WHITE)
+                .pattern(" 3 ")
+                .pattern("121")
+                .input('1', blackSquareStick)
+                .input('2', whiteShortSquareStick)
+                .input('3', whiteSquareStick)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(whiteShortSquareStick), conditionsFromItem(whiteShortSquareStick))
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_CHAIR)
+                .pattern("1  ")
+                .pattern("111")
+                .pattern("1 1")
+                .input('1', blackSquareStick)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_COFFEE_TABLE)
+                .pattern("22")
+                .pattern("11")
+                .input('1', blackShortSquareStick)
+                .input('2', blackPanel)
+                .criterion(hasItem(blackShortSquareStick), conditionsFromItem(blackShortSquareStick))
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(blackPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.BLACK_COMPARTMENT_STORAGE_CABINET)
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_COMPUTER_MOUSE)
+                .pattern("3")
+                .pattern("1")
+                .pattern("2")
+                .input('1', blackShortSquareStick)
+                .input('2', redstone)
+                .input('3', buttonStone)
+                .criterion(hasItem(blackShortSquareStick), conditionsFromItem(blackShortSquareStick))
+                .criterion(hasItem(redstone), conditionsFromItem(redstone))
+                .criterion(hasItem(buttonStone), conditionsFromItem(buttonStone))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_DESK)
+                .pattern("22")
+                .pattern("33")
+                .pattern("11")
+                .input('1', blackSquareStick)
+                .input('2', blackPanel)
+                .input('3', blackDrawerSingle)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .criterion(hasItem(blackDrawerSingle), conditionsFromItem(blackDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_DESK_COLUMN)
+                .pattern(" 12")
+                .pattern(" 1 ")
+                .pattern("111")
+                .input('1', blackSquareStick)
+                .input('2', redstone)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(redstone), conditionsFromItem(redstone))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_DRAWER_SINGLE, 3)
+                .pattern("121")
+                .input('1', concreteBlack)
+                .input('2', chest)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(chest), conditionsFromItem(chest))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_GAMING_CHAIR)
                 .pattern("1  ")
                 .pattern("121")
@@ -106,14 +233,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_KEYBOARD)
+                .pattern("222")
+                .pattern("131")
+                .input('1', blackPanel)
+                .input('2', blackShortSquareStick)
+                .input('3', redstone)
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .criterion(hasItem(blackShortSquareStick), conditionsFromItem(blackShortSquareStick))
+                .criterion(hasItem(redstone), conditionsFromItem(redstone))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_MIRROR)
-                .pattern("1")
-                .pattern("2")
-                .pattern("1")
-                .input('1', concreteBlack)
+                .pattern("121")
+                .pattern("121")
+                .pattern("121")
+                .input('1', blackSquareStick)
                 .input('2', glassPane)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
                 .criterion(hasItem(glassPane), conditionsFromItem(glassPane))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BLACK_PANEL)
+                .pattern("11")
+                .pattern("11")
+                .input('1', blackSquareStick)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_SOFA, 2)
@@ -123,38 +268,67 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(woolBlack), conditionsFromItem(woolBlack))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BLACK_SHORT_SQUARE_STICK, 2)
+                .pattern("1")
+                .input('1', blackSquareStick)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BLACK_SQUARE_STICK, 6)
+                .pattern("1")
+                .pattern("1")
+                .pattern("1")
+                .input('1', concreteBlack)
+                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_STANDING_DESK)
                 .pattern("111")
-                .pattern("223")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .input('2', redstone)
-                .input('3', lever)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
+                .pattern("232")
+                .input('1', blackPanel)
+                .input('2', blackDeskColumn)
+                .input('3', blackSquareStick)
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .criterion(hasItem(blackDeskColumn), conditionsFromItem(blackDeskColumn))
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_STANDING_DESK_B)
                 .pattern("111")
-                .pattern("223")
-                .pattern("4 4")
-                .input('1', concreteBlack)
-                .input('2', redstone)
-                .input('3', lever)
-                .input('4', concreteWhite)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
+                .pattern("232")
+                .input('1', blackPanel)
+                .input('2', whiteDeskColumn)
+                .input('3', whiteSquareStick)
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .criterion(hasItem(whiteDeskColumn), conditionsFromItem(whiteDeskColumn))
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_TABLE, 2)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_TABLE)
+                .pattern("222")
+                .pattern("1 1")
+                .input('1', blackSquareStick)
+                .input('2', blackPanel)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_TV_STAND)
+                .pattern(" 11")
                 .pattern("111")
                 .pattern("1 1")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+                .input('1', blackPanel)
+                .criterion(hasItem(blackPanel), conditionsFromItem(blackPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_VERTICAL_BLINDS)
+                .pattern("111")
+                .pattern("222")
+                .pattern("222")
+                .input('1', blackSquareStick)
+                .input('2', bannerBlack)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(bannerBlack), conditionsFromItem(bannerBlack))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BOOKS, 2)
@@ -167,24 +341,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(book), conditionsFromItem(book))
                 .criterion(hasItem(dyeWhite), conditionsFromItem(dyeWhite))
                 .criterion(hasItem(dyeBlack), conditionsFromItem(dyeBlack))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.CEILING_FAN)
-                .pattern(" 2 ")
-                .pattern("111")
-                .input('1', concreteBlack)
-                .input('2', redstone)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.CEILING_FAN_B)
-                .pattern(" 2 ")
-                .pattern("111")
-                .input('1', concreteWhite)
-                .input('2', redstone)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.COMPUTER_CASE)
@@ -205,15 +361,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('2', concreteWhite)
                 .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
                 .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.COMPUTER_MOUSE)
-                .pattern("2")
-                .pattern("1")
-                .input('1', concreteBlack)
-                .input('2', redstone)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.COOKTOP)
@@ -282,147 +429,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(concreteLightGray), conditionsFromItem(concreteLightGray))
                 .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
                 .criterion(hasItem(computerFan), conditionsFromItem(computerFan))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KEYBOARD)
-                .pattern("121")
-                .pattern("111")
-                .input('1', concreteBlack)
-                .input('2', redstone)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_BOTTOM, 2)
-                .pattern("333")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', slabBirch)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(slabBirch), conditionsFromItem(slabBirch))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_BOTTOM_2, 2)
-                .pattern("131")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', ironIngot)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_BOTTOM_2_EXTRA, 2)
-                .pattern("111")
-                .pattern("131")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', ironIngot)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_BOTTOM_B, 2)
-                .pattern("333")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', concreteWhite)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_BOTTOM_B_2, 2)
-                .pattern("111")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_BOTTOM_B_WITH_SINK, 2)
-                .pattern("343")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', concreteWhite)
-                .input('4', bucket)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(bucket), conditionsFromItem(bucket))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_BOTTOM_WITH_SINK, 2)
-                .pattern("343")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', slabBirch)
-                .input('4', bucket)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(slabBirch), conditionsFromItem(slabBirch))
-                .criterion(hasItem(bucket), conditionsFromItem(bucket))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_TOP, 2)
-                .pattern("11")
-                .pattern("23")
-                .pattern("11")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', ironIngot)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_CABINET_TOP_B, 2)
-                .pattern("11")
-                .pattern("21")
-                .pattern("11")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_DRAWERS, 2)
-                .pattern("323")
-                .pattern("121")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', slabBirch)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(slabBirch), conditionsFromItem(slabBirch))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.KITCHEN_DRAWERS_B, 2)
-                .pattern("323")
-                .pattern("121")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .input('3', concreteWhite)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.MAINBOARD)
@@ -557,7 +563,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.MODERN_CHAIR, 4)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.MODERN_CHAIR, 2)
                 .pattern("2  ")
                 .pattern("121")
                 .pattern("1 1")
@@ -601,12 +607,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("14")
                 .pattern("23")
                 .input('1', monitor)
-                .input('2', keyboard)
-                .input('3', computerMouse)
+                .input('2', blackKeyboard)
+                .input('3', blackComputerMouse)
                 .input('4', carpetBlack)
                 .criterion(hasItem(monitor), conditionsFromItem(monitor))
-                .criterion(hasItem(keyboard), conditionsFromItem(keyboard))
-                .criterion(hasItem(computerMouse), conditionsFromItem(computerMouse))
+                .criterion(hasItem(blackKeyboard), conditionsFromItem(blackKeyboard))
+                .criterion(hasItem(blackComputerMouse), conditionsFromItem(blackComputerMouse))
                 .criterion(hasItem(carpetBlack), conditionsFromItem(carpetBlack))
                 .offerTo(recipeExporter);
 
@@ -678,13 +684,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(redstone), conditionsFromItem(redstone))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.SOFA, 2)
-                .pattern("111")
-                .pattern("111")
-                .input('1', woolWhite)
-                .criterion(hasItem(woolWhite), conditionsFromItem(woolWhite))
-                .offerTo(recipeExporter);
-
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.STUDIO_LIGHT, 2)
                 .pattern("121")
                 .pattern(" 1 ")
@@ -714,13 +713,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(dyeWhite), conditionsFromItem(dyeWhite))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.VERTICAL_BLINDS)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_VERTICAL_BLINDS)
                 .pattern("111")
                 .pattern("222")
                 .pattern("222")
-                .input('1', concreteWhite)
+                .input('1', whiteSquareStick)
                 .input('2', bannerWhite)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
                 .criterion(hasItem(bannerWhite), conditionsFromItem(bannerWhite))
                 .offerTo(recipeExporter);
 
@@ -736,37 +735,82 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(endCrystal), conditionsFromItem(endCrystal))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_3_DRAWER_DRESSER, 2)
-                .pattern("121")
-                .pattern("121")
-                .pattern("121")
-                .input('1', concreteWhite)
-                .input('2', chest)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_3_DRAWER_DRESSER)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', whiteCompartmentStorageCabinet)
+                .input('2', whiteDrawerSingle)
+                .criterion(hasItem(whiteCompartmentStorageCabinet), conditionsFromItem(whiteCompartmentStorageCabinet))
+                .criterion(hasItem(whiteDrawerSingle), conditionsFromItem(whiteDrawerSingle))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_CHAIR, 4)
-                .pattern("2  ")
-                .pattern("122")
-                .pattern("1 1")
-                .input('1', concreteWhite)
-                .input('2', woolWhite)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(woolWhite), conditionsFromItem(woolWhite))
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_CEILING_FAN_BLACK)
+                .pattern(" 1 ")
+                .pattern("121")
+                .input('1', whiteSquareStick)
+                .input('2', whiteShortSquareStick)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .criterion(hasItem(whiteShortSquareStick), conditionsFromItem(whiteShortSquareStick))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_COFFEE_TABLE, 2)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_CEILING_FAN_WHITE)
+                .pattern(" 3 ")
+                .pattern("121")
+                .input('1', whiteSquareStick)
+                .input('2', blackShortSquareStick)
+                .input('3', blackSquareStick)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .criterion(hasItem(blackShortSquareStick), conditionsFromItem(blackShortSquareStick))
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_CHAIR)
+                .pattern("1  ")
                 .pattern("111")
                 .pattern("1 1")
-                .input('1', concreteWhite)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
+                .input('1', whiteSquareStick)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_DESK, 2)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_COFFEE_TABLE)
+                .pattern("22")
+                .pattern("11")
+                .input('1', whiteShortSquareStick)
+                .input('2', whitePanel)
+                .criterion(hasItem(whiteShortSquareStick), conditionsFromItem(whiteShortSquareStick))
+                .criterion(hasItem(whitePanel), conditionsFromItem(whitePanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(whitePanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WHITE_COMPARTMENT_STORAGE_CABINET)
+                .criterion(hasItem(whitePanel), conditionsFromItem(whitePanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_DESK)
+                .pattern("22")
+                .pattern("33")
+                .pattern("11")
+                .input('1', whiteSquareStick)
+                .input('2', whitePanel)
+                .input('3', whiteDrawerSingle)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .criterion(hasItem(whitePanel), conditionsFromItem(whitePanel))
+                .criterion(hasItem(whiteDrawerSingle), conditionsFromItem(whiteDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_DESK_COLUMN)
+                .pattern(" 12")
+                .pattern(" 1 ")
+                .pattern("111")
+                .input('1', whiteSquareStick)
+                .input('2', redstone)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .criterion(hasItem(redstone), conditionsFromItem(redstone))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_DRAWER_SINGLE, 3)
                 .pattern("121")
-                .pattern("1 1")
-                .pattern("1 1")
                 .input('1', concreteWhite)
                 .input('2', chest)
                 .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
@@ -785,193 +829,357 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_STANDING_DESK)
-                .pattern("222")
-                .pattern("334")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .input('2', concreteWhite)
-                .input('3', redstone)
-                .input('4', lever)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WHITE_PANEL)
+                .pattern("11")
+                .pattern("11")
+                .input('1', whiteSquareStick)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WHITE_SHORT_SQUARE_STICK, 2)
+                .pattern("1")
+                .input('1', whiteSquareStick)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_SOFA, 2)
+                .pattern("111")
+                .pattern("111")
+                .input('1', woolWhite)
+                .criterion(hasItem(woolWhite), conditionsFromItem(woolWhite))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WHITE_SQUARE_STICK, 6)
+                .pattern("1")
+                .pattern("1")
+                .pattern("1")
+                .input('1', concreteWhite)
                 .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_STANDING_DESK)
+                .pattern("111")
+                .pattern("232")
+                .input('1', whitePanel)
+                .input('2', blackDeskColumn)
+                .input('3', blackSquareStick)
+                .criterion(hasItem(whitePanel), conditionsFromItem(whitePanel))
+                .criterion(hasItem(blackDeskColumn), conditionsFromItem(blackDeskColumn))
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_STANDING_DESK_B)
-                .pattern("222")
-                .pattern("334")
-                .pattern("2 2")
-                .input('2', concreteWhite)
-                .input('3', redstone)
-                .input('4', lever)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
+                .pattern("111")
+                .pattern("232")
+                .input('1', whitePanel)
+                .input('2', whiteDeskColumn)
+                .input('3', whiteSquareStick)
+                .criterion(hasItem(whitePanel), conditionsFromItem(whitePanel))
+                .criterion(hasItem(whiteDeskColumn), conditionsFromItem(whiteDeskColumn))
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_TABLE, 2)
-                .pattern("111")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_TABLE)
+                .pattern("222")
                 .pattern("1 1")
-                .pattern("1 1")
-                .input('1', concreteWhite)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
+                .input('1', whiteSquareStick)
+                .input('2', whitePanel)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .criterion(hasItem(whitePanel), conditionsFromItem(whitePanel))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_TV_STAND)
-                .pattern("111")
-                .pattern("212")
-                .input('1', concreteWhite)
-                .input('2', chest)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_3_DRAWER_DRESSER, 2)
-                .pattern("121")
-                .pattern("121")
-                .pattern("121")
-                .input('1', planksBirch)
-                .input('2', chest)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_CHAIR, 4)
-                .pattern("2  ")
-                .pattern("122")
-                .pattern("1 1")
-                .input('1', planksBirch)
-                .input('2', woolWhite)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(woolWhite), conditionsFromItem(woolWhite))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_COFFEE_TABLE, 2)
+                .pattern(" 11")
                 .pattern("111")
                 .pattern("1 1")
-                .input('1', planksBirch)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
+                .input('1', whitePanel)
+                .criterion(hasItem(whitePanel), conditionsFromItem(whitePanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_DESK, 2)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_3_DRAWER_DRESSER)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', woodLightCompartmentStorageCabinet)
+                .input('2', woodLightDrawerSingle)
+                .criterion(hasItem(woodLightCompartmentStorageCabinet), conditionsFromItem(woodLightCompartmentStorageCabinet))
+                .criterion(hasItem(woodLightDrawerSingle), conditionsFromItem(woodLightDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_CEILING_FAN_BLACK)
+                .pattern(" 1 ")
+                .pattern("323")
+                .input('1', blackSquareStick)
+                .input('2', blackShortSquareStick)
+                .input('3', woodLightSquareStick)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(blackShortSquareStick), conditionsFromItem(blackShortSquareStick))
+                .criterion(hasItem(woodLightSquareStick), conditionsFromItem(woodLightSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_CEILING_FAN_WHITE)
+                .pattern(" 1 ")
+                .pattern("323")
+                .input('1', whiteSquareStick)
+                .input('2', whiteShortSquareStick)
+                .input('3', woodLightSquareStick)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .criterion(hasItem(whiteShortSquareStick), conditionsFromItem(whiteShortSquareStick))
+                .criterion(hasItem(woodLightSquareStick), conditionsFromItem(woodLightSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_CHAIR)
+                .pattern("1  ")
+                .pattern("111")
+                .pattern("1 1")
+                .input('1', woodLightSquareStick)
+                .criterion(hasItem(woodLightSquareStick), conditionsFromItem(woodLightSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_COFFEE_TABLE)
+                .pattern("22")
+                .pattern("11")
+                .input('1', woodLightShortSquareStick)
+                .input('2', woodLightPanel)
+                .criterion(hasItem(woodLightShortSquareStick), conditionsFromItem(woodLightShortSquareStick))
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_COMPARTMENT_STORAGE_CABINET)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_DRAWER_SINGLE, 3)
                 .pattern("121")
-                .pattern("1 1")
-                .pattern("1 1")
                 .input('1', planksBirch)
                 .input('2', chest)
                 .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
                 .criterion(hasItem(chest), conditionsFromItem(chest))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_TABLE, 2)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_DESK)
+                .pattern("22")
+                .pattern("33")
+                .pattern("11")
+                .input('1', woodLightSquareStick)
+                .input('2', woodLightPanel)
+                .input('3', woodLightDrawerSingle)
+                .criterion(hasItem(woodLightSquareStick), conditionsFromItem(woodLightSquareStick))
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .criterion(hasItem(woodLightDrawerSingle), conditionsFromItem(woodLightDrawerSingle))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_2)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_2_EXTRA)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B_2)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B_WITH_SINK)
+                .pattern("2")
+                .pattern("1")
+                .input('1', woodLightKitchenCabinetBottomB)
+                .input('2', bucket)
+                .criterion(hasItem(woodLightKitchenCabinetBottomB), conditionsFromItem(woodLightKitchenCabinetBottomB))
+                .criterion(hasItem(bucket), conditionsFromItem(bucket))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_WITH_SINK)
+                .pattern("2")
+                .pattern("1")
+                .input('1', woodLightKitchenCabinetBottom)
+                .input('2', bucket)
+                .criterion(hasItem(woodLightKitchenCabinetBottom), conditionsFromItem(woodLightKitchenCabinetBottom))
+                .criterion(hasItem(bucket), conditionsFromItem(bucket))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_TOP)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_TOP_B)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodLightPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET_B)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_DRAWERS)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', woodLightKitchenCompartmentStorageCabinet)
+                .input('2', woodLightDrawerSingle)
+                .criterion(hasItem(woodLightKitchenCompartmentStorageCabinet), conditionsFromItem(woodLightKitchenCompartmentStorageCabinet))
+                .criterion(hasItem(woodLightDrawerSingle), conditionsFromItem(woodLightDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_KITCHEN_DRAWERS_B)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', woodLightKitchenCompartmentStorageCabinetB)
+                .input('2', woodLightDrawerSingle)
+                .criterion(hasItem(woodLightKitchenCompartmentStorageCabinetB), conditionsFromItem(woodLightKitchenCompartmentStorageCabinetB))
+                .criterion(hasItem(woodLightDrawerSingle), conditionsFromItem(woodLightDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WOOD_LIGHT_PANEL)
+                .pattern("11")
+                .pattern("11")
+                .input('1', woodLightSquareStick)
+                .criterion(hasItem(woodLightSquareStick), conditionsFromItem(woodLightSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WOOD_LIGHT_SHORT_SQUARE_STICK, 2)
+                .pattern("1")
+                .input('1', woodLightSquareStick)
+                .criterion(hasItem(woodLightSquareStick), conditionsFromItem(woodLightSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WOOD_LIGHT_SQUARE_STICK, 6)
+                .pattern("1")
+                .pattern("1")
+                .pattern("1")
+                .input('1', planksBirch)
+                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_STANDING_DESK)
+                .pattern("111")
+                .pattern("232")
+                .input('1', woodLightPanel)
+                .input('2', blackDeskColumn)
+                .input('3', blackSquareStick)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .criterion(hasItem(blackDeskColumn), conditionsFromItem(blackDeskColumn))
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_STANDING_DESK_B)
+                .pattern("111")
+                .pattern("232")
+                .input('1', woodLightPanel)
+                .input('2', whiteDeskColumn)
+                .input('3', whiteSquareStick)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
+                .criterion(hasItem(whiteDeskColumn), conditionsFromItem(whiteDeskColumn))
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_TABLE)
                 .pattern("222")
                 .pattern("1 1")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .input('2', planksBirch)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
+                .input('1', woodLightSquareStick)
+                .input('2', woodLightPanel)
+                .criterion(hasItem(woodLightSquareStick), conditionsFromItem(woodLightSquareStick))
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_TV_STAND, 2)
-                .pattern("211")
-                .pattern("1 1")
-                .input('1', planksBirch)
-                .input('2', concreteWhite)
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_3_DRAWER_DRESSER, 2)
-                .pattern("121")
-                .pattern("121")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_CHAIR, 4)
-                .pattern("2  ")
-                .pattern("122")
-                .pattern("1 1")
-                .input('1', planksJungle)
-                .input('2', woolWhite)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(woolWhite), conditionsFromItem(woolWhite))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_COFFEE_TABLE, 2)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_LIGHT_TV_STAND)
+                .pattern(" 11")
                 .pattern("111")
                 .pattern("1 1")
-                .input('1', planksJungle)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
+                .input('1', woodLightPanel)
+                .criterion(hasItem(woodLightPanel), conditionsFromItem(woodLightPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_DESK, 2)
-                .pattern("121")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_3_DRAWER_DRESSER)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', woodMediumCompartmentStorageCabinet)
+                .input('2', woodMediumDrawerSingle)
+                .criterion(hasItem(woodMediumCompartmentStorageCabinet), conditionsFromItem(woodMediumCompartmentStorageCabinet))
+                .criterion(hasItem(woodMediumDrawerSingle), conditionsFromItem(woodMediumDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_CEILING_FAN_BLACK)
+                .pattern(" 1 ")
+                .pattern("323")
+                .input('1', blackSquareStick)
+                .input('2', blackShortSquareStick)
+                .input('3', woodMediumSquareStick)
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
+                .criterion(hasItem(blackShortSquareStick), conditionsFromItem(blackShortSquareStick))
+                .criterion(hasItem(woodMediumSquareStick), conditionsFromItem(woodMediumSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_CEILING_FAN_WHITE)
+                .pattern(" 1 ")
+                .pattern("323")
+                .input('1', whiteSquareStick)
+                .input('2', whiteShortSquareStick)
+                .input('3', woodMediumSquareStick)
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
+                .criterion(hasItem(whiteShortSquareStick), conditionsFromItem(whiteShortSquareStick))
+                .criterion(hasItem(woodMediumSquareStick), conditionsFromItem(woodMediumSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_CHAIR)
+                .pattern("1  ")
+                .pattern("111")
                 .pattern("1 1")
-                .pattern("1 1")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
+                .input('1', woodMediumSquareStick)
+                .criterion(hasItem(woodMediumSquareStick), conditionsFromItem(woodMediumSquareStick))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM, 2)
-                .pattern("333")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', slabJungle)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(slabJungle), conditionsFromItem(slabJungle))
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_COFFEE_TABLE)
+                .pattern("22")
+                .pattern("11")
+                .input('1', woodMediumShortSquareStick)
+                .input('2', woodMediumPanel)
+                .criterion(hasItem(woodMediumShortSquareStick), conditionsFromItem(woodMediumShortSquareStick))
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2, 2)
-                .pattern("131")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', ironIngot)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_COMPARTMENT_STORAGE_CABINET)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2_EXTRA, 2)
-                .pattern("111")
-                .pattern("131")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', ironIngot)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_DESK)
+                .pattern("22")
+                .pattern("33")
+                .pattern("11")
+                .input('1', woodMediumSquareStick)
+                .input('2', woodMediumPanel)
+                .input('3', woodMediumDrawerSingle)
+                .criterion(hasItem(woodMediumSquareStick), conditionsFromItem(woodMediumSquareStick))
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .criterion(hasItem(woodMediumDrawerSingle), conditionsFromItem(woodMediumDrawerSingle))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B, 2)
-                .pattern("333")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', concreteWhite)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2, 2)
-                .pattern("111")
-                .pattern("111")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_DRAWER_SINGLE, 3)
                 .pattern("121")
                 .input('1', planksJungle)
                 .input('2', chest)
@@ -979,106 +1187,130 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(chest), conditionsFromItem(chest))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK, 2)
-                .pattern("343")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', concreteWhite)
-                .input('4', bucket)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_2_EXTRA)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .offerTo(recipeExporter);
+
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_2)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_B_WITH_SINK)
+                .pattern("2")
+                .pattern("1")
+                .input('1', woodMediumKitchenCabinetBottomB)
+                .input('2', bucket)
+                .criterion(hasItem(woodMediumKitchenCabinetBottomB), conditionsFromItem(woodMediumKitchenCabinetBottomB))
                 .criterion(hasItem(bucket), conditionsFromItem(bucket))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_WITH_SINK, 2)
-                .pattern("343")
-                .pattern("111")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', slabJungle)
-                .input('4', bucket)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(slabJungle), conditionsFromItem(slabJungle))
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_BOTTOM_WITH_SINK)
+                .pattern("2")
+                .pattern("1")
+                .input('1', woodMediumKitchenCabinetBottom)
+                .input('2', bucket)
+                .criterion(hasItem(woodMediumKitchenCabinetBottom), conditionsFromItem(woodMediumKitchenCabinetBottom))
                 .criterion(hasItem(bucket), conditionsFromItem(bucket))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP, 2)
-                .pattern("11")
-                .pattern("23")
-                .pattern("11")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', ironIngot)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(ironIngot), conditionsFromItem(ironIngot))
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B, 2)
-                .pattern("11")
-                .pattern("21")
-                .pattern("11")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS, 2)
-                .pattern("323")
-                .pattern("121")
-                .pattern("121")
-                .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', slabJungle)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(slabJungle), conditionsFromItem(slabJungle))
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B, 2)
-                .pattern("323")
-                .pattern("121")
-                .pattern("121")
+        StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(woodMediumPanel),
+                        RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET_B)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', woodMediumKitchenCompartmentStorageCabinet)
+                .input('2', woodMediumDrawerSingle)
+                .criterion(hasItem(woodMediumKitchenCompartmentStorageCabinet), conditionsFromItem(woodMediumKitchenCompartmentStorageCabinet))
+                .criterion(hasItem(woodMediumDrawerSingle), conditionsFromItem(woodMediumDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B)
+                .pattern(" 2")
+                .pattern("12")
+                .pattern(" 2")
+                .input('1', woodMediumKitchenCompartmentStorageCabinetB)
+                .input('2', woodMediumDrawerSingle)
+                .criterion(hasItem(woodMediumKitchenCompartmentStorageCabinetB), conditionsFromItem(woodMediumKitchenCompartmentStorageCabinetB))
+                .criterion(hasItem(woodMediumDrawerSingle), conditionsFromItem(woodMediumDrawerSingle))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WOOD_MEDIUM_PANEL)
+                .pattern("11")
+                .pattern("11")
+                .input('1', woodMediumSquareStick)
+                .criterion(hasItem(woodMediumSquareStick), conditionsFromItem(woodMediumSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WOOD_MEDIUM_SHORT_SQUARE_STICK, 2)
+                .pattern("1")
+                .input('1', woodMediumSquareStick)
+                .criterion(hasItem(woodMediumSquareStick), conditionsFromItem(woodMediumSquareStick))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WOOD_MEDIUM_SQUARE_STICK, 6)
+                .pattern("1")
+                .pattern("1")
+                .pattern("1")
                 .input('1', planksJungle)
-                .input('2', chest)
-                .input('3', concreteWhite)
                 .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(chest), conditionsFromItem(chest))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_STANDING_DESK)
-                .pattern("222")
-                .pattern("334")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .input('2', planksJungle)
-                .input('3', redstone)
-                .input('4', lever)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
+                .pattern("111")
+                .pattern("232")
+                .input('1', woodMediumPanel)
+                .input('2', blackDeskColumn)
+                .input('3', blackSquareStick)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .criterion(hasItem(blackDeskColumn), conditionsFromItem(blackDeskColumn))
+                .criterion(hasItem(blackSquareStick), conditionsFromItem(blackSquareStick))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_STANDING_DESK_B)
-                .pattern("222")
-                .pattern("334")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .input('2', planksJungle)
-                .input('3', redstone)
-                .input('4', lever)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
+                .pattern("111")
+                .pattern("232")
+                .input('1', woodMediumPanel)
+                .input('2', whiteDeskColumn)
+                .input('3', whiteSquareStick)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
+                .criterion(hasItem(whiteDeskColumn), conditionsFromItem(whiteDeskColumn))
+                .criterion(hasItem(whiteSquareStick), conditionsFromItem(whiteSquareStick))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_STRIPED_WALL, 4)
@@ -1089,51 +1321,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_TABLE, 2)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_TABLE)
                 .pattern("222")
                 .pattern("1 1")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .input('2', planksJungle)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
+                .input('1', woodMediumSquareStick)
+                .input('2', woodMediumPanel)
+                .criterion(hasItem(woodMediumSquareStick), conditionsFromItem(woodMediumSquareStick))
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_TV_STAND, 2)
-                .pattern("211")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_MEDIUM_TV_STAND)
+                .pattern(" 11")
+                .pattern("111")
                 .pattern("1 1")
-                .input('1', planksJungle)
-                .input('2', concreteWhite)
-                .criterion(hasItem(planksJungle), conditionsFromItem(planksJungle))
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_STANDING_DESK)
-                .pattern("222")
-                .pattern("334")
-                .pattern("1 1")
-                .input('1', concreteBlack)
-                .input('2', planksBirch)
-                .input('3', redstone)
-                .input('4', lever)
-                .criterion(hasItem(concreteBlack), conditionsFromItem(concreteBlack))
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_STANDING_DESK_B)
-                .pattern("222")
-                .pattern("334")
-                .pattern("1 1")
-                .input('1', concreteWhite)
-                .input('2', planksBirch)
-                .input('3', redstone)
-                .input('4', lever)
-                .criterion(hasItem(concreteWhite), conditionsFromItem(concreteWhite))
-                .criterion(hasItem(planksBirch), conditionsFromItem(planksBirch))
-                .criterion(hasItem(redstone), conditionsFromItem(redstone))
-                .criterion(hasItem(lever), conditionsFromItem(lever))
+                .input('1', woodMediumPanel)
+                .criterion(hasItem(woodMediumPanel), conditionsFromItem(woodMediumPanel))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOOD_STRIPED_WALL, 4)
