@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,mount=stand": {
+      "model": "js_furniture_mod:block/tv",
+      "y": 90
+    },
+    "facing=east,mount=wall": {
+      "model": "js_furniture_mod:block/tv_wall_mount",
+      "y": 90
+    },
+    "facing=north,mount=stand": {
+      "model": "js_furniture_mod:block/tv"
+    },
+    "facing=north,mount=wall": {
+      "model": "js_furniture_mod:block/tv_wall_mount"
+    },
+    "facing=south,mount=stand": {
+      "model": "js_furniture_mod:block/tv",
+      "y": 180
+    },
+    "facing=south,mount=wall": {
+      "model": "js_furniture_mod:block/tv_wall_mount",
+      "y": 180
+    },
+    "facing=west,mount=stand": {
+      "model": "js_furniture_mod:block/tv",
+      "y": 270
+    },
+    "facing=west,mount=wall": {
+      "model": "js_furniture_mod:block/tv_wall_mount",
+      "y": 270
+    }
+  }
+}

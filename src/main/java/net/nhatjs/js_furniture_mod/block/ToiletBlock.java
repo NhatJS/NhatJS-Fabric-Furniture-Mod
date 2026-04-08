@@ -3,21 +3,27 @@ package net.nhatjs.js_furniture_mod.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+import net.nhatjs.js_furniture_mod.block.core.FurnitureHorizontalBlock;
 
-public class ToiletBlock extends Block {
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
+public class ToiletBlock extends FurnitureHorizontalBlock {
+    public static final BooleanProperty OPEN = BooleanProperty.of("open");
 
     public ToiletBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.getStateManager().getDefaultState()
+                .with(FACING, Direction.NORTH)
+                .with(OPEN, false));
     }
 
     private static final VoxelShape NORTH = VoxelShapes.union(
@@ -59,12 +65,16 @@ public class ToiletBlock extends Block {
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING, OPEN);
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (!world.isClient()) {
+            boolean current = state.get(OPEN);
+            world.setBlockState(pos, state.with(OPEN, !current), 3, Block.NOTIFY_ALL);
+        }
+        return ActionResult.SUCCESS;
     }
 }

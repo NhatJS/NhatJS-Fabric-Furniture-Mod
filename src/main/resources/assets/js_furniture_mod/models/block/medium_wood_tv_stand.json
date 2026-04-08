@@ -1,7 +1,0 @@
-{
-	"parent": "js_furniture_mod:block/tv_stand",
-	"textures": {
-		"0": "js_furniture_mod:block/medium_wood",
-		"particle": "js_furniture_mod:block/medium_wood"
-	}
-}

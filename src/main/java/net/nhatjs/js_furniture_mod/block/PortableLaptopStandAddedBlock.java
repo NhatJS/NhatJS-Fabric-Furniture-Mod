@@ -1,18 +1,13 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -20,9 +15,12 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.nhatjs.js_furniture_mod.block.core.FurnitureHorizontalBlock;
+import net.nhatjs.js_furniture_mod.blockentity.LaptopBlockEntity;
+import net.nhatjs.js_furniture_mod.core.ModBlocks;
+import org.jetbrains.annotations.Nullable;
 
-public class PortableLaptopStandAddedBlock extends Block {
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
+public class PortableLaptopStandAddedBlock extends FurnitureHorizontalBlock implements BlockEntityProvider {
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
     public static final BooleanProperty OPEN = BooleanProperty.of("open");
 
@@ -50,8 +48,13 @@ public class PortableLaptopStandAddedBlock extends Block {
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new LaptopBlockEntity(pos, state);
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 
     @Override
@@ -96,11 +99,12 @@ public class PortableLaptopStandAddedBlock extends Block {
                 world.setBlockState(pos, state.with(TURN_ON, false));
             } else {
                 world.setBlockState(pos, state.with(TURN_ON, true));
-                return ActionResult.CONSUME;
             }
-            return ActionResult.CONSUME;
+            BlockEntity entity = world.getBlockEntity(pos);
+            if (!(entity instanceof LaptopBlockEntity light)) return ActionResult.PASS;
+            light.setPowered(!light.isPowered());
+            world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
         }
-
         return ActionResult.CONSUME;
     }
 }

@@ -1,27 +1,17 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chest": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:chest"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "js_furniture_mod:white_tv_stand"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_concrete": {
+    "has_white_panel": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:white_concrete"
+            "items": "js_furniture_mod:white_panel"
           }
         ]
       },
@@ -31,8 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_white_concrete",
-      "has_chest"
+      "has_white_panel"
     ]
   ],
   "rewards": {

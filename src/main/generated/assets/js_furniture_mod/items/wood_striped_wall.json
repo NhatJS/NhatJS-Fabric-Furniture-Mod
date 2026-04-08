@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "js_furniture_mod:block/light_wood_striped_wall"
+    "model": "js_furniture_mod:item/wood_striped_wall"
   }
 }

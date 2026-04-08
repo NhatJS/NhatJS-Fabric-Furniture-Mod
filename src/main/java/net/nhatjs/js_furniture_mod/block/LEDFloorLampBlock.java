@@ -1,10 +1,8 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
@@ -17,8 +15,11 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.nhatjs.js_furniture_mod.block.core.FurnitureHorizontalBlock;
+import net.nhatjs.js_furniture_mod.blockentity.LampBlockEntity;
+import org.jetbrains.annotations.Nullable;
 
-public class LEDFloorLampBlock extends Block{
+public class LEDFloorLampBlock extends FurnitureHorizontalBlock implements BlockEntityProvider {
     public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
 
@@ -55,15 +56,22 @@ public class LEDFloorLampBlock extends Block{
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new LampBlockEntity(pos, state);
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient()) {
-            boolean current = state.get(TURN_ON);
-            world.setBlockState(pos, state.with(TURN_ON, !current), 3);
+            BlockEntity entity = world.getBlockEntity(pos);
+            if (!(entity instanceof LampBlockEntity floorLamp)) return ActionResult.PASS;
+            floorLamp.setPowered(!floorLamp.isPowered());
+            world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
         }
         return ActionResult.SUCCESS;
     }
