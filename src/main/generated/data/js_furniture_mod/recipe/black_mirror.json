@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": "minecraft:black_concrete",
+    "1": "js_furniture_mod:black_square_stick",
     "2": "minecraft:glass_pane"
   },
   "pattern": [
-    "1",
-    "2",
-    "1"
+    "121",
+    "121",
+    "121"
   ],
   "result": {
     "count": 1,

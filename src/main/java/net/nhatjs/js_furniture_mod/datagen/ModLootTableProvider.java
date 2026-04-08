@@ -3,7 +3,7 @@ package net.nhatjs.js_furniture_mod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.registry.RegistryWrapper;
-import net.nhatjs.js_furniture_mod.block.ModBlocks;
+import net.nhatjs.js_furniture_mod.core.ModBlocks;
 import java.util.concurrent.CompletableFuture;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
@@ -81,18 +81,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.PC_TOWER_GLASS);
 
-
-        //1.0.2 update
         addDrop(ModBlocks.CEILING_FAN);
         addDrop(ModBlocks.BLACK_GAMING_CHAIR);
         addDrop(ModBlocks.WHITE_GAMING_CHAIR);
-        //end
 
-        //1.0.3 update
         addDrop(ModBlocks.TOILET);
-        //end
 
-        //1.0.4 update
         addDrop(ModBlocks.CEILING_FAN_B);
         addDrop(ModBlocks.BLACK_SOFA);
         addDrop(ModBlocks.MIDI_KEYBOARD_CONTROLLER);
@@ -116,9 +110,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WOOD_MEDIUM_KITCHEN_DRAWERS_B);
         addDrop(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP);
         addDrop(ModBlocks.WOOD_MEDIUM_KITCHEN_CABINET_TOP_B);
-        //end
 
-        //1.0.5 update
         addDrop(ModBlocks.COMPUTER_CASE);
         addDrop(ModBlocks.PC_ADDED_1);
         addDrop(ModBlocks.PC_ADDED_2);
@@ -131,6 +123,55 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PC_ADDED_9);
         addDrop(ModBlocks.PC_ADDED_10);
         addDrop(ModBlocks.PC_ADDED_11);
-        //end
+
+        addDrop(ModBlocks.BLACK_CHAIR);
+        addDrop(ModBlocks.BLACK_COFFEE_TABLE);
+        addDrop(ModBlocks.BLACK_3_DRAWER_DRESSER);
+        addDrop(ModBlocks.WOOD_LIGHT_DRAWER_SINGLE);
+        addDrop(ModBlocks.WOOD_MEDIUM_DRAWER_SINGLE);
+        addDrop(ModBlocks.BLACK_DRAWER_SINGLE);
+        addDrop(ModBlocks.WHITE_DRAWER_SINGLE);
+        addDrop(ModBlocks.BLACK_DESK);
+        addDrop(ModBlocks.BLACK_TV_STAND);
+        addDrop(ModBlocks.BLACK_DESK_COLUMN);
+        addDrop(ModBlocks.WHITE_DESK_COLUMN);
+        addDrop(ModBlocks.BLACK_VERTICAL_BLINDS);
+        addDrop(ModBlocks.WOOD_LIGHT_CEILING_FAN_BLACK);
+        addDrop(ModBlocks.WOOD_MEDIUM_CEILING_FAN_BLACK);
+        addDrop(ModBlocks.BLACK_CEILING_FAN_BLACK);
+        addDrop(ModBlocks.WHITE_CEILING_FAN_BLACK);
+        addDrop(ModBlocks.WOOD_LIGHT_CEILING_FAN_WHITE);
+        addDrop(ModBlocks.WOOD_MEDIUM_CEILING_FAN_WHITE);
+        addDrop(ModBlocks.BLACK_CEILING_FAN_WHITE);
+        addDrop(ModBlocks.WHITE_CEILING_FAN_WHITE);
+        addDrop(ModBlocks.WHITE_SOFA);
+        addDrop(ModBlocks.WOOD_LIGHT_COMPARTMENT_STORAGE_CABINET);
+        addDrop(ModBlocks.WOOD_MEDIUM_COMPARTMENT_STORAGE_CABINET);
+        addDrop(ModBlocks.BLACK_COMPARTMENT_STORAGE_CABINET);
+        addDrop(ModBlocks.WHITE_COMPARTMENT_STORAGE_CABINET);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET);
+        addDrop(ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_COMPARTMENT_STORAGE_CABINET_B);
+        addDrop(ModBlocks.WOOD_MEDIUM_KITCHEN_COMPARTMENT_STORAGE_CABINET_B);
+        addDrop(ModBlocks.WHITE_VERTICAL_BLINDS);
+        addDrop(ModBlocks.WOOD_LIGHT_3_DRAWER_DRESSER);
+        addDrop(ModBlocks.WOOD_LIGHT_CHAIR);
+        addDrop(ModBlocks.WOOD_LIGHT_COFFEE_TABLE);
+        addDrop(ModBlocks.WOOD_LIGHT_DESK);
+        addDrop(ModBlocks.WOOD_LIGHT_STANDING_DESK);
+        addDrop(ModBlocks.WOOD_LIGHT_STANDING_DESK_B);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_WITH_SINK);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_2);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_2_EXTRA);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B_WITH_SINK);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_BOTTOM_B_2);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_DRAWERS);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_DRAWERS_B);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_TOP);
+        addDrop(ModBlocks.WOOD_LIGHT_KITCHEN_CABINET_TOP_B);
+        addDrop(ModBlocks.BLACK_COMPUTER_MOUSE);
+        addDrop(ModBlocks.BLACK_KEYBOARD);
     }
 }

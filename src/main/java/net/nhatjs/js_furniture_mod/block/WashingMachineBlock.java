@@ -1,14 +1,10 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -16,9 +12,11 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.nhatjs.js_furniture_mod.block.core.FurnitureHorizontalBlock;
+import net.nhatjs.js_furniture_mod.blockentity.WashingMachineBlockEntity;
+import org.jetbrains.annotations.Nullable;
 
-public class WashingMachineBlock extends Block{
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
+public class WashingMachineBlock extends FurnitureHorizontalBlock implements BlockEntityProvider {
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
 
     public WashingMachineBlock(Settings settings) {
@@ -36,23 +34,31 @@ public class WashingMachineBlock extends Block{
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
-            default -> Block.createCuboidShape(1.1, 0, 0.3, 14.9, 22, 15.9);
-            case SOUTH -> Block.createCuboidShape(1.1, 0, 0.1, 14.9, 22, 15.7);
-            case EAST -> Block.createCuboidShape(0.1, 0, 1.1, 15.7, 22, 14.9);
-            case WEST -> Block.createCuboidShape(0.3, 0, 1.1, 15.9, 22, 14.9);
+            default -> Block.createCuboidShape(0, 0, 0, 16, 23, 16);
         };
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new WashingMachineBlockEntity(pos, state);
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!world.isClient) {
+        if (player.isSneaking()) {
             boolean current = state.get(TURN_ON);
             world.setBlockState(pos, state.with(TURN_ON, !current), 3);
+        }
+        else {
+            BlockEntity entity = world.getBlockEntity(pos);
+            if (!(entity instanceof WashingMachineBlockEntity light)) return ActionResult.PASS;
+            light.setPowered(!light.isPowered());
+            world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
         }
         return ActionResult.SUCCESS;
     }

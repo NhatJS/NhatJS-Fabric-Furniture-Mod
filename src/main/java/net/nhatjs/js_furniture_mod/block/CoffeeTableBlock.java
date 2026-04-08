@@ -1,16 +1,12 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
@@ -21,10 +17,10 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.nhatjs.js_furniture_mod.blockentity.client.CoffeeTableBlockEntity;
+import net.nhatjs.js_furniture_mod.block.core.FurnitureHorizontalBlock;
+import net.nhatjs.js_furniture_mod.blockentity.CoffeeTableBlockEntity;
 
-public class CoffeeTableBlock extends BlockWithEntity {
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
+public class CoffeeTableBlock extends FurnitureHorizontalBlock implements BlockEntityProvider {
     public static final BooleanProperty HAS_ITEM = BooleanProperty.of("has_item");
 
     public CoffeeTableBlock(Settings settings) {
@@ -33,23 +29,21 @@ public class CoffeeTableBlock extends BlockWithEntity {
     }
 
     private static final VoxelShape HORIZONTAL = VoxelShapes.union(
-            Block.createCuboidShape(-2.5, 0, 2.25, -1.25, 8, 3.5),
-            Block.createCuboidShape(17.25, 0, 2.25, 18.5, 8, 3.5),
-            Block.createCuboidShape(17.25, 0, 12.5, 18.5, 8, 13.75),
-            Block.createCuboidShape(-2.5, 0, 12.5, -1.25, 8, 13.75),
-            Block.createCuboidShape(-2, 4.625, 3.5, 8, 4.975, 12.5),
-            Block.createCuboidShape(-2.5, 8, 2.25, 18.5, 9.25, 13.75),
-            Block.createCuboidShape(8, 4.625, 3.5, 18, 4.975, 12.5)
+            Block.createCuboidShape(-2.5, 0, 2.25, -1, 7.75, 3.75),
+            Block.createCuboidShape(17, 0, 2.25, 18.5, 7.75, 3.75),
+            Block.createCuboidShape(17, 0, 12.25, 18.5, 7.75, 13.75),
+            Block.createCuboidShape(-2.5, 0, 12.25, -1, 7.75, 13.75),
+            Block.createCuboidShape(-2.5, 7.75, 2.25, 18.5, 9.25, 13.75),
+            Block.createCuboidShape(-2, 2.625, 3.75, 18, 3.625, 12.25)
     );
 
     private static final VoxelShape VERTICAL = VoxelShapes.union(
-            Block.createCuboidShape(12.5, 0, -2.5, 13.75, 8, -1.25),
-            Block.createCuboidShape(12.5, 0, 17.25, 13.75, 8, 18.5),
-            Block.createCuboidShape(2.25, 0, 17.25, 3.5, 8, 18.5),
-            Block.createCuboidShape(2.25, 0, -2.5, 3.5, 8, -1.25),
-            Block.createCuboidShape(3.5, 4.625, -2, 12.5, 4.975, 8),
-            Block.createCuboidShape(2.25, 8, -2.5, 13.75, 9.25, 18.5),
-            Block.createCuboidShape(3.5, 4.625, 8, 12.5, 4.975, 18)
+            Block.createCuboidShape(12.25, 0, -2.5, 13.75, 7.75, -1),
+            Block.createCuboidShape(12.25, 0, 17, 13.75, 7.75, 18.5),
+            Block.createCuboidShape(2.25, 0, 17, 3.75, 7.75, 18.5),
+            Block.createCuboidShape(2.25, 0, -2.5, 3.75, 7.75, -1),
+            Block.createCuboidShape(2.25, 7.75, -2.5, 13.75, 9.25, 18.5),
+            Block.createCuboidShape(3.75, 2.625, -2, 12.25, 3.625, 18)
     );
 
     @Override
@@ -63,23 +57,12 @@ public class CoffeeTableBlock extends BlockWithEntity {
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
-    }
-
-    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING, HAS_ITEM);
     }
 
-    public static final MapCodec<CoffeeTableBlock> CODEC = createCodec(CoffeeTableBlock::new);
-
     @Override
-    public MapCodec<CoffeeTableBlock> getCodec() {
-        return CODEC;
-    }
-
-    @Override public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new CoffeeTableBlockEntity(pos, state);
     }
 
@@ -105,7 +88,7 @@ public class CoffeeTableBlock extends BlockWithEntity {
             ItemScatterer.spawn(world, pos.getX()+0.5, pos.getY()+1, pos.getZ()+0.5, be.getItem());
             be.setItem(ItemStack.EMPTY);
         }
-        return ActionResult.CONSUME; // đã xử lý
+        return ActionResult.CONSUME;
     }
 
     @Override

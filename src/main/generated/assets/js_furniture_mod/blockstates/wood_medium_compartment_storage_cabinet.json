@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "js_furniture_mod:block/wood_medium_compartment_storage_cabinet",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "js_furniture_mod:block/wood_medium_compartment_storage_cabinet"
+    },
+    "facing=south": {
+      "model": "js_furniture_mod:block/wood_medium_compartment_storage_cabinet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "js_furniture_mod:block/wood_medium_compartment_storage_cabinet",
+      "y": 270
+    }
+  }
+}

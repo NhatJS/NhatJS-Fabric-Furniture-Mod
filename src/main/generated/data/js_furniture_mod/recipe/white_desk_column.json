@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:white_square_stick",
+    "2": "minecraft:redstone"
+  },
+  "pattern": [
+    " 12",
+    " 1 ",
+    "111"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:white_desk_column"
+  }
+}

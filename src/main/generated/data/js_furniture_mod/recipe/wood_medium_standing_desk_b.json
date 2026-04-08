@@ -2,15 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": "minecraft:black_concrete",
-    "2": "minecraft:jungle_planks",
-    "3": "minecraft:redstone",
-    "4": "minecraft:lever"
+    "1": "js_furniture_mod:wood_medium_panel",
+    "2": "js_furniture_mod:white_desk_column",
+    "3": "js_furniture_mod:white_square_stick"
   },
   "pattern": [
-    "222",
-    "334",
-    "1 1"
+    "111",
+    "232"
   ],
   "result": {
     "count": 1,

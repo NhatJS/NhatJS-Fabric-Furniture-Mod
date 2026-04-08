@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "js_furniture_mod:block/light_wood_tv_stand"
+    "model": "js_furniture_mod:item/wood_light_tv_stand"
   }
 }

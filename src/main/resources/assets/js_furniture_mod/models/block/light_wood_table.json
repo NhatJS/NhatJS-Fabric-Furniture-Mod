@@ -1,7 +1,0 @@
-{
-	"parent": "js_furniture_mod:block/wood_table",
-	"textures": {
-		"0": "js_furniture_mod:block/light_wood",
-		"particle": "js_furniture_mod:block/light_wood"
-	}
-}

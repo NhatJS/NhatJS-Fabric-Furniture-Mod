@@ -7,11 +7,21 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_concrete": {
+    "has_white_panel": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:white_concrete"
+            "items": "js_furniture_mod:white_panel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_white_square_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:white_square_stick"
           }
         ]
       },
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_white_concrete"
+      "has_white_square_stick",
+      "has_white_panel"
     ]
   ],
   "rewards": {

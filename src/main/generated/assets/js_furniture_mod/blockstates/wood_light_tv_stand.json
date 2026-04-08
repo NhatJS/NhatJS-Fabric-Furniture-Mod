@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=east": {
-      "model": "js_furniture_mod:block/light_wood_tv_stand",
+      "model": "js_furniture_mod:block/wood_light_tv_stand",
       "y": 90
     },
     "facing=north": {
-      "model": "js_furniture_mod:block/light_wood_tv_stand"
+      "model": "js_furniture_mod:block/wood_light_tv_stand"
     },
     "facing=south": {
-      "model": "js_furniture_mod:block/light_wood_tv_stand",
+      "model": "js_furniture_mod:block/wood_light_tv_stand",
       "y": 180
     },
     "facing=west": {
-      "model": "js_furniture_mod:block/light_wood_tv_stand",
+      "model": "js_furniture_mod:block/wood_light_tv_stand",
       "y": 270
     }
   }

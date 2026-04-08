@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:white_square_stick",
+    "2": "js_furniture_mod:black_short_square_stick",
+    "3": "js_furniture_mod:black_square_stick"
+  },
+  "pattern": [
+    " 3 ",
+    "121"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:white_ceiling_fan_white"
+  }
+}

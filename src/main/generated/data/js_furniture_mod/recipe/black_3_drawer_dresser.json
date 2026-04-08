@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:black_compartment_storage_cabinet",
+    "2": "js_furniture_mod:black_drawer_single"
+  },
+  "pattern": [
+    " 2",
+    "12",
+    " 2"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:black_3_drawer_dresser"
+  }
+}

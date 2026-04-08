@@ -11,21 +11,21 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_computer_mouse": {
+    "has_black_computer_mouse": {
       "conditions": {
         "items": [
           {
-            "items": "js_furniture_mod:computer_mouse"
+            "items": "js_furniture_mod:black_computer_mouse"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_keyboard": {
+    "has_black_keyboard": {
       "conditions": {
         "items": [
           {
-            "items": "js_furniture_mod:keyboard"
+            "items": "js_furniture_mod:black_keyboard"
           }
         ]
       },
@@ -52,8 +52,8 @@
     [
       "has_the_recipe",
       "has_monitor",
-      "has_keyboard",
-      "has_computer_mouse",
+      "has_black_keyboard",
+      "has_black_computer_mouse",
       "has_black_carpet"
     ]
   ],

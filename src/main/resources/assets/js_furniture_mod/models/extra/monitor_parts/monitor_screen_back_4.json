@@ -1,0 +1,19 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "js_furniture_mod:block/monitor_screen_back",
+		"particle": "js_furniture_mod:block/monitor_screen_back"
+	},
+	"elements": [
+		{
+			"from": [6.38947, 0, 7.625],
+			"to": [9.61053, 0, 8.375],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"down": {"uv": [13.3125, 15.9375, 11.5, 9.5625], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}
