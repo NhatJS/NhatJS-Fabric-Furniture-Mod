@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_square_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:black_square_stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "js_furniture_mod:black_chair"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_black_square_stick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "js_furniture_mod:black_chair"
+    ]
+  }
+}

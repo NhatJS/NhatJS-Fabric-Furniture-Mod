@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "js_furniture_mod:block/monitor"
+    "model": "js_furniture_mod:item/monitor"
   }
 }

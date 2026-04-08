@@ -1,0 +1,28 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "js_furniture_mod:block/monitor_stand",
+		"particle": "js_furniture_mod:block/monitor_stand"
+	},
+	"elements": [
+		{
+			"from": [7.60125, 0, 5.0575],
+			"to": [8.39875, 0, 10.9425],
+			"rotation": {"angle": 0, "axis": "y", "origin": [10.73115, -1.52512, 7.74093]},
+			"faces": {
+				"up": {"uv": [11.5625, 9.125, 10.625, 0.125], "texture": "#0"},
+				"down": {"uv": [11.5625, 0.125, 10.625, 9.125], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 0.27495, 11.91387],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

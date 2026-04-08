@@ -1,7 +1,5 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -10,46 +8,26 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.DyeColor;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.nhatjs.js_furniture_mod.blockentity.client.CeilingFanBlockEntity;
+import net.nhatjs.js_furniture_mod.blockentity.CeilingFanBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class CeilingFanBlock extends BlockWithEntity {
+public class CeilingFanBlock extends Block implements BlockEntityProvider {
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
 
-    private static final MapCodec<CeilingFanBlock> CODEC = RecordCodecBuilder.mapCodec(builder -> {
-        return builder.group(DyeColor.CODEC.fieldOf("color").forGetter(block -> {
-            return block.color;
-        }), createSettingsCodec()).apply(builder, CeilingFanBlock::new);
-    });
-
-    private final DyeColor color;
-
-    public CeilingFanBlock(DyeColor color, Settings settings)
+    public CeilingFanBlock(Settings settings)
     {
         super(settings);
-        this.color = color;
         setDefaultState(getStateManager().getDefaultState().with(TURN_ON, false));
-    }
-
-    public DyeColor getColor()
-    {
-        return this.color;
-    }
-
-    @Override
-    public MapCodec<CeilingFanBlock> getCodec() {
-        return CODEC;
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return Block.createCuboidShape(0, 11, 0, 16, 16, 16);
+        return Block.createCuboidShape(5.15, 7, 5.15, 10.85, 16, 10.85);
     }
 
     @Override

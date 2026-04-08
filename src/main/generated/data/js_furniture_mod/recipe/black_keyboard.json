@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "js_furniture_mod:black_panel",
+    "2": "js_furniture_mod:black_short_square_stick",
+    "3": "minecraft:redstone"
+  },
+  "pattern": [
+    "222",
+    "131"
+  ],
+  "result": {
+    "count": 1,
+    "id": "js_furniture_mod:black_keyboard"
+  }
+}

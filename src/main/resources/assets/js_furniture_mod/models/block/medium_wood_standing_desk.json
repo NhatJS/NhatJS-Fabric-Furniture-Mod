@@ -1,6 +1,0 @@
-{
-	"parent": "js_furniture_mod:block/wood_standing_desk",
-	"textures": {
-		"2": "js_furniture_mod:block/medium_wood"
-	}
-}

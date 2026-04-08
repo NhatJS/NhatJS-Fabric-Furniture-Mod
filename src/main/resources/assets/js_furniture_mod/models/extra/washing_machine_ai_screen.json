@@ -1,0 +1,19 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "js_furniture_mod:block/washing_machine_ai",
+		"particle": "js_furniture_mod:block/washing_machine_ai"
+	},
+	"elements": [
+		{
+			"name": "washing_machine_ai",
+			"from": [5.85, 20.37, -0.01],
+			"to": [9.975, 22.245, -0.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -0.025]},
+			"faces": {
+				"north": {"uv": [13.4375, 10.75, 16, 16], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

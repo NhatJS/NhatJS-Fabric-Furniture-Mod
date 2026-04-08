@@ -15,8 +15,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.nhatjs.js_furniture_mod.block.CoffeeTableBlock;
-import net.nhatjs.js_furniture_mod.block.ModBlocks;
-import net.nhatjs.js_furniture_mod.blockentity.client.CoffeeTableBlockEntity;
+import net.nhatjs.js_furniture_mod.core.ModBlocks;
+import net.nhatjs.js_furniture_mod.blockentity.CoffeeTableBlockEntity;
 
 import java.util.HashMap;
 import java.util.Map;

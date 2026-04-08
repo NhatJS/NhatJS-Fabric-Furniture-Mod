@@ -1,0 +1,7 @@
+{
+	"parent": "js_furniture_mod:type/drawer_single",
+	"textures": {
+		"0": "js_furniture_mod:block/black_plastic",
+		"particle": "js_furniture_mod:block/black_plastic"
+	}
+}

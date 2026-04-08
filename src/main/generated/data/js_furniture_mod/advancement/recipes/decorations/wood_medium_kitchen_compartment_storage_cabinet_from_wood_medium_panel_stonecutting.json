@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "js_furniture_mod:wood_medium_kitchen_compartment_storage_cabinet_from_wood_medium_panel_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood_medium_panel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "js_furniture_mod:wood_medium_panel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wood_medium_panel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "js_furniture_mod:wood_medium_kitchen_compartment_storage_cabinet_from_wood_medium_panel_stonecutting"
+    ]
+  }
+}

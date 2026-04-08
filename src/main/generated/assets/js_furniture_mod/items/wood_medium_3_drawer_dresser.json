@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "js_furniture_mod:block/medium_wood_3_drawer_dresser"
+    "model": "js_furniture_mod:block/wood_medium_3_drawer_dresser"
   }
 }

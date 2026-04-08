@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=east": {
-      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_top",
+      "model": "js_furniture_mod:block/wood_medium_kitchen_cabinet_top",
       "y": 90
     },
     "facing=north": {
-      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_top"
+      "model": "js_furniture_mod:block/wood_medium_kitchen_cabinet_top"
     },
     "facing=south": {
-      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_top",
+      "model": "js_furniture_mod:block/wood_medium_kitchen_cabinet_top",
       "y": 180
     },
     "facing=west": {
-      "model": "js_furniture_mod:block/medium_wood_kitchen_cabinet_top",
+      "model": "js_furniture_mod:block/wood_medium_kitchen_cabinet_top",
       "y": 270
     }
   }
