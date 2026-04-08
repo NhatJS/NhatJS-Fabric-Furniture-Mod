@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:birch_planks",
+    "2": "minecraft:chest"
+  },
+  "pattern": [
+    "121"
+  ],
+  "result": {
+    "count": 3,
+    "id": "js_furniture_mod:wood_light_drawer_single"
+  }
+}

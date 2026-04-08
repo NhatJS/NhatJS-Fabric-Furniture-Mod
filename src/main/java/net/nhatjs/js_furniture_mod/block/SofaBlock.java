@@ -1,7 +1,5 @@
 package net.nhatjs.js_furniture_mod.block;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -12,9 +10,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.DyeColor;
 import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -27,42 +23,21 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
-import net.nhatjs.js_furniture_mod.entity.ModEntities;
-import net.nhatjs.js_furniture_mod.entity.client.SeatBlockEntity;
+import net.nhatjs.js_furniture_mod.block.core.FurnitureHorizontalBlock;
+import net.nhatjs.js_furniture_mod.core.ModEntities;
+import net.nhatjs.js_furniture_mod.entity.SeatBlockEntity;
 
 import java.util.List;
 
-public class SofaBlock extends Block {
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
-    public static final EnumProperty<Part> PART = EnumProperty.of("part", Part.class);
+public class SofaBlock extends FurnitureHorizontalBlock {
+    public static final EnumProperty<Sofa> SOFA = EnumProperty.of("sofa", Sofa.class);
 
-    private static final MapCodec<SofaBlock> CODEC = RecordCodecBuilder.mapCodec(builder -> {
-        return builder.group(DyeColor.CODEC.fieldOf("color").forGetter(block -> {
-            return block.color;
-        }), createSettingsCodec()).apply(builder, SofaBlock::new);
-    });
-
-    private final DyeColor color;
-
-    public SofaBlock(DyeColor color, Settings settings)
+    public SofaBlock(Settings settings)
     {
         super(settings);
-        this.color = color;
-        this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(PART, Part.SINGLE));
     }
 
-    public DyeColor getColor()
-    {
-        return this.color;
-    }
-
-    @Override
-    protected MapCodec<SofaBlock> getCodec()
-    {
-        return CODEC;
-    }
-
-    public enum Part implements StringIdentifiable
+    public enum Sofa implements StringIdentifiable
     {
         SINGLE("single"),
         LEFT("left"),
@@ -73,7 +48,7 @@ public class SofaBlock extends Block {
 
         private final String name;
 
-        Part(String name)
+        Sofa(String name)
         {
             this.name = name;
         }
@@ -87,17 +62,15 @@ public class SofaBlock extends Block {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        super.appendProperties(builder);
-        builder.add(FACING, PART);
+        builder.add(FACING, SOFA);
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        Direction facing = ctx.getHorizontalPlayerFacing();
-        BlockState state = this.getDefaultState().with(FACING, facing);
+        BlockState state = this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
         if(state != null)
         {
-            return state.with(PART, this.getShape(state, ctx.getWorld(), ctx.getBlockPos()));
+            return state.with(SOFA, this.getShape(state, ctx.getWorld(), ctx.getBlockPos()));
         }
         return null;
     }
@@ -110,40 +83,40 @@ public class SofaBlock extends Block {
     }
 
     @Override
-    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
-        return state.with(PART, this.getShape(state, (WorldAccess) world, pos));
+    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction dir, BlockPos neighborPos, BlockState neighborState, Random random) {
+        return state.with(SOFA, this.getShape(state, (WorldAccess) world, pos));
     }
 
-    public Part getShape(BlockState state, WorldAccess level, BlockPos pos)
+    public Sofa getShape(BlockState state, WorldAccess level, BlockPos pos)
     {
         Direction facing = state.get(FACING);
-        Direction front = this.getSofaState(level, pos, facing.getOpposite());
+        Direction front = this.getSofaState(level, pos, facing);
         if(front != null)
         {
             if(front == facing.rotateYClockwise())
             {
-                return Part.CORNER_RIGHT;
+                return Sofa.CORNER_RIGHT;
             }
             else if(front == facing.rotateYCounterclockwise())
             {
-                return Part.CORNER_LEFT;
+                return Sofa.CORNER_LEFT;
             }
         }
-        boolean left = this.isConnectable(level, pos, facing, facing.rotateYCounterclockwise());
-        boolean right = this.isConnectable(level, pos, facing, facing.rotateYClockwise());
+        boolean left = this.isConnectable(level, pos, facing, facing.rotateYClockwise());
+        boolean right = this.isConnectable(level, pos, facing, facing.rotateYCounterclockwise());
         if(left && right)
         {
-            return Part.MIDDLE;
+            return Sofa.MIDDLE;
         }
         else if(left)
         {
-            return Part.RIGHT;
+            return Sofa.RIGHT;
         }
         else if(right)
         {
-            return Part.LEFT;
+            return Sofa.LEFT;
         }
-        return Part.SINGLE;
+        return Sofa.SINGLE;
     }
 
     private Direction getSofaState(WorldAccess level, BlockPos pos, Direction side)
@@ -159,9 +132,9 @@ public class SofaBlock extends Block {
         if(relativeState.getBlock() instanceof SofaBlock)
         {
             Direction other = relativeState.get(FACING);
-            return other == facing || other == offset;
+            return other == facing || other == offset.getOpposite();
         }
-        return relativeState.isSideSolidFullSquare(level, relativePos, offset.getOpposite());
+        return relativeState.isSideSolidFullSquare(level, relativePos, offset);
     }
 
     @Override

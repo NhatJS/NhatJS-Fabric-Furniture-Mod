@@ -2,7 +2,6 @@ package net.nhatjs.js_furniture_mod.blockentity.renderer;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
@@ -16,17 +15,37 @@ import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.nhatjs.js_furniture_mod.NhatJSFurnitureModClient;
-import net.nhatjs.js_furniture_mod.block.ModBlocks;
-import net.nhatjs.js_furniture_mod.blockentity.client.CeilingFanBlockEntity;
+import net.nhatjs.js_furniture_mod.core.ModBlocks;
+import net.nhatjs.js_furniture_mod.blockentity.CeilingFanBlockEntity;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.function.Function;
 
 @Environment(EnvType.CLIENT)
 public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEntity, CeilingFanRenderState> {
     private final MinecraftClient mc = MinecraftClient.getInstance();
+    private final BlockStateModel blades_black;
+    private final BlockStateModel blades_white;
+
+    private final BlockStateModel woodLightBladesBlack;
+    private final BlockStateModel woodMediumBladesBlack;
+    private final BlockStateModel blackBladesBlack;
+    private final BlockStateModel whiteBladesBlack;
+    private final BlockStateModel woodLightBladesWhite;
+    private final BlockStateModel woodMediumBladesWhite;
+    private final BlockStateModel blackBladesWhite;
+    private final BlockStateModel whiteBladesWhite;
 
     public CeilingFanRenderer(BlockEntityRendererFactory.Context ctx) {
+        blades_black = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_ID);
+        blades_white = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_B_ID);
+
+        woodLightBladesBlack = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.WOOD_LIGHT_CEILING_FAN_BLADES_BLACK_ID);
+        woodMediumBladesBlack = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.WOOD_MEDIUM_CEILING_FAN_BLADES_BLACK_ID);
+        blackBladesBlack = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.BLACK_CEILING_FAN_BLADES_BLACK_ID);
+        whiteBladesBlack = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.WHITE_CEILING_FAN_BLADES_BLACK_ID);
+        woodLightBladesWhite = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.WOOD_LIGHT_CEILING_FAN_BLADES_WHITE_ID);
+        woodMediumBladesWhite = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.WOOD_MEDIUM_CEILING_FAN_BLADES_WHITE_ID);
+        blackBladesWhite = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.BLACK_CEILING_FAN_BLADES_WHITE_ID);
+        whiteBladesWhite = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.WHITE_CEILING_FAN_BLADES_WHITE_ID);
     }
 
     @Override
@@ -46,16 +65,11 @@ public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEn
         state.blockState = be.getCachedState();
         state.angle = be.getAngle(tickDelta);
 
-        World w = be.getWorld();
-        if (w == null || state.blockState == null) {
-            state.light = 0;
-            state.overlay = OverlayTexture.DEFAULT_UV;
-            return;
-        }
+        World world = be.getWorld();
+        if (world == null) return;
 
-        state.light = WorldRenderer.getLightmapCoordinates(w, state.pos);
+        state.light = WorldRenderer.getLightmapCoordinates(world, state.pos);
         state.overlay = OverlayTexture.DEFAULT_UV;
-
     }
 
     @Override
@@ -63,37 +77,46 @@ public class CeilingFanRenderer implements BlockEntityRenderer<CeilingFanBlockEn
                        MatrixStack ms,
                        OrderedRenderCommandQueue queue,
                        CameraRenderState cameraState) {
-        if (state.blockState == null || state.pos == null) return;
-
-        BlockStateModel blades_black = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_ID);
-        BlockStateModel blades_white = mc.getBakedModelManager().getModel(NhatJSFurnitureModClient.CEILING_FAN_BLADES_B_ID);
+        RenderLayer cutout = RenderLayers.cutout();
 
         ms.push();
-        try {
-            ms.translate(0.5, 0.9375, 0.5);
-            ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(state.angle));
-            ms.translate(-0.5, -0.9375, -0.5);
+        ms.translate(0.5, 0.9375, 0.5);
+        ms.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(state.angle));
+        ms.translate(-0.5, -0.9375, -0.5);
 
-            CeilingFanBlockEntity be = (CeilingFanBlockEntity) mc.world.getBlockEntity(state.pos);
-            float blur = 0f;
-            float alpha = 1f;
-            if (be != null) {
-                blur = Math.min(be.speed / 27f, 1f);
-                alpha = 1.0f - (blur * 0.4f);
-            }
-
-            Function<BlockRenderLayer, RenderLayer> layerMapper = (ignored) -> RenderLayers.cutout();
-
-            if (state.blockState.getBlock() == ModBlocks.CEILING_FAN) {
-                queue.submitBlockStateModel(ms, layerMapper, blades_black, 1f, 1f, 1f, state.light,
-                        state.overlay, 0, mc.world, state.pos, state.blockState);
-            }
-            else if (state.blockState.getBlock() == ModBlocks.CEILING_FAN_B) {
-                queue.submitBlockStateModel(ms, layerMapper, blades_white, 1f, 1f, 1f, state.light,
-                        state.overlay, 0, mc.world, state.pos, state.blockState);
-            }
-        } finally {
-            ms.pop();
+        //unused
+        if (state.blockState.getBlock() == ModBlocks.CEILING_FAN) {
+            queue.submitBlockStateModel(ms, cutout, blades_black, 1f, 1f, 1f, state.light, state.overlay, 0);
         }
+        else if (state.blockState.getBlock() == ModBlocks.CEILING_FAN_B) {
+            queue.submitBlockStateModel(ms, cutout, blades_white, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        //unused
+
+        if (state.blockState.getBlock() == ModBlocks.WOOD_LIGHT_CEILING_FAN_BLACK) {
+            queue.submitBlockStateModel(ms, cutout, woodLightBladesBlack, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        else if (state.blockState.getBlock() == ModBlocks.WOOD_MEDIUM_CEILING_FAN_BLACK) {
+            queue.submitBlockStateModel(ms, cutout, woodMediumBladesBlack, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        else if (state.blockState.getBlock() == ModBlocks.BLACK_CEILING_FAN_BLACK) {
+            queue.submitBlockStateModel(ms, cutout, blackBladesBlack, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        else if (state.blockState.getBlock() == ModBlocks.WHITE_CEILING_FAN_BLACK) {
+            queue.submitBlockStateModel(ms, cutout, whiteBladesBlack, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        else if (state.blockState.getBlock() == ModBlocks.WOOD_LIGHT_CEILING_FAN_WHITE) {
+            queue.submitBlockStateModel(ms, cutout, woodLightBladesWhite, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        else if (state.blockState.getBlock() == ModBlocks.WOOD_MEDIUM_CEILING_FAN_WHITE) {
+            queue.submitBlockStateModel(ms, cutout, woodMediumBladesWhite, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        else if (state.blockState.getBlock() == ModBlocks.BLACK_CEILING_FAN_WHITE) {
+            queue.submitBlockStateModel(ms, cutout, blackBladesWhite, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        else if (state.blockState.getBlock() == ModBlocks.WHITE_CEILING_FAN_WHITE) {
+            queue.submitBlockStateModel(ms, cutout, whiteBladesWhite, 1f, 1f, 1f, state.light, state.overlay, 0);
+        }
+        ms.pop();
     }
 }

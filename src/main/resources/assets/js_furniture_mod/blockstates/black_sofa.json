@@ -1,124 +1,124 @@
 {
   "variants": {
-    "facing=north,part=single": {
+    "facing=north,sofa=single": {
       "model": "js_furniture_mod:block/black_sofa",
       "uvlock": true,
       "y": 0
     },
-    "facing=north,part=left": {
+    "facing=north,sofa=left": {
       "model": "js_furniture_mod:block/black_sofa_left",
       "uvlock": true,
       "y": 0
     },
-    "facing=north,part=right": {
+    "facing=north,sofa=right": {
       "model": "js_furniture_mod:block/black_sofa_right",
       "uvlock": true,
       "y": 0
     },
-    "facing=north,part=middle": {
+    "facing=north,sofa=middle": {
       "model": "js_furniture_mod:block/black_sofa_middle",
       "uvlock": true,
       "y": 0
     },
-    "facing=north,part=corner_left": {
+    "facing=north,sofa=corner_left": {
       "model": "js_furniture_mod:block/black_sofa_corner_left",
       "uvlock": true,
       "y": 0
     },
-    "facing=north,part=corner_right": {
+    "facing=north,sofa=corner_right": {
       "model": "js_furniture_mod:block/black_sofa_corner_right",
       "uvlock": true,
       "y": 0
     },
 
-    "facing=east,part=single": {
+    "facing=east,sofa=single": {
       "model": "js_furniture_mod:block/black_sofa",
       "uvlock": true,
       "y": 90
     },
-    "facing=east,part=left": {
+    "facing=east,sofa=left": {
       "model": "js_furniture_mod:block/black_sofa_left",
       "uvlock": true,
       "y": 90
     },
-    "facing=east,part=right": {
+    "facing=east,sofa=right": {
       "model": "js_furniture_mod:block/black_sofa_right",
       "uvlock": true,
       "y": 90
     },
-    "facing=east,part=middle": {
+    "facing=east,sofa=middle": {
       "model": "js_furniture_mod:block/black_sofa_middle",
       "uvlock": true,
       "y": 90
     },
-    "facing=east,part=corner_left": {
+    "facing=east,sofa=corner_left": {
       "model": "js_furniture_mod:block/black_sofa_corner_left",
       "uvlock": true,
       "y": 90
     },
-    "facing=east,part=corner_right": {
+    "facing=east,sofa=corner_right": {
       "model": "js_furniture_mod:block/black_sofa_corner_right",
       "uvlock": true,
       "y": 90
     },
 
-    "facing=south,part=single": {
+    "facing=south,sofa=single": {
       "model": "js_furniture_mod:block/black_sofa",
       "uvlock": true,
       "y": 180
     },
-    "facing=south,part=left": {
+    "facing=south,sofa=left": {
       "model": "js_furniture_mod:block/black_sofa_left",
       "uvlock": true,
       "y": 180
     },
-    "facing=south,part=right": {
+    "facing=south,sofa=right": {
       "model": "js_furniture_mod:block/black_sofa_right",
       "uvlock": true,
       "y": 180
     },
-    "facing=south,part=middle": {
+    "facing=south,sofa=middle": {
       "model": "js_furniture_mod:block/black_sofa_middle",
       "uvlock": true,
       "y": 180
     },
-    "facing=south,part=corner_left": {
+    "facing=south,sofa=corner_left": {
       "model": "js_furniture_mod:block/black_sofa_corner_left",
       "uvlock": true,
       "y": 180
     },
-    "facing=south,part=corner_right": {
+    "facing=south,sofa=corner_right": {
       "model": "js_furniture_mod:block/black_sofa_corner_right",
       "uvlock": true,
       "y": 180
     },
 
-    "facing=west,part=single": {
+    "facing=west,sofa=single": {
       "model": "js_furniture_mod:block/black_sofa",
       "uvlock": true,
       "y": 270
     },
-    "facing=west,part=left": {
+    "facing=west,sofa=left": {
       "model": "js_furniture_mod:block/black_sofa_left",
       "uvlock": true,
       "y": 270
     },
-    "facing=west,part=right": {
+    "facing=west,sofa=right": {
       "model": "js_furniture_mod:block/black_sofa_right",
       "uvlock": true,
       "y": 270
     },
-    "facing=west,part=middle": {
+    "facing=west,sofa=middle": {
       "model": "js_furniture_mod:block/black_sofa_middle",
       "uvlock": true,
       "y": 270
     },
-    "facing=west,part=corner_left": {
+    "facing=west,sofa=corner_left": {
       "model": "js_furniture_mod:block/black_sofa_corner_left",
       "uvlock": true,
       "y": 270
     },
-    "facing=west,part=corner_right": {
+    "facing=west,sofa=corner_right": {
       "model": "js_furniture_mod:block/black_sofa_corner_right",
       "uvlock": true,
       "y": 270

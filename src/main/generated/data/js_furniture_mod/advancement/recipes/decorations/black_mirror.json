@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_concrete": {
+    "has_black_square_stick": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:black_concrete"
+            "items": "js_furniture_mod:black_square_stick"
           }
         ]
       },
@@ -31,7 +31,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_black_concrete",
+      "has_black_square_stick",
       "has_glass_pane"
     ]
   ],
