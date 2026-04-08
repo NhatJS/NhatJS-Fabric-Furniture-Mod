@@ -45,7 +45,8 @@ public class ModBlockEntities {
     public static final BlockEntityType<DrawerBlockEntity> DRAWER = Registry.register(Registries.BLOCK_ENTITY_TYPE,
             Identifier.of(NhatJSFurnitureMod.MOD_ID, "drawer"),
             FabricBlockEntityTypeBuilder.create(DrawerBlockEntity::new,
-                    ModBlocks.WOOD_3_DRAWER_DRESSER,
+                    ModBlocks.WOOD_3_DRAWER_DRESSER, //will be removed
+                    ModBlocks.WOOD_LIGHT_3_DRAWER_DRESSER,
                     ModBlocks.WOOD_MEDIUM_3_DRAWER_DRESSER,
                     ModBlocks.BLACK_3_DRAWER_DRESSER,
                     ModBlocks.WHITE_3_DRAWER_DRESSER).build(null));
