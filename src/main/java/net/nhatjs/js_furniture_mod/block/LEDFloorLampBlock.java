@@ -21,7 +21,6 @@ import net.nhatjs.js_furniture_mod.blockentity.MIDIBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class LEDFloorLampBlock extends FurnitureHorizontalBlock implements BlockEntityProvider {
-    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty TURN_ON = BooleanProperty.of("turn_on");
 
     public LEDFloorLampBlock(Settings settings) {

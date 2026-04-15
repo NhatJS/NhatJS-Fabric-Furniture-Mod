@@ -56,6 +56,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MODERN_LIGHT);
         addDrop(ModBlocks.LED_FLOOR_LAMP);
         addDrop(ModBlocks.LED_FLOOR_LAMP_RGB_OFF);
+        addDrop(ModBlocks.LED_FLOOR_LAMP_RGB_OFF_2);
         addDrop(ModBlocks.LED_RGB_TRIANGLE_PANEL);
         addDrop(ModBlocks.STUDIO_LIGHT);
         addDrop(ModBlocks.MONITOR_SETUP);
